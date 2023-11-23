@@ -1,0 +1,35 @@
+# .gitignore for Hugo website
+
+# Ignore Hugo build output directory
+/public/
+
+# Ignore Hugo temp files
+/resources/_gen/
+
+# Ignore Hugo's build lock file
+.hugo_build.lock
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore user-specific files
+*.swp
+*.swo
+*.swn
+.idea/
+*.iml
+*.log
+*.bak
+*.orig
+*.pyc
+*.pyo
+*.rej
+*.save
+*.swo
+*.swp
+*.tmproj
+*.un~
+Session.vim
+tags
+netrwhist

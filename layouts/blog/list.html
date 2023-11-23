@@ -1,0 +1,11 @@
+{{ define "main" }}
+	{{- .Content }}
+
+	<ul>
+		{{ range .Pages.ByLastmod }}
+		<li>
+			<a href="{{ .Permalink }}">{{ .Page.Title }}</a>
+		</li>
+		{{ end }}
+	</ul>
+{{ end }}

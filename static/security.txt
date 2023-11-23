@@ -1,0 +1,2 @@
+Canonical: https://costas.dev/security.txt
+Preferred-Languages: es, en
