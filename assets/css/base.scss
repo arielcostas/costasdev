@@ -1,0 +1,41 @@
+@import "fonts.scss";
+@import "root.scss";
+
+@import "markup/render-heading.scss";
+
+@import "partials/header.scss";
+@import "partials/footer.scss";
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+h1 {
+	font-weight: 900;
+}
+
+a {
+	color: var(--accent-500);
+}
+
+#main-footer-separator {
+	flex-grow: 1;
+	flex-shrink: 0;
+}
+
+main {
+	max-width: 80ch;
+	margin: 0 auto;
+	padding: 1rem;
+
+	font-size: 1.25rem;
+}
