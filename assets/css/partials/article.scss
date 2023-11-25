@@ -1,0 +1,22 @@
+article {
+	max-width: 70ch;
+	margin: 0 auto;
+	font-size: 1.25rem;
+
+	>* {
+		margin-top: 0;
+		margin-bottom: 1.75rem;
+	}
+
+	h1 {
+		font-size: 3.5rem;
+		line-height: 1;
+		margin-bottom: 1rem;
+	}
+
+	p.meta {
+		display: block;
+		font-size: 0.85rem;
+		margin-bottom: 1rem;
+	}
+}

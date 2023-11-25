@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{- .Content }}
+
+{{ with .Site.GetPage "section" "blog" }}
+<h2 id="{{ .RelPermalink }}">
+	<a class="anchor" href="{{ .RelPermalink | safeURL }}">#</a>
+	Últimas entradas
+</h2>
+
+<ul>
+	{{ range .Pages }}
+
+	<li>{{ .PublishDate.Format "02/01" }} <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+	{{ end }}
+</ul>
+{{ end }}
+{{ end}}

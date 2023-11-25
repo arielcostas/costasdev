@@ -5,3 +5,8 @@ title: Ariel Costas
 outputs:
   home: ["HTML", "AMP"]
   posts: ["HTML", "RSS", "markdown"]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

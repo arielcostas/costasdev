@@ -4,6 +4,7 @@
 @import "markup/render-heading.scss";
 
 @import "partials/header.scss";
+@import "partials/article.scss";
 @import "partials/footer.scss";
 
 html,
@@ -17,6 +18,13 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-heading);
+	line-height: 1.25;
+	margin-top: 0;
+	margin-bottom: 0.6em;	
 }
 
 h1 {
@@ -34,6 +42,7 @@ a {
 
 main {
 	max-width: 80ch;
+	width: 100%;
 	margin: 0 auto;
 	padding: 1rem;
 
