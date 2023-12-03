@@ -3,7 +3,7 @@ header {
 	color: black;
 
 	display: flex;
-	flex-direction: horizontal;
+	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 
@@ -37,6 +37,22 @@ header {
 
 		&:hover {
 			color: var(--accent-dark);
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	header {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		h1 {
+			margin-bottom: 0.5rem;
+		}
+
+		p {
+			margin-bottom: 0;
 		}
 	}
 }
