@@ -2,9 +2,18 @@
 <html lang="es">
 
 <head>
+	<base href="{{ .Site.BaseURL }}">
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ .Page.Title }} - Ariel Costas</title>
+
+	<meta name="description" content="{{ .Page.Description }}">
+
+	<meta property="og:title" content="{{ .Page.Title }} - Ariel Costas">
+	<meta property="og:description" content="{{ .Page.Description }}">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="{{ .Permalink }}">
 
 	{{ $stylesheetOptions := dict "transpiler" "libsass" }}
 	{{ $stylesheet := resources.Get "css/base.scss" | resources.ToCSS $stylesheetOptions | minify }}
