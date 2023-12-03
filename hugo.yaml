@@ -1,9 +1,9 @@
-baseURL: https://costas.dev/
+baseURL: https://www.costas.dev/
 languageCode: es-ES
 title: Ariel Costas
 
 outputs:
-  home: ["HTML", "AMP"]
+  home: ["HTML"]
   posts: ["HTML", "RSS", "markdown"]
 
 markup:
