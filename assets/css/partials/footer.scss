@@ -4,7 +4,20 @@ footer {
 
 	padding: 0.5rem 1rem;
 
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
 	a {
 		color: var(--accent-7);
+	}
+
+	div {
+		display: flex;
+		gap: 1rem;
+		
+		font-size: 1.125rem;
+
+		font-family: var(--font-mono);
 	}
 }
