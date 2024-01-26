@@ -1,13 +1,22 @@
 <header>
-	<h1>
-		<a href="{{ .Site.Home.RelPermalink }}">
-			CostasDEV
-		</a>
-	</h1>
+	<div>
+		<h1>
+			<a href="{{ .Site.Home.RelPermalink }}">
+				CostasDEV
+			</a>
+		</h1>
+
+		<nav>
+			{{$current := .}}
+			{{ range .Site.Home.Pages }}
+			<a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $current.RelPermalink }} class="active"{{ end }}>{{ .Title }}</a>
+			{{ end }}
+		</nav>
+	</div>
 
 	<nav>
-		{{ range .Site.Home.Pages }}
-		<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-		{{ end }}
+		<a rel="me" href="https://masto.es/@arielcg">Mastodon</a>
+		<a href="https://github.com/arielcostas">GitHub</a>
+		<a href="https://linkedin.com/in/ariel-costas">LinkedIn</a>
 	</nav>
 </header>

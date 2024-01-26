@@ -2,10 +2,19 @@ main {
 	margin: 0 auto 3rem;
 	padding: 1rem;
 	box-sizing: border-box;
-	
+
 	max-width: 65ch;
 	width: 100%;
 	font-size: 1.25rem;
+
+	a {
+		color: var(--accent-1);
+		transition: color 0.2s ease-in-out;
+
+		&:hover {
+			color: var(--accent-2);
+		}
+	}
 
 	>* {
 		margin-top: 0;

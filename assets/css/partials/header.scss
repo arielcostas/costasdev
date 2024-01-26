@@ -1,5 +1,6 @@
 header {
-	background-color: var(--accent-5);
+	border-top: 4px solid var(--accent-5);
+	background-color: #EFEFEF;
 	color: black;
 
 	display: flex;
@@ -7,8 +8,21 @@ header {
 	align-items: center;
 	justify-content: space-between;
 
-	padding: 1rem 2rem;
+	padding: 0 2rem;
 	margin-bottom: 1rem;
+
+	a {
+		display: inline-block;
+		padding-top: 1rem;
+		padding-bottom: calc(1rem - 4px);
+	}
+
+	>div {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 1rem;
+	}
 
 	h1 {
 		font-size: 2rem;
@@ -26,7 +40,7 @@ header {
 		font-weight: 300;
 	}
 
-	nav > a {
+	nav>a {
 		text-decoration: none;
 		font-weight: 700;
 		font-size: 1.2rem;
@@ -36,7 +50,11 @@ header {
 		transition: color 0.2s ease-in-out;
 
 		&:hover {
-			color: var(--accent-dark);
+			color: var(--accent-3);
+		}
+
+		&.active {
+			border-bottom: 2px solid var(--accent-3);
 		}
 	}
 }
