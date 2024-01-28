@@ -3,15 +3,7 @@
 	font-style: normal;
 	font-weight: 100 900;
 	font-display: swap;
-	src: url('/fonts/aleo.ttf') format('truetype-variations');
-}
-
-@font-face {
-	font-family: 'Aleo';
-	font-style: italic;
-	font-weight: 100 900;
-	font-display: swap;
-	src: url('/fonts/aleo-italic.ttf') format('truetype-variations');
+	src: url('/fonts/aleo.woff2') format('woff2-variations');
 }
 
 @font-face {
@@ -19,5 +11,5 @@
 	font-style: normal;
 	font-weight: 100 900;
 	font-display: swap;
-	src: url('/fonts/rubik.ttf') format('truetype-variations');
+	src: url('/fonts/rubik.woff2') format('woff2-variations');
 }

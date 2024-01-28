@@ -1,5 +1,6 @@
 baseURL: https://www.costas.dev/
 languageCode: es-ES
+defaultContentLanguage: es
 title: Ariel Costas
 
 outputs:
