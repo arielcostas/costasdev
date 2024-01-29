@@ -1,6 +1,6 @@
 ---
 title: "Parad de una vez de comprar ccTLDs"
-date: 2024-01-30
+date: 2024-01-29
 ---
 
 Los dominios ccTLD (Country-Code Top Level Domain) son los dominios de nivel superior que se asignan a cada país. Por ejemplo, `.es` para España, `.fr` para Francia, `.de` para Alemania, `.uk` para Reino Unido, `.us` para Estados Unidos, etc. Estos dominios se asignan a cada país según el [código ISO 3166-1](https://es.wikipedia.org/wiki/ISO_3166-1) de cada país.
