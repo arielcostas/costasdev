@@ -4,40 +4,55 @@ header {
 	color: black;
 
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	flex-direction: column;
 	justify-content: space-between;
 
-	padding: 0 2rem;
+	padding: 0 1rem;
 	margin-bottom: 1rem;
 
 	a {
 		display: inline-block;
-		padding-top: 1rem;
-		padding-bottom: calc(1rem - 4px);
+		padding-top: 0.5rem;
+		padding-bottom: calc(0.5rem - 4px);
 	}
 
-	>div {
+	#brand {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		gap: 1rem;
-	}
 
-	h1 {
-		font-size: 2rem;
-		margin: 0;
-		font-weight: 900;
-		letter-spacing: 0.15rem;
+		h1 {
+			font-size: 2rem;
+			margin: 0;
+			font-weight: 900;
+			letter-spacing: 0.15rem;
 
-		a {
-			text-decoration: none;
+			a {
+				text-decoration: none;
+			}
 		}
 	}
 
-	p {
-		font-size: 1.2rem;
-		font-weight: 300;
+	#nav-pages {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		padding-inline-start: 2.5rem;
+	}
+
+	#nav-socials {
+		align-self: center;
+
+		display: flex;
+		gap: 1.5rem;
+
+		a {
+			font-size: 1.5rem;
+			transition: color 0.2s ease-in-out;
+			line-height: 1;
+		}
 	}
 
 	nav>a {
@@ -46,7 +61,6 @@ header {
 		font-size: 1.2rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1rem;
-		margin: 0 0.5rem;
 		transition: color 0.2s ease-in-out;
 
 		&:hover {
@@ -57,20 +71,69 @@ header {
 			border-bottom: 2px solid var(--accent-3);
 		}
 	}
+
+	button#mobile-menu {
+		display: block;
+		background-color: transparent;
+		border: none;
+		font-size: 2rem;
+		cursor: pointer;
+	}
+
+	&.collapsed {
+
+		#nav-pages,
+		#nav-socials {
+			display: none;
+		}
+	}
 }
 
-@media (max-width: 768px) {
+@media (min-width: 480px) {
 	header {
-		flex-direction: column;
+		flex-direction: row;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
+
+		a {
+			padding-top: 1rem;
+			padding-bottom: calc(1rem - 4px);
+		}
+
+		#nav-pages {
+			justify-self: start;
+			flex-direction: row;
+			gap: 1.5rem;
+			padding-inline-start: 0;
+		}
+
+		button#mobile-menu {
+			display: none;
+		}
+
+		&.collapsed {
+
+			#nav-pages,
+			#nav-socials {
+				display: flex;
+			}
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	header {
+		padding: 0 1rem;
+		gap: 1.5rem;
+		justify-content: start;
 
 		h1 {
 			margin-bottom: 0.5rem;
 		}
 
-		p {
-			margin-bottom: 0;
+		#nav-socials {
+			align-self: flex-end;
+			margin-left: auto;
 		}
 	}
 }
