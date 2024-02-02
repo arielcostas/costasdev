@@ -40,3 +40,7 @@ a {
 	flex-grow: 1;
 	flex-shrink: 0;
 }
+
+li > time {
+	font-family: var(--font-mono);
+}
