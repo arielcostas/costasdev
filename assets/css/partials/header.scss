@@ -40,6 +40,9 @@ header {
 		align-items: flex-start;
 
 		padding-inline-start: 2.5rem;
+
+		transition: max-height 0.2s linear;
+		max-height: 100vh;
 	}
 
 	#nav-socials {
@@ -47,6 +50,9 @@ header {
 
 		display: flex;
 		gap: 1.5rem;
+
+		transition: max-height 0.2s linear;
+		max-height: 100vh;
 
 		a {
 			font-size: 1.5rem;
@@ -84,7 +90,8 @@ header {
 
 		#nav-pages,
 		#nav-socials {
-			display: none;
+			max-height: 0;
+			overflow: hidden;
 		}
 	}
 }
