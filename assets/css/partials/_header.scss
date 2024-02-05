@@ -1,7 +1,7 @@
 header {
-	border-top: 4px solid var(--accent-5);
-	background-color: #EFEFEF;
-	color: black;
+	border-top: 4px solid var(--header-color);
+	background-color: var(--header-background);
+	color: var(--header-color);
 
 	display: flex;
 	flex-direction: column;
@@ -29,6 +29,7 @@ header {
 			letter-spacing: 0.15rem;
 
 			a {
+				color: var(--header-color);
 				text-decoration: none;
 			}
 		}
@@ -68,6 +69,7 @@ header {
 		text-transform: uppercase;
 		letter-spacing: 0.1rem;
 		transition: color 0.2s ease-in-out;
+		color: var(--header-color);
 
 		&:hover {
 			color: var(--accent-3);

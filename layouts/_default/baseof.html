@@ -16,8 +16,12 @@
 	<meta property="og:url" content="{{ .Permalink }}">
 
 	{{ $stylesheetOptions := dict "transpiler" "libsass" }}
-	{{ $stylesheet := resources.Get "css/base.scss" | resources.ToCSS $stylesheetOptions | minify }}
-	<link rel="stylesheet" href='{{ $stylesheet.RelPermalink }}'>
+	{{ $mainStylesheet := resources.Get "css/base.scss" | resources.ToCSS $stylesheetOptions | resources.Minify | resources.Fingerprint }}
+	<link rel="stylesheet" href='{{ $mainStylesheet.RelPermalink }}' integrity='{{ $mainStylesheet.Data.Integrity }}' crossorigin='anonymous'>
+
+	{{ $darkStylesheet := resources.Get "css/dark.scss" | resources.ToCSS $stylesheetOptions | resources.Minify | resources.Fingerprint }}
+	<link rel="stylesheet" href='{{ $darkStylesheet.RelPermalink }}' integrity='{{ $darkStylesheet.Data.Integrity }}' crossorigin='anonymous' media="(prefers-color-scheme: dark)">
+
 </head>
 
 <body>

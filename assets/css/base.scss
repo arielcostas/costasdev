@@ -14,6 +14,9 @@ body {
 	max-width: 100vw;
 	display: flex;
 	flex-direction: column;
+	
+	background-color: var(--body-background);
+	color: var(--body-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,7 +31,7 @@ h1 {
 }
 
 a {
-	color: var(--accent-500);
+	color: var(--accent-1);
 }
 
 #main-footer-separator {
