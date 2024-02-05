@@ -123,6 +123,7 @@ header {
 			#nav-pages,
 			#nav-socials {
 				display: flex;
+				max-height: unset;
 			}
 		}
 	}
