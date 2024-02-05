@@ -1,11 +1,6 @@
-@import "fonts.scss";
-@import "root.scss";
-
-@import "markup/render-heading.scss";
-
-@import "partials/header.scss";
-@import "partials/article.scss";
-@import "partials/footer.scss";
+@import "_root";
+@import "markup/_index";
+@import "partials/_index";
 
 html,
 body {

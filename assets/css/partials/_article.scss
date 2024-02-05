@@ -3,7 +3,7 @@ main {
 	padding: 1rem;
 	box-sizing: border-box;
 
-	max-width: 65ch;
+	max-width: 72ch;
 	width: 100%;
 	font-size: 1.25rem;
 
@@ -23,8 +23,10 @@ main {
 
 	>p>code {
 		word-break: break-word;
-		font-size: 0.9em;
+		font-family: var(--font-mono);
+		
 		color: var(--accent-1);
+		background-color: #f6f6f6;
 	}
 
 	h1 {
