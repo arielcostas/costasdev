@@ -1,0 +1,8 @@
+{
+	"globalHeaders": {
+		"X-Frame-Options": "DENY",
+		"X-Content-Type-Options": "nosniff",
+		"X-XSS-Protection": "1; mode=block",
+		"Content-Security-Policy": "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'"	
+	}
+}
