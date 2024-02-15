@@ -1,19 +1,37 @@
 header {
-	border-top: 4px solid var(--header-color);
 	background-color: var(--header-background);
 	color: var(--header-color);
+	box-shadow: var(--shadow);
 
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	gap: 0.5rem 0;
 
-	padding: 0 1rem;
+	padding: 1rem 1rem;
+	margin: 0.75rem;
 	margin-bottom: 1rem;
+
+	border-radius: $floatingRadius;
+
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		content: "";
+		height: 4px;
+		width: 100%;
+
+		background-color: var(--header-color);
+
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+	}
 
 	a {
 		display: inline-block;
-		padding-top: 0.5rem;
-		padding-bottom: calc(0.5rem - 4px);
 	}
 
 	#brand {
@@ -26,9 +44,10 @@ header {
 			font-size: 2rem;
 			margin: 0;
 			font-weight: 900;
-			letter-spacing: 0.15rem;
+			line-height: 1;
 
 			a {
+				font-family: var(--font-heading);
 				color: var(--header-color);
 				text-decoration: none;
 			}
@@ -39,6 +58,7 @@ header {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		gap: 0.25rem;
 
 		padding-inline-start: 2.5rem;
 
@@ -70,13 +90,14 @@ header {
 		letter-spacing: 0.1rem;
 		transition: color 0.2s ease-in-out;
 		color: var(--header-color);
+		line-height: 1;
 
 		&:hover {
 			color: var(--accent-3);
 		}
 
 		&.active {
-			border-bottom: 2px solid var(--accent-3);
+			color: var(--accent-1);
 		}
 	}
 
@@ -87,8 +108,11 @@ header {
 		font-size: 2rem;
 		cursor: pointer;
 	}
+}
 
-	&.collapsed {
+@media (max-width: $breakpointTablet) {
+	header.collapsed {
+		gap: 0;
 
 		#nav-pages,
 		#nav-socials {
@@ -98,16 +122,11 @@ header {
 	}
 }
 
-@media (min-width: 480px) {
+@media (min-width: $breakpointTablet) {
 	header {
 		flex-direction: row;
-		align-items: center;
+		align-items: baseline;
 		justify-content: space-between;
-
-		a {
-			padding-top: 1rem;
-			padding-bottom: calc(1rem - 4px);
-		}
 
 		#nav-pages {
 			justify-self: start;
@@ -131,11 +150,11 @@ header {
 	}
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $breakpointDesktop) {
 	header {
-		padding: 0 1rem;
+		padding: 1rem 1.25rem;
 		gap: 1.5rem;
-		justify-content: start;
+		justify-content: center;
 
 		h1 {
 			margin-bottom: 0.5rem;
