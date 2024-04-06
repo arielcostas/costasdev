@@ -1,5 +1,5 @@
 ---
-title: "Info"
+title: "Sobre mí"
 weight: 1
 ---
 
