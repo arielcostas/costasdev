@@ -28,7 +28,7 @@ main {
 
 	>p>code {
 		word-break: break-word;
-		font-family: var(--font-mono);
+		font-family: $monoFontStack;
 		
 		color: var(--accent-1);
 		background-color: #f6f6f6;

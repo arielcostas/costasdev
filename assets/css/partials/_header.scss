@@ -9,10 +9,6 @@ header {
 	gap: 0.5rem 0;
 
 	padding: 1rem 1rem;
-	margin: 0.75rem;
-	margin-bottom: 1rem;
-
-	border-radius: $floatingRadius;
 
 	position: relative;
 	overflow: hidden;
@@ -47,7 +43,7 @@ header {
 			line-height: 1;
 
 			a {
-				font-family: var(--font-heading);
+				font-family: $mainFontStack;
 				color: var(--header-color);
 				text-decoration: none;
 			}
@@ -64,6 +60,10 @@ header {
 
 		transition: max-height 0.2s linear;
 		max-height: 100vh;
+
+		a {
+			@extend %tracking-tight;
+		}
 	}
 
 	#nav-socials {

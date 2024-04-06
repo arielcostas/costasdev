@@ -1,24 +1,29 @@
 {{ define "head_extras" }}
-	{{ partial "ld/website.html" . }}
+{{ partial "ld/website.html" . }}
 {{ end }}
 
 {{ define "main" }}
-	{{- .Content }}
+{{- .Content }}
 
-	{{ with .Site.GetPage "section" "blog" }}
+{{ with .Site.GetPage "section" "blog" }}
+<section>
 	<h2 id="{{ .RelPermalink }}">
 		<a class="anchor" href="{{ .RelPermalink | safeURL }}">#</a>
 		Últimas entradas
 	</h2>
 
 	<ul>
-		{{ range .Pages }}
+		{{ range .Pages | first 5 }}
 
 		<li>
-			<time datetime="{{ .PublishDate.Format " 2006-01-02T15:04:05-07:00"}}">{{ .PublishDate.Format "02/01" }}</time>
+			<time datetime="{{ .PublishDate.Format " 2006-01-02T15:04:05-07:00"}}">{{ .PublishDate.Format "02/01"
+				}}</time>
 			<a href="{{ .RelPermalink }}">{{ .Title }}</a>
 		</li>
 		{{ end }}
 	</ul>
-	{{ end }}
+
+	<a href="{{ .RelPermalink }}" class="button">Ver todas las entradas</a>
+</section>
+{{ end }}
 {{ end}}

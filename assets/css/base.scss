@@ -1,3 +1,5 @@
+@import "_fonts";
+@import "_utilities";
 @import "_root";
 @import "markup/_index";
 @import "partials/_index";
@@ -19,10 +21,14 @@ body {
 	
 	background-color: var(--body-background);
 	color: var(--body-color);
+
+	background-image: radial-gradient(circle at 1px 1px, #A9A9A988 1px, transparent 0);
+	background-size: 15px 15px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: var(--font-heading);
+	font-family: $mainFontStack;
+	@extend %tracking-tight;
 	line-height: 1.25;
 	margin-top: 0;
 	margin-bottom: 0.6em;	
@@ -42,5 +48,5 @@ a {
 }
 
 li > time {
-	font-family: var(--font-mono);
+	font-family: $monoFontStack;
 }
