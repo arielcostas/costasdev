@@ -1,6 +1,6 @@
 ---
 title: "Montando un router casero con una Raspberry Pi"
-date: 2024-04-30
+date: 2024-04-29
 ---
 
 El otro día recordé que tengo una Raspberry 4B por casa, y que no le estoy dando ningún uso. Así que, con fines experimentales, decidí montar un router casero con ella, añadiendo de paso un servidor DNS y HTTP.
