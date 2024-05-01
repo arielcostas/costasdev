@@ -1,7 +1,7 @@
 header {
-	background-color: var(--header-background);
-	color: var(--header-color);
-	box-shadow: var(--shadow);
+	background-color: $lightAlt;
+	color: $accent;
+	box-shadow: $shadow;
 
 	display: flex;
 	flex-direction: column;
@@ -18,7 +18,7 @@ header {
 		height: 4px;
 		width: 100%;
 
-		background-color: var(--header-color);
+		background-color: $accent;
 
 		position: absolute;
 		display: block;
@@ -44,7 +44,7 @@ header {
 
 			a {
 				font-family: $mainFontStack;
-				color: var(--header-color);
+				color: $accent;
 				text-decoration: none;
 			}
 		}
@@ -89,15 +89,15 @@ header {
 		text-transform: uppercase;
 		letter-spacing: 0.1rem;
 		transition: color 0.2s ease-in-out;
-		color: var(--header-color);
+		color: $accent;
 		line-height: 1;
 
 		&:hover {
-			color: var(--accent-3);
+			color: $accentDark;
 		}
 
 		&.active {
-			color: var(--accent-1);
+			color: $accentDark;
 		}
 	}
 

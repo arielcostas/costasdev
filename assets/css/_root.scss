@@ -1,28 +1,17 @@
-:root {
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.65;
-	font-family: $mainFontStack;
+$accent: hsl(215, 69%, 49%);
+$accentLight: hsl(215, 69%, 59%);
+$accentDark: hsl(215, 69%, 39%);
+$dark: hsl(340, 13%, 5%);
+$light: hsl(214, 64%, 98%);
+$lightAlt: hsl(0, 0%, 94%);
 
-	--body-background: #efefef;
-	--body-color: #212121;
-
-	--header-background: #ffffff;
-	--header-color: var(--accent-1);
-
-	--footer-background: #212121;
-	--footer-color: #ffffff;
-
-	--accent-1: hsl(36, 100%, 50%);
-	--accent-2: hsl(36, 100%, 60%);
-	--accent-3: hsl(36, 100%, 70%);
-	--accent-4: hsl(36, 100%, 80%);
-	--accent-5: hsl(36, 100%, 90%);
-
-	--shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
-}
+$shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
 
 $floatingRadius: 0.5rem;
 
 $breakpointTablet: 480px;
 $breakpointDesktop: 1024px;
+
+:root {
+	font: 400 16px/1.65 $mainFontStack;
+}

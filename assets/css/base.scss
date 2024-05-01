@@ -19,8 +19,8 @@ body {
 	flex-direction: column;
 	gap: 0.5rem;
 	
-	background-color: var(--body-background);
-	color: var(--body-color);
+	background-color: $light;
+	color: $dark;
 
 	background-image: radial-gradient(circle at 1px 1px, #A9A9A988 1px, transparent 0);
 	background-size: 15px 15px;
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-	color: var(--accent-1);
+	color: $accent;
 }
 
 #main-footer-separator {

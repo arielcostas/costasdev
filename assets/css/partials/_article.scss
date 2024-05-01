@@ -3,21 +3,21 @@ main {
 	margin: 0.75rem 1rem 3rem;
 	padding: 1.5rem 2.5rem;
 	border-radius: $floatingRadius;
-	box-shadow: var(--shadow);
+	box-shadow: $shadow;
 
 	align-self: center;
 
 	max-width: 82ch;
 	font-size: 1.25rem;
 
-	background-color: var(--header-background);
+	background-color: $lightAlt;
 
 	a {
-		color: var(--accent-1);
+		color: $accentDark;
 		transition: color 0.2s ease-in-out;
 
 		&:hover {
-			color: var(--accent-2);
+			color: $accent;
 		}
 	}
 
@@ -30,7 +30,7 @@ main {
 		word-break: break-word;
 		font-family: $monoFontStack;
 
-		color: var(--accent-1);
+		color: $accentDark;
 		background-color: #f6f6f6;
 	}
 
