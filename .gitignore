@@ -1,35 +1,24 @@
-# .gitignore for Hugo website
+# build output
+dist/
 
-# Ignore Hugo build output directory
-/public/
+# generated types
+.astro/
 
-# Ignore Hugo temp files
-/resources/_gen/
+# dependencies
+node_modules/
 
-# Ignore Hugo's build lock file
-.hugo_build.lock
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Ignore system files
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
 .DS_Store
-Thumbs.db
 
-# Ignore user-specific files
-*.swp
-*.swo
-*.swn
+# jetbrains setting folder
 .idea/
-*.iml
-*.log
-*.bak
-*.orig
-*.pyc
-*.pyo
-*.rej
-*.save
-*.swo
-*.swp
-*.tmproj
-*.un~
-Session.vim
-tags
-netrwhist

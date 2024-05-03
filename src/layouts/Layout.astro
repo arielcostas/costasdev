@@ -1,0 +1,102 @@
+---
+import "@fontsource-variable/sen";
+import Header from "../partials/Header.astro";
+import MainWrapper from "../partials/MainWrapper.astro";
+import Footer from "../partials/Footer.astro";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+
+		<link rel="canonical" href={Astro.url} />
+		<link rel="alternate" type="application/rss+xml" href="/blog.xml" />
+		<link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/favicon.png" />
+
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:image" content="/favicon.png" />
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="/favicon.png" />
+
+		<title>{title} - Ariel Costas</title>
+
+		<slot name="head-jsonld" />
+	</head>
+	<body>
+		<Header />
+		<MainWrapper>
+			<slot />
+		</MainWrapper>
+		<Footer />
+	</body>
+</html>
+
+<style is:global lang="scss">
+	@import "../../styles/shared.scss";
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		min-height: 100vh;
+		max-width: 100vw;
+
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		background-color: $light;
+		color: $dark;
+
+		background-image: radial-gradient(
+			circle at 1px 1px,
+			#a9a9a988 1px,
+			transparent 0
+		);
+		background-size: 15px 15px;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: $mainFontStack;
+		@extend %tracking-tight;
+		line-height: 1.25;
+		margin-block: 0.6em;
+	}
+
+	a {
+		color: $accent;
+	}
+
+	*::selection {
+		background-color: transparentize($accent, 0.85);
+	}
+</style>

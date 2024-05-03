@@ -1,0 +1,63 @@
+<main>
+	<slot/>
+</main>
+
+<style is:global lang="scss">
+	@import "../../styles/shared.scss";
+
+	li > time {
+		font-family: $monoFontStack;
+	}
+
+	main {
+		box-sizing: border-box;
+		margin: 0.75rem 1rem 3rem;
+		padding: 1.5rem 3rem;
+		border-radius: $floatingRadius;
+		box-shadow: $shadow;
+
+		align-self: center;
+
+		max-width: 82ch;
+		font-size: 1.2rem;
+
+		background-color: $lightAlt;
+
+		a {
+			color: $accentDark;
+			transition: color 0.2s ease-in-out;
+
+			&:hover {
+				color: $accent;
+			}
+		}
+
+		> * {
+			margin-block: 0.75em;
+		}
+
+		> p > code {
+			word-break: break-word;
+			font-family: $monoFontStack;
+
+			color: $accentDark;
+			background-color: #f6f6f6;
+		}
+
+		h1 {
+			font-size: 2.75rem;
+			line-height: 1;
+			margin-bottom: 1rem;
+		}
+
+		p.meta {
+			display: block;
+			font-size: 0.85rem;
+			margin-bottom: 1rem;
+		}
+
+		pre {
+			overflow: scroll;
+		}
+	}
+</style>

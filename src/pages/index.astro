@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+const blogCollection = (await getCollection("blog")).sort((a, b) => {
+	return b.data.publishedAt.getTime() - a.data.publishedAt.getTime();
+});
+
+const schema = {
+	"@context": "http://schema.org",
+	"@type": "WebSite",
+	id: "https://www.costas.dev/",
+	url: "https://www.costas.dev/",
+};
+---
+
+<Layout title="Inicio" description="Página de inicio de mi web">
+	<script type="application/ld+json" slot="head-jsonld" set:html={JSON.stringify(schema)}></script>
+
+	<h1>Inicio</h1>
+	<p>
+		Te doy la bienvenida a mi web. Aquí encontrarás información sobre mí,
+		mis proyectos y mis intereses. Esta web está creada con el generador
+		Hugo y un tema creado por mí desde cero.
+	</p>
+	<h2>¿Quién soy?</h2>
+	<p>
+		Soy un desarrollador web que le gusta aprender cosas nuevas y compartir
+		su conocimiento. Me gusta la programación, el diseño web y la
+		creatividad. Me encanta crear cosas nuevas y aprender de los demás.
+	</p>
+
+	<h2>¿Qué hago?</h2>
+	<p>
+		Actualmente trabajo como desarrollador de software y admistrador de
+		Cloud en una empresa de tecnología. Me encargo de desarrollar
+		aplicaciones web y desplegarlas en la nube de forma segura y eficiente.
+	</p>
+
+	<a href="/portfolio">Mi portafolio</a>
+
+	<h2>Últimas entradas del blog</h2>
+
+	<ul>
+		{
+			blogCollection.slice(0, 5).map((p) => {
+				const date = Intl.DateTimeFormat("es-ES", {
+					day: "2-digit",
+					month: "short",
+					year: "numeric",
+				}).format(p.data.publishedAt);
+				return (
+					<li>
+						<time datetime={p.data.publishedAt.toISOString()}>
+							{date}
+						</time>
+						<a href={`/blog/${p.slug}`}>{p.data.title}</a>
+					</li>
+				);
+			})
+		}
+	</ul>
+	<a href="/blog">Ver todas las entradas</a>
+</Layout>

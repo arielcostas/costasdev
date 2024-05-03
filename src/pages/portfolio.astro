@@ -1,0 +1,175 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	"url": "https://www.costas.dev/portfolio",
+	"headline": "Mi trayectoria como desarrollador"
+};
+---
+
+<Layout title="Portfolio" description="Mi trayectoria como desarrollador">
+	<script type="application/ld+json" slot="head-jsonld" set:html={JSON.stringify(schema)}></script>
+
+	<h1>Mi trayectoria como desarrollador</h1>
+
+	<p>
+		Soy un desarrollador de software que vive en Vigo, España. Me gusta
+		mucho la tecnología, y me gusta aprender cosas nuevas. Me dedico
+		profesionalmente al desarrollo de software en todos sus ámbitos: desde
+		el diseño de la arquitectura, la implementación y el despliegue en
+		producción, pasando por otros aspectos como la experiencia de usuario,
+		la accesibilidad y la seguridad.
+	</p>
+
+	<h2>Tecnologías que domino</h2>
+
+	<p>
+		Domino principalmente el ecosistema de Microsoft: .NET (C#), ASP.NET
+		Core, SQL Server, Azure y Azure DevOps. También tengo experiencia con
+		otros lenguajes y tecnologías, como PHP, Python y Java. Además, tengo
+		conocimientos de frontend con
+		<abbr title="Hypertext Markup Language">HTML5</abbr>,
+		<abbr title="Cascading Style Sheets">CSS3</abbr>, JavaScript y
+		TypeScript.
+	</p>
+
+	<p>
+		También tengo experiencia con herramientas de DevOps como Docker,
+		Kubernetes, Terraform y GitHub Actions; así como el ecosistema Cloud de
+		Azure.
+	</p>
+
+	<h2>Educación y credenciales</h2>
+
+	<ul>
+		<li>
+			<strong>Microsoft Certified: Azure Developer Associate</strong>:
+			acredita mis conocimientos en el desarrollo de aplicaciones en
+			Azure. <a
+				href="https://learn.microsoft.com/api/credentials/share/en-us/ariel-costas/E15072607CCF2DA9?sharingId=149A1CD9C13790F4"
+				>Ver credencial</a
+			>.
+		</li>
+
+		<li>
+			<strong>Microsoft Certified: Azure DevOps Engineer Expert</strong>:
+			acredita mis conocimientos en la implementación de metodologías de
+			DevOps en Azure con Azure DevOps y GitHub. <a
+				href="https://learn.microsoft.com/api/credentials/share/en-us/ariel-costas/5FB94876A1701595?sharingId=149A1CD9C13790F4"
+				>Ver credencial</a
+			>
+		</li>
+
+		<li>
+			<strong
+				>Técnico Superior en Desarrollo de Aplicaciones Multiplataforma</strong
+			>: título de formación profesional de grado superior, obtenido en el
+			<a href="https://iesteis.es/">IES de Teis</a> en Vigo.
+		</li>
+	</ul>
+
+	<h2>Experiencia laboral</h2>
+
+	<h3>Estelaria Solutions (Q3 2023 - actualidad)</h3>
+
+	<p>
+		Desarrollo de aplicaciones full-stack, principalmente en PHP con
+		Symfony, MongoDB y JavaScript Vanilla. Además, implementé una cantidad
+		considerable de mejoras en usabilidad, accesibilidad y rendimiento.
+	</p>
+
+	<p>
+		También me encargo de la gestión de la infraestructura en AWS, y de la
+		implementación de herramientas de colaboración como Jira y GitHub.
+	</p>
+
+	<h3>FCT en Polygon-E (Q2 2023)</h3>
+
+	<p>
+		Realicé mis prácticas de formación profesional en la empresa Polygon-E,
+		donde desarrollé varias aplicaciones de gestión interna con ASP.NET Core
+		y Blazor, desplegando sobre entornos <i>on-premise</i> con Windows Server,
+		IIS y SQL Server.
+	</p>
+
+	<h2>Proyectos para terceros (freelance)</h2>
+
+	<p>
+		En contadas ocasiones, he realizado proyectos para terceros por encargo:
+	</p>
+
+	<ul>
+		<li>
+			<p>
+				<strong>Extractor de pedidos compra online (2023)</strong>
+				Implementación de una aplicación de escritorio que extrae los datos
+				sobre los pedidos on-line de diversas plataformas (como WooCommerce,
+				Amazon y Ebay) para almacenar de forma local y centralizada. Además,
+				cruza estos datos con la base de datos de productos en almacén y
+				sus precios de coste, para generar informes de Excel sobre los ingresos
+				y costes por cada pedido, así como calcular la rentabilidad de estos.
+			</p>
+		</li>
+
+		<li>
+			<p>
+				<strong>
+					Punto de información turística en móviles (2020-2021)
+				</strong>
+				Creación de un sitio web dinámico con PHP adaptado a móviles y accesible
+				mediante QR en localizaciones físicas. Cada página muestra datos
+				de la ubicación correspondiente en tres idiomas (castellano, gallego
+				e inglés), una galería de imágenes en 360º con la biblioteca PanoLens
+				y vídeos incrustados de YouTube.
+			</p>
+		</li>
+	</ul>
+
+	<h2>Proyectos propios</h2>
+
+	<p>
+		Además, tengo varios proyectos propios que he desarrollado en mi tiempo
+		libre:
+	</p>
+
+	<ul>
+		<li>
+			<p>
+				<strong>Web personal (2023 - actualidad)</strong>
+				Desarrollado con Astro, un generador de sitios web estáticos que
+				permite escribir contenido en Markdown y publicar en la web con un
+				rendimiento excelente. Desplegado sobre Azure Static Web Apps.
+			</p>
+		</li>
+
+		<li>
+			<p>
+				<strong>MiEntreno (proyecto fin de ciclo)</strong>
+				Aplicación web para la gestión de entrenamientos deportivos, con
+				una interfaz sencilla y fácil de usar. Desarrollado con ASP.NET Core,
+				Razor Pages y SQL Server. Desplegado en Azure App Service, y usando
+				sistemas como RabbitMQ y Azure Communication Services.
+			</p>
+		</li>
+
+		<li>
+			<p>
+				<strong>Vigo 360 (2021 - actualidad)</strong>
+				Blog sobre Vigo y su entorno, orientado principalmente a hablar de
+				movilidad y toponimia. Desarrollado en Go, con base de datos MySQL
+				y desplegado sobre VPS administrado por mí mismo.
+			</p>
+			<p>
+				Además, dentro del ámbito de este proyecto, he desarrollado más
+				herramientas, como un bot de Telegram que informa sobre las
+				llegadas de autobuses en tiempo real, a partir de los datos
+				obtenidos mediante <i>web scraping</i> de la web de Vitrasa.
+				<a href="https://vigo360.es/post/publicamos-bot-infobus"
+					>Más información</a
+				>.
+			</p>
+		</li>
+	</ul>
+</Layout>
