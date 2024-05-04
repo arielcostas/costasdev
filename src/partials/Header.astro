@@ -269,3 +269,12 @@ import Favicon from "../assets/Favicon.astro";
 		}
 	}
 </style>
+
+<script>
+	const mobileMenuButton = document.getElementById("mobile-menu") as HTMLButtonElement;
+	const headerElement = document.querySelector("header") as HTMLElement;
+
+	mobileMenuButton.addEventListener("click", () => {
+		headerElement.classList.toggle("collapsed");
+	});
+</script>
