@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "ContactPage",
+	url: "https://www.costas.dev/contact",
+	headline: "Ponte en contacto conmigo",
+};
+---
+
+<Layout title="Contacto" description="Ponte en contacto conmigo">
+	<script
+		type="application/ld+json"
+		slot="head-jsonld"
+		set:html={JSON.stringify(schema)}
+	/>
+
+	<h1>Contacta conmigo</h1>
+
+	<p>
+		La forma más sencilla de contactar conmigo es a través de mi dirección
+		de correo electrónico:
+		<a href="#" id="email-addr">ariel ARROBA costas PUNTO dev</a>
+	</p>
+
+	<p>También puedes encontrarme en algunas redes sociales:</p>
+
+	<dl>
+		<dt>Mastodon</dt>
+		<dd><a href="https://masto.es/@arielcg">@arielcg@masto.es</a></dd>
+		<dt>GitHub</dt>
+		<dd><a href="https://github.com/arielcostas">@arielcostas</a></dd>
+		<dt>LinkedIn</dt>
+		<dd><a href="https://www.linkedin.com/in/ariel-costas/">/in/ariel-costas</a></dd>
+	</dl>
+</Layout>
+
+<script>
+	// Obfuscate email address
+	const emailAddr = document.getElementById(
+		"email-addr",
+	) as HTMLAnchorElement;
+	if (emailAddr != null) {
+		emailAddr.href = `mailto:${emailAddr.textContent!.replace(" ARROBA ", "@").replace(" PUNTO ", ".")}`;
+		emailAddr.textContent = emailAddr
+			.textContent!.replace(" ARROBA ", "@")
+			.replace(" PUNTO ", ".");
+	}
+</script>

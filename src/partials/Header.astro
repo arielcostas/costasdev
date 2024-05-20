@@ -34,8 +34,10 @@ import Favicon from "../assets/Favicon.astro";
 
 	<nav id="nav-pages">
 		<a href="/">Inicio</a>
+		<a href="/trajectory">Trayectoria</a>
 		<a href="/portfolio">Portfolio</a>
 		<a href="/blog">Blog</a>
+		<a href="/contact">Contacto</a>
 	</nav>
 
 	<nav id="nav-socials">
@@ -191,12 +193,14 @@ import Favicon from "../assets/Favicon.astro";
 			font-size: 1.2rem;
 			text-transform: uppercase;
 			letter-spacing: 0.1rem;
-			transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 			color: $accent;
 			line-height: 1;
+			border-bottom: 2px solid transparent;
 
 			&:hover {
 				color: $accentDark;
+				border-bottom-color: currentColor;
 			}
 
 			&.active {
