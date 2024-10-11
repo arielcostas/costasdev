@@ -1,16 +1,22 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Layout from "../layouts/Layout.astro";
+import TechnologyBadge from "../partials/TechnologyBadge.astro";
 
 const schema = {
 	"@context": "https://schema.org",
 	"@type": "WebPage",
-	"url": "https://www.costas.dev/portfolio",
-	"headline": "Mi portfolio de proyectos"
+	url: "https://www.costas.dev/portfolio",
+	headline: "Mi portfolio de proyectos",
 };
 ---
 
 <Layout title="Portfolio" description="Los proyectos en los que he trabajado">
-	<script type="application/ld+json" slot="head-jsonld" set:html={JSON.stringify(schema)}></script>
+	<script
+		type="application/ld+json"
+		slot="head-jsonld"
+		set:html={JSON.stringify(schema)}
+	></script>
 
 	<h1>Mi portfolio</h1>
 
@@ -18,7 +24,7 @@ const schema = {
 		En esta sección encontrarás una lista de los proyectos en los que he
 		trabajado, tanto para terceros como propios. Si quieres más información
 		sobre alguno de ellos, no dudes en
-		<a href="/contacto">contactar conmigo</a>.
+		<a href="/contact">contactar conmigo</a>.
 	</p>
 
 	<h2>Proyectos para terceros (freelance)</h2>
@@ -30,14 +36,21 @@ const schema = {
 	<ul>
 		<li>
 			<p>
-				<strong>Extractor de pedidos compra online (2023)</strong>
-				Implementación de una aplicación de escritorio que extrae los datos
-				sobre los pedidos on-line de diversas plataformas (como WooCommerce,
-				Amazon y Ebay) para almacenar de forma local y centralizada. Además,
-				cruza estos datos con la base de datos de productos en almacén y
-				sus precios de coste, para generar informes de Excel sobre los ingresos
-				y costes por cada pedido, así como calcular la rentabilidad de estos.
+				<strong
+					>Extractor de pedidos compra online (2023-actualidad)</strong
+				>
 			</p>
+
+			<p>
+				Aplicación de escritorio que extrae los datos sobre los pedidos
+				on-line de diversas plataformas (como WooCommerce, Amazon y
+				Ebay).
+				<a href="/portfolio/order-extractor">Leer más</a>
+			</p>
+
+			<TechnologyBadge size="small" code="java" />
+			<TechnologyBadge size="small" code="javafx" />
+			<TechnologyBadge size="small" code="windows" />
 		</li>
 
 		<li>
@@ -45,12 +58,16 @@ const schema = {
 				<strong>
 					Punto de información turística en móviles (2020-2021)
 				</strong>
-				Creación de un sitio web dinámico con PHP adaptado a móviles y accesible
-				mediante QR en localizaciones físicas. Cada página muestra datos
-				de la ubicación correspondiente en tres idiomas (castellano, gallego
-				e inglés), una galería de imágenes en 360º con la biblioteca PanoLens
-				y vídeos incrustados de YouTube.
 			</p>
+
+			<p>
+				Aplicación web de información turística, con QR, contenido en 360º e incrustado
+				de YouTube.
+				<a href="/portfolio/dynamic-tourist-info">Leer más</a>
+			</p>
+
+			<TechnologyBadge size={"small"} code="php" />
+			<TechnologyBadge size={"small"} code="webtrio" />		
 		</li>
 	</ul>
 
@@ -69,6 +86,10 @@ const schema = {
 				permite escribir contenido en Markdown y publicar en la web con un
 				rendimiento excelente. Desplegado sobre Azure Static Web Apps.
 			</p>
+
+			<TechnologyBadge size="small" code="webtrio" />
+			<TechnologyBadge size="small" code="astro" />
+			<TechnologyBadge size="small" code="azure" />
 		</li>
 
 		<li>
@@ -79,6 +100,12 @@ const schema = {
 				Razor Pages y SQL Server. Desplegado en Azure App Service, y usando
 				sistemas como RabbitMQ y Azure Communication Services.
 			</p>
+
+			<TechnologyBadge size="small" code="dotnet" />
+			<TechnologyBadge size="small" code="sqlserver" />
+			<TechnologyBadge size="small" code="azure" />
+			<TechnologyBadge size="small" code="linux" />
+			<TechnologyBadge size="small" code="rabbitmq" />
 		</li>
 
 		<li>
@@ -88,15 +115,10 @@ const schema = {
 				movilidad y toponimia. Desarrollado en Go, con base de datos MySQL
 				y desplegado sobre VPS administrado por mí mismo.
 			</p>
-			<p>
-				Además, dentro del ámbito de este proyecto, he desarrollado más
-				herramientas, como un bot de Telegram que informa sobre las
-				llegadas de autobuses en tiempo real, a partir de los datos
-				obtenidos mediante <i>web scraping</i> de la web de Vitrasa.
-				<a href="https://vigo360.es/post/publicamos-bot-infobus"
-					>Más información</a
-				>.
-			</p>
+			
+			<TechnologyBadge size="small" code="go" />
+			<TechnologyBadge size="small" code="mysql" />
+			<TechnologyBadge size="small" code="linux" />
 		</li>
 	</ul>
 </Layout>

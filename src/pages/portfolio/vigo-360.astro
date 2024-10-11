@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import TechnologyBadge from "../../partials/TechnologyBadge.astro";
+---
+
+<Layout
+	title="Vigo 360"
+	description="Desarrollo y publicación de un blog sobre Vigo"
+>
+	<a href="/portfolio">← Volver al portfolio</a>
+
+	<h1>Vigo 360 (2021-actualidad)</h1>
+
+	<p>
+		Implementación de una aplicación de escritorio que extrae los datos
+		sobre los pedidos on-line de diversas plataformas (como WooCommerce,
+		Amazon y Ebay) para almacenar de forma local y centralizada. Además,
+		cruza estos datos con la base de datos de productos en almacén y sus
+		precios de coste, para generar informes de Excel sobre los ingresos y
+		costes por cada pedido, así como calcular la rentabilidad de estos.
+	</p>
+
+	<h2>Tecnologías utilizadas</h2>
+
+	<TechnologyBadge size={"small"} code="go" />
+	<TechnologyBadge size={"small"} code="webtrio" />
+	<TechnologyBadge size={"small"} code="mysql" />
+	<TechnologyBadge size={"small"} code="linux" />
+</Layout>
