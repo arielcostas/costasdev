@@ -1,0 +1,16 @@
+BEGIN:VCARD
+VERSION:3.0
+FN;CHARSET=UTF-8: Ariel Costas Guerrero
+N;CHARSET=UTF-8:Costas Guerrero;Ariel;;;
+BDAY:
+ANNIVERSARY:
+EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:ariel@costas.dev
+TEL;TYPE=CELL:+34626932007
+TEL;TYPE=WORK,VOICE:+34626932007
+ADR;CHARSET=UTF-8;TYPE=HOME:;;;;;;
+ADR;CHARSET=UTF-8;TYPE=WORK:;;;Vigo;Pontevedra;;Spain
+TITLE;CHARSET=UTF-8:Software & DevOps Engineer
+URL;type=WORK;CHARSET=UTF-8:https://costas.dev
+URL;TYPE=linkedin:https://www.linkedin.com/in/ariel-costas
+
+END:VCARD
