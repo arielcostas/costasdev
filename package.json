@@ -14,7 +14,7 @@
     "@astrojs/rss": "^4.0.8",
     "@astrojs/sitemap": "^3.2.0",
     "@fontsource-variable/sen": "^5.0.5",
-    "astro": "^4.16.1",
+    "astro": "^4.16.18",
     "braces": ">=3.0.3",
     "typescript": "5.5.4"
   },
