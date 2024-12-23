@@ -57,7 +57,7 @@ const schema = {
 						<time datetime={p.data.publishedAt.toISOString()}>
 							{date}
 						</time>
-						<a href={`/blog/${p.slug}`}>{p.data.title}</a>
+						<a href={`/blog/${p.id}`}>{p.data.title}</a>
 					</li>
 				);
 			})
