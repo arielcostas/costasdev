@@ -42,7 +42,7 @@ const schema = {
 ---
 
 <Layout title="Blog" description="Artículos sobre desarrollo, tecnología y otras temáticas que pueda querer compartir.">
-	<script type="application/ld+json" slot="head-jsonld" set:html={JSON.stringify(schema)}></script>
+	<script is:inline type="application/ld+json" slot="head-jsonld" set:html={JSON.stringify(schema)}></script>
 
 	<h1>Blog de Ariel Costas</h1>
 
