@@ -1,3 +1,4 @@
+$titleFontStack: 'Beiruti', 'Arial', system-ui, sans-serif;
 $mainFontStack: 'Sen Variable', 'Arial', system-ui, sans-serif;
 $monoFontStack: 'Fira Code', 'Consolas', monospace;
 
@@ -21,13 +22,8 @@ $breakpointDesktop: 1024px;
 	font: 400 16px/1.65 $mainFontStack;
 }
 
-%tracking-tight {
-	letter-spacing: -0.05em;
-}
-
 %heading {
-	font-family: $mainFontStack;
-	@extend %tracking-tight;
+	font-family: $titleFontStack;
 	line-height: 1.25;
 	margin-block-start: 0.75em;
 	margin-block-end: 0.25em;
@@ -35,12 +31,12 @@ $breakpointDesktop: 1024px;
 
 h1 {
 	@extend %heading;
-	font-size: 3rem;
+	font-size: 3.25rem;
 }
 
 h2 {
 	@extend %heading;
-	font-size: 2.25rem;
+	font-size: 2.5rem;
 }
 
 h3 {

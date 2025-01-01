@@ -22,7 +22,9 @@ const schema = {
 	<p>
 		La forma más sencilla de contactar conmigo es a través de mi dirección
 		de correo electrónico:
-		<a href="#" id="email-addr">ariel ARROBA costas PUNTO dev</a>
+		<a href="#" id="email-addr">ACTIVA JAVASCRIPT PARA VER ESTO</a>. También
+		puedes usar <a href="https://wa.me/message/W7T7L4EZAELQI1">WhatsApp</a> con el número de teléfono
+		<a href="#" id="phone-number">ACTIVA JAVASCRIPT PARA VER ESTO</a>.
 	</p>
 
 	<p>También puedes encontrarme en algunas redes sociales:</p>
@@ -32,18 +34,52 @@ const schema = {
 		<dd><a href="https://github.com/arielcostas">@arielcostas</a></dd>
 		<dt>LinkedIn</dt>
 		<dd><a href="https://www.linkedin.com/in/ariel-costas/">/in/ariel-costas</a></dd>
+		<dt>BlueSky</dt>
+		<dd><a href="https://bsky.app/profile/costas.dev">@costas.dev</a></dd>
 	</dl>
 </Layout>
 
 <script>
-	// Obfuscate email address
-	const emailAddr = document.getElementById(
-		"email-addr",
-	) as HTMLAnchorElement;
-	if (emailAddr != null) {
-		emailAddr.href = `mailto:${emailAddr.textContent!.replace(" ARROBA ", "@").replace(" PUNTO ", ".")}`;
-		emailAddr.textContent = emailAddr
-			.textContent!.replace(" ARROBA ", "@")
-			.replace(" PUNTO ", ".");
+	const encryptedEmail = "LygNLiMmFRo/GlQZaFIWBA==";
+	const encryptedPhoneNumber = "ZWlQfX1QT0Z+XgVd";
+	const key = "NZdKOfvuLn5jF6sryF0Q";
+
+	const emailAddrLink = document.getElementById("email-addr") as HTMLAnchorElement;
+	const phoneNumberLink = document.getElementById("phone-number") as HTMLAnchorElement;
+
+	(() => {
+		if (emailAddrLink == null || phoneNumberLink == null) {
+			return;
+		}
+
+		const emailAddress = xorData(encryptedEmail, key);
+		const phoneNumber = xorData(encryptedPhoneNumber, key);
+
+		emailAddrLink.href = `mailto:${emailAddress}`;
+		emailAddrLink.textContent = emailAddress;
+
+		phoneNumberLink.href = `tel:${phoneNumber}`;
+		phoneNumberLink.textContent = phoneNumber;
+	})();
+
+	function xorData(data: string, key: string): string {
+		let actualData = atob(data);
+		let actualKey = key;
+		const keyLength = key.length;
+		const dataLength = actualData.length;
+		const result = new Array(dataLength);
+		
+		// If the key is 12 characters but the data is 30 characters, the key should be repeated 3 times and truncated to 30 characters
+		if (keyLength < dataLength) {
+			actualKey = key.repeat(Math.ceil(dataLength / keyLength)).substring(0, dataLength);
+		} else if (keyLength > dataLength) {
+			actualKey = key.substring(0, dataLength);
+		}
+
+		for (let i = 0; i < dataLength; i++) {
+			result[i] = String.fromCharCode(actualData.charCodeAt(i) ^ actualKey.charCodeAt(i));
+		}
+
+		return result.join("");
 	}
 </script>
