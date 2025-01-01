@@ -5,6 +5,8 @@ $accent: hsl(209, 94%, 42%);
 $accentLight: hsl(215, 90%, 60%);
 $accentDark: hsl(215, 90%, 30%);
 $dark: hsl(340, 13%, 5%);
+
+$background: hsl(210, 40%, 98%);
 $light: hsl(214, 64%, 98%);
 $lightAlt: hsl(0, 0%, 100%);
 
@@ -23,3 +25,30 @@ $breakpointDesktop: 1024px;
 	letter-spacing: -0.05em;
 }
 
+%heading {
+	font-family: $mainFontStack;
+	@extend %tracking-tight;
+	line-height: 1.25;
+	margin-block-start: 0.75em;
+	margin-block-end: 0.25em;
+}
+
+h1 {
+	@extend %heading;
+	font-size: 3rem;
+}
+
+h2 {
+	@extend %heading;
+	font-size: 2.25rem;
+}
+
+h3 {
+	@extend %heading;
+	font-size: 1.5rem;
+}
+
+h4 {
+	@extend %heading;
+	font-size: 1.25rem;
+}

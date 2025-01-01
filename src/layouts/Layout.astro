@@ -68,27 +68,8 @@ const { title, description } = Astro.props;
 		flex-direction: column;
 		gap: 1.5rem;
 
-		background-color: $light;
+		background-color: $background;
 		color: $dark;
-
-		background-image: radial-gradient(
-			circle at 1px 1px,
-			#a9a9a988 1px,
-			transparent 0
-		);
-		background-size: 15px 15px;
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-family: $mainFontStack;
-		@extend %tracking-tight;
-		line-height: 1.25;
-		margin-block: 0.6em;
 	}
 
 	a {
@@ -105,18 +86,14 @@ const { title, description } = Astro.props;
 
 	main {
 		box-sizing: border-box;
-		margin: 0.75rem 1rem 3rem;
-		padding: 1.5rem 3rem;
-		border-radius: $floatingRadius;
-		box-shadow: $shadow;
 		margin-bottom: auto;
 
 		align-self: center;
 
 		max-width: 82ch;
 		font-size: 1.2rem;
-
-		background-color: $lightAlt;
+		
+		padding-block-end: 3rem;
 
 		a {
 			color: $accentDark;
@@ -127,22 +104,12 @@ const { title, description } = Astro.props;
 			}
 		}
 
-		> * {
-			margin-block: 0.75em;
-		}
-
 		> p > code {
 			word-break: break-word;
 			font-family: $monoFontStack;
 
 			color: $accentDark;
 			background-color: #f6f6f6;
-		}
-
-		h1 {
-			font-size: 2.75rem;
-			line-height: 1;
-			margin-bottom: 1rem;
 		}
 
 		p.meta {
