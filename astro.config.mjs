@@ -10,6 +10,8 @@ export default defineConfig({
 	})],
 	build: {
 		assets: 'assets',
-		inlineStylesheets: 'never'
-	}
+		inlineStylesheets: 'never',
+		format: 'file',
+	},
+	trailingSlash: "never"
 });
