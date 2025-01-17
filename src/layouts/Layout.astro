@@ -85,6 +85,19 @@ const { title, description } = Astro.props;
 		font-family: $monoFontStack;
 	}
 
+	div[role="alert"] {
+		padding: 1rem;
+		margin-block: 1rem;
+		border-radius: 0.5rem;
+
+		box-shadow: 0 0 0 1px $accent;
+
+		&.note {
+			background-color: $noteBackground;
+			color: $noteText;
+		}
+	}
+
 	main {
 		box-sizing: border-box;
 		margin-bottom: auto;
