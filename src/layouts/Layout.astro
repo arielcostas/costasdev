@@ -69,7 +69,11 @@ const { title, description } = Astro.props;
 		flex-direction: column;
 		gap: 1.5rem;
 
-		background-color: $background;
+		background: linear-gradient(to bottom,
+			#FFFFFF 0%,
+			$background 3rem,
+			$background 100%
+		);
 		color: $dark;
 	}
 
@@ -109,15 +113,6 @@ const { title, description } = Astro.props;
 		
 		padding-block-end: 3rem;
 
-		a {
-			color: $accentDark;
-			transition: color 0.2s ease-in-out;
-
-			&:hover {
-				color: $accent;
-			}
-		}
-
 		> p > code {
 			word-break: break-word;
 			font-family: $monoFontStack;
@@ -134,6 +129,25 @@ const { title, description } = Astro.props;
 
 		pre {
 			overflow: scroll;
+		}
+	}
+
+	main a, footer a {
+		color: $accentDark;
+		transition: color 0.2s ease-in-out,
+			box-shadow 0.2s ease-in-out;
+		text-decoration: none;
+		padding: 0.1rem;
+		box-shadow: 0 1px $accent;
+
+		&:hover {
+			box-shadow: 0 2px $accentDark;
+		}
+
+		&:focus {
+			outline: none;
+			background-color: $secondary;
+			box-shadow: 0 4px #0b0c0c;
 		}
 	}
 </style>
