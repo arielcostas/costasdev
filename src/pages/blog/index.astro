@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+const blogCollection = (await getCollection("blog")).sort((a, b) => {
+	return b.data.publishedAt.getTime() - a.data.publishedAt.getTime();
+});
+const groupedPosts = blogCollection.reduce(
+	(acc: Record<string, any[]>, post) => {
+		const year = post.data.publishedAt.getFullYear();
+		const month = post.data.publishedAt.getMonth() + 1;
+		const key = `${year}-${month}`;
+		if (!acc[key]) {
+			acc[key] = [];
+		}
+		acc[key].push(post);
+		return acc;
+	},
+	{},
+);
+function humaniseDate(date: Date) {
+	const result = date.toLocaleDateString("es-ES", {
+		month: "long",
+		year: "numeric",
+	});
+	return result.charAt(0).toUpperCase() + result.slice(1);
+}
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "Blog",
+	"headline": "Blog de Ariel Costas",
+	"description": "En este blog encontrarás artículos sobre desarrollo, tecnología y otras temáticas que pueda querer compartir. Disclaimer de siempre: las opiniones son mías, y no representan a ninguna empresa o institución.",
+	"publisher": {
+		"@type": "Person",
+		"name": "Ariel Costas",
+	},
+	"author": {
+		"@type": "Person",
+		"name": "Ariel Costas",
+	}
+};
+
+---
+
+<Layout title="Blog" description="Artículos sobre desarrollo, tecnología y otras temáticas que pueda querer compartir. Disclaimer de siempre: las opiniones son mías, y no representan a ninguna empresa o institución.">
+	<script is:inline type="application/ld+json" slot="head-jsonld" set:html={JSON.stringify(schema)}></script>
+
+	<h1>Blog de Ariel Costas</h1>
+
+	<p>
+		En este blog encontrarás artículos sobre desarrollo, tecnología y otras
+		temáticas que pueda querer compartir. Disclaimer de siempre: las
+		opiniones son mías, y no representan a ninguna empresa o institución.
+	</p>
+
+	{
+		Object.entries(groupedPosts).map(([key, posts]) => (
+			<section>
+				<h2>{humaniseDate(new Date(key))}</h2>
+				<ul>
+					{posts.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}`}>{post.data.title}</a>
+						</li>
+					))}
+				</ul>
+			</section>
+		))
+	}
+</Layout>

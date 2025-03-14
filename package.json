@@ -11,15 +11,15 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/rss": "4.0.10",
+    "@astrojs/rss": "4.0.11",
     "@astrojs/sitemap": "3.2.1",
-    "@fontsource-variable/sen": "5.1.0",
-    "@fontsource/beiruti": "^5.1.1",
-    "astro": "^5.1.1",
+    "@fontsource-variable/sen": "5.2.5",
+    "@fontsource/beiruti": "^5.2.5",
+    "astro": "^5.5.2",
     "braces": "3.0.3",
-    "typescript": "5.7.2"
+    "typescript": "5.8.2"
   },
   "devDependencies": {
-    "sass": "^1.76.0"
+    "sass": "^1.85.1"
   }
 }
