@@ -40,6 +40,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: production
+          path: dist
       - name: Connect to tailnet
         uses: tailscale/github-action@v3
         with:
