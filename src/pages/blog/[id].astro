@@ -1,15 +1,19 @@
 ---
-import type { GetStaticPaths } from "astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
+import { type GetStaticPaths } from "astro";
 
-export const getStaticPaths = (async () => {
+interface Props {
+    entry: any;
+}
+
+export const getStaticPaths: GetStaticPaths = (async () => {
 	const entries = await getCollection("blog");
-	return entries.map((entry) => ({
+	return entries.map((entry: any) => ({
 		params: { id: entry.id },
 		props: { entry },
 	}));
-}) satisfies GetStaticPaths;
+});
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);

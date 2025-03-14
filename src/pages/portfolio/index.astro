@@ -30,95 +30,117 @@ const schema = {
 	<h2>Proyectos para terceros (freelance)</h2>
 
 	<p>
-		En contadas ocasiones, he realizado proyectos para terceros por encargo:
+		He realizado desarrollos de proyectos para terceros por encargo, siendo los más destacados los siguientes:
 	</p>
 
-	<ul>
-		<li>
-			<p>
-				<strong
-					>Extractor de pedidos compra online (2023-actualidad)</strong
-				>
-			</p>
+	<section>
+		<article>
+			<h3>Extractor de pedidos compra online</h3>
 
 			<p>
 				Aplicación de escritorio que extrae los datos sobre los pedidos
 				on-line de diversas plataformas (como WooCommerce, Amazon y
-				Ebay).
-				<a href="/portfolio/order-extractor">Leer más</a>
+				Ebay). <a href="/portfolio/order-extractor">Más información</a>.
 			</p>
 
-			<TechnologyBadge size="small" code="java" />
-			<TechnologyBadge size="small" code="javafx" />
-			<TechnologyBadge size="small" code="windows" />
-		</li>
+			<TechnologyBadge code="java" />
+			<TechnologyBadge code="windows" />
+		</article>
 
-		<li>
-			<p>
-				<strong>
-					Punto de información turística en móviles (2020-2021)
-				</strong>
-			</p>
+		<article>
+			<h3>Punto de información turística en móviles</h3>
 
 			<p>
 				Aplicación web de información turística, con QR, contenido en 360º e incrustado
-				de YouTube.
-				<a href="/portfolio/dynamic-tourist-info">Leer más</a>
+				de YouTube. <a href="/portfolio/dynamic-tourist-info">Más información</a>.
 			</p>
 
-			<TechnologyBadge size={"small"} code="php" />
-			<TechnologyBadge size={"small"} code="webtrio" />		
-		</li>
-	</ul>
+			<TechnologyBadge code="php" />
+			<TechnologyBadge code="mysql" />
+		</article>
+
+		<article>
+			<h3>Consultoría WordPress</h3>
+
+			<p>
+				Trabajos de mantenimiento, optimización y migración de sitios web WordPress y tiendas online WooCommerce.
+				<a href="/portfolio/wp-consulting">Más información</a>.
+				<a href="/contact">Contactar</a>.
+			</p>
+
+			<TechnologyBadge code="php" />
+		</article>
+	</section>
 
 	<h2>Proyectos propios</h2>
 
 	<p>
-		Además, tengo varios proyectos propios que he desarrollado en mi tiempo
-		libre:
+		Además, tengo varios proyectos propios que he desarrollado en mi tiempo, estando algunos de ellos en activo, y como código abierto.
 	</p>
 
-	<ul>
-		<li>
+	<section>
+		<article>
+			<h3>Web personal</h3>
+
 			<p>
-				<strong>Web personal (2023 - actualidad)</strong>
 				Desarrollado con Astro, un generador de sitios web estáticos que
 				permite escribir contenido en Markdown y publicar en la web con un
 				rendimiento excelente. Desplegado sobre Azure Static Web Apps.
 			</p>
 
-			<TechnologyBadge size="small" code="webtrio" />
-			<TechnologyBadge size="small" code="astro" />
-			<TechnologyBadge size="small" code="azure" />
-		</li>
+			<TechnologyBadge code="astro" />
+			<TechnologyBadge code="azure" />
+		</article>
 
-		<li>
+		<article>
+			<h3>MiEntreno (proyecto fin de ciclo)</h3>
+
 			<p>
-				<strong>MiEntreno (proyecto fin de ciclo)</strong>
 				Aplicación web para la gestión de entrenamientos deportivos, con
 				una interfaz sencilla y fácil de usar. Desarrollado con ASP.NET Core,
-				Razor Pages y SQL Server. Desplegado en Azure App Service, y usando
-				sistemas como RabbitMQ y Azure Communication Services.
+				Razor Pages y SQL Server. <a href="/portfolio/mientreno">Más información</a>.
+				<a href="https://github.com/arielcostas/mientreno">Código fuente</a>.
 			</p>
 
-			<TechnologyBadge size="small" code="dotnet" />
-			<TechnologyBadge size="small" code="sqlserver" />
-			<TechnologyBadge size="small" code="azure" />
-			<TechnologyBadge size="small" code="linux" />
-			<TechnologyBadge size="small" code="rabbitmq" />
-		</li>
+			<TechnologyBadge code="dotnet" />
+			<TechnologyBadge code="sqlserver" />
+			<TechnologyBadge code="azure" />
+			<TechnologyBadge code="rabbitmq" />
+		</article>
 
-		<li>
+		<article>
+			<h3>Vigo 360</h3>
+
 			<p>
-				<strong>Vigo 360 (2021 - actualidad)</strong>
 				Blog sobre Vigo y su entorno, orientado principalmente a hablar de
 				movilidad y toponimia. Desarrollado en Go, con base de datos MySQL
 				y desplegado sobre VPS administrado por mí mismo.
+				<a href="/portfolio/vigo-360">Más información</a>.
+				<a href="https://github.com/arielcostas/vigo360">Código fuente</a>.
+				<a href="https://vigo360.es">Web</a>.
 			</p>
 			
-			<TechnologyBadge size="small" code="go" />
-			<TechnologyBadge size="small" code="mysql" />
-			<TechnologyBadge size="small" code="linux" />
-		</li>
-	</ul>
+			<TechnologyBadge code="go" />
+			<TechnologyBadge code="mysql" />
+			<TechnologyBadge code="linux" />
+		</article>
+	</section>
 </Layout>
+
+<style>
+	section {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+		gap: 1rem;
+	}
+
+	article {
+		padding: 1rem;
+		border: 1px solid var(--accent);
+		border-radius: 0.5rem;
+	}
+
+	article h3 {
+		margin-top: 0;
+	}
+</style>
