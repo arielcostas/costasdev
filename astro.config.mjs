@@ -11,7 +11,5 @@ export default defineConfig({
 	build: {
 		assets: 'assets',
 		inlineStylesheets: 'never',
-		format: 'file',
 	},
-	trailingSlash: "never"
 });
