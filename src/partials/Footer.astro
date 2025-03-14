@@ -1,19 +1,23 @@
+---
+import { useTranslations } from "../i18n"
+
+const t = useTranslations(Astro.currentLocale);
+---
+
 <footer>
 	<p>
-		Copyright &copy; 2023-{new Date().getFullYear()} Ariel Costas Guerrero. Todos
-		los derechos reservados.
+		Copyright &copy; 2023-{new Date().getFullYear()} Ariel Costas Guerrero. {t.footer.copyright}
 	</p>
+
 	<p>
-		Contenido cedido bajo licencia <a
-			href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"
-			>CC BY-SA 4.0</a
-		> salvo que se indique lo contrario. El código fuente de este sitio está
-		disponible en <a href="https://github.com/arielcostas/costasdev"
-			>GitHub</a
-		>, bajo los términos de la <a
+		{t.footer.contentLicencedUnder} <a
+			href={`https://creativecommons.org/licenses/by-sa/4.0/deed.${Astro.currentLocale}`}
+			>CC BY-SA 4.0</a>.
+
+		{t.footer.sourceCodeAvailableOn} <a href="https://github.com/arielcostas/costasdev">GitHub</a>
+		{t.footer.andIsLicencedUnder} <a
 			href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-11-12"
-			>Licencia Pública de la Unión Europea</a
-		>.
+			>{t.footer.eupl} 1.2</a
 	</p>
 </footer>
 

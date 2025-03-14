@@ -1,9 +1,16 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations } from "../i18n"
+
+const t = useTranslations(Astro.currentLocale);
+---
+
 <header>
-	<a href="/">Inicio</a>
-	<a href="/trajectory">Trayectoria</a>
-	<a href="/portfolio">Portfolio</a>
-	<a href="/blog">Blog</a>
-	<a href="/contact">Contacto</a>
+	<a href={getRelativeLocaleUrl(Astro.currentLocale!, "")}>{t.header.home}</a>
+	<a href={getRelativeLocaleUrl(Astro.currentLocale!, "trajectory")}>{t.header.trajectory}</a>
+	<a href={getRelativeLocaleUrl(Astro.currentLocale!, "portfolio")}>{t.header.portfolio}</a>
+	<a href={getRelativeLocaleUrl("es", "blog")}>{t.header.blog}</a>
+	<a href={getRelativeLocaleUrl(Astro.currentLocale!, "contact")}>{t.header.contact}</a>
 </header>
 
 <style lang="scss">

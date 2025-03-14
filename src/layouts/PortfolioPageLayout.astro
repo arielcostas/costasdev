@@ -1,0 +1,113 @@
+---
+import Layout from "./Layout.astro";
+import { useTranslations } from "../i18n";
+import TechnologyBadge from "../partials/TechnologyBadge.astro";
+
+const t = useTranslations(Astro.currentLocale);
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url: "https://www.costas.dev/portfolio",
+    headline: t.portfolioPage.headline,
+};
+---
+
+<Layout title={t.portfolioPage.title} description={t.portfolioPage.description}>
+    <script
+        is:inline
+        type="application/ld+json"
+        slot="head-jsonld"
+        set:html={JSON.stringify(schema)}
+    ></script>
+
+    <h1>{t.portfolioPage.headline}</h1>
+
+    <p set:html={t.portfolioPage.intro} />
+
+    <h2>{t.portfolioPage.freelanceTitle}</h2>
+
+    <p>{t.portfolioPage.freelanceDesc}</p>
+
+    <section>
+        <article>
+            <h3>{t.portfolioPage.orderExtractorTitle}</h3>
+
+            <p set:html={t.portfolioPage.orderExtractorDesc} />
+
+            <TechnologyBadge code="java" />
+            <TechnologyBadge code="windows" />
+        </article>
+
+        <article>
+            <h3>{t.portfolioPage.touristInfoTitle}</h3>
+
+            <p set:html={t.portfolioPage.touristInfoDesc} />
+
+            <TechnologyBadge code="php" />
+            <TechnologyBadge code="mysql" />
+        </article>
+
+        <article>
+            <h3>{t.portfolioPage.wpConsultingTitle}</h3>
+
+            <p set:html={t.portfolioPage.wpConsultingDesc} />
+
+            <TechnologyBadge code="php" />
+        </article>
+    </section>
+
+    <h2>{t.portfolioPage.ownProjectsTitle}</h2>
+
+    <p>{t.portfolioPage.ownProjectsDesc}</p>
+
+    <section>
+        <article>
+            <h3>{t.portfolioPage.personalWebTitle}</h3>
+
+            <p>{t.portfolioPage.personalWebDesc}</p>
+
+            <TechnologyBadge code="astro" />
+            <TechnologyBadge code="azure" />
+        </article>
+
+        <article>
+            <h3>{t.portfolioPage.mientrenoTitle}</h3>
+
+            <p set:html={t.portfolioPage.mientrenoDesc} />
+
+            <TechnologyBadge code="dotnet" />
+            <TechnologyBadge code="sqlserver" />
+            <TechnologyBadge code="azure" />
+            <TechnologyBadge code="rabbitmq" />
+        </article>
+
+        <article>
+            <h3>{t.portfolioPage.vigo360Title}</h3>
+
+            <p set:html={t.portfolioPage.vigo360Desc} />
+            
+            <TechnologyBadge code="go" />
+            <TechnologyBadge code="mysql" />
+            <TechnologyBadge code="linux" />
+        </article>
+    </section>
+</Layout>
+
+<style>
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 1rem;
+    }
+
+    article {
+        padding: 1rem;
+        border: 1px solid var(--accent);
+        border-radius: 0.5rem;
+    }
+
+    article h3 {
+        margin-top: 0;
+    }
+</style>

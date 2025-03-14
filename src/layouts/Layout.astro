@@ -13,7 +13,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={Astro.currentLocale}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -53,6 +53,7 @@ const { title, description } = Astro.props;
 
 <style is:global lang="scss">
 	@use "../../styles/shared.scss" as *;
+	@use "sass:color";
 
 	html,
 	body {
@@ -82,7 +83,7 @@ const { title, description } = Astro.props;
 	}
 
 	*::selection {
-		background-color: transparentize($accent, 0.85);
+		background-color: color.adjust($accent, $alpha: -0.85);
 	}
 
 	li > time {
@@ -93,12 +94,17 @@ const { title, description } = Astro.props;
 		padding: 1rem;
 		margin-block: 1rem;
 		border-radius: 0.5rem;
-
-		box-shadow: 0 0 0 1px $accent;
-
+		
 		&.note {
 			background-color: $noteBackground;
 			color: $noteText;
+			box-shadow: 0 0 0 1px $noteText;
+		}
+
+		&.warning {
+			background-color: $warningBackground;
+			color: $warningText;
+			box-shadow: 0 0 0 1px $warningText;
 		}
 	}
 
@@ -132,10 +138,15 @@ const { title, description } = Astro.props;
 		}
 	}
 
-	main a, footer a {
+	main a {
 		color: $accentDark;
-		transition: color 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out;
+	}
+
+	footer a {
+		color: $accentLight;
+	}
+
+	main a, footer a {
 		text-decoration: none;
 		padding: 0.1rem;
 		box-shadow: 0 1px $accent;
@@ -145,6 +156,7 @@ const { title, description } = Astro.props;
 		}
 
 		&:focus {
+			color: $accentDark;
 			outline: none;
 			background-color: $secondary;
 			box-shadow: 0 4px #0b0c0c;

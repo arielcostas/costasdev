@@ -46,44 +46,44 @@ Si estás usando tecnologías JavaScript (ya sea Vite con algún framework, o As
 ```html
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<!-- ... -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.0.0/dist/maplibre-gl.min.css" />
-		<style>
-			#map {
-				height: 100vh;
-				width: 100vw;
-			}
-		</style>
-	</head>
-	
-	<body>
-		<div id="map"></div>
+ <head>
+  <!-- ... -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.0.0/dist/maplibre-gl.min.css" />
+  <style>
+   #map {
+    height: 100vh;
+    width: 100vw;
+   }
+  </style>
+ </head>
+ 
+ <body>
+  <div id="map"></div>
 
-		<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.0.0/dist/maplibre-gl.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/pmtiles-protocol@1.0.4/index.min.js"></script>
-		<script>
-			/*
-			* Si estás usando paquetes de npm o un importmap o similar, puedes importar los módulos así:
-			* import maplibregl from "maplibre-gl";
-			* import * as pmtiles from "pmtiles";
-			*/
+  <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.0.0/dist/maplibre-gl.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pmtiles-protocol@1.0.4/index.min.js"></script>
+  <script>
+   /*
+   * Si estás usando paquetes de npm o un importmap o similar, puedes importar los módulos así:
+   * import maplibregl from "maplibre-gl";
+   * import * as pmtiles from "pmtiles";
+   */
 
-			// Añadir el protocolo de pmtiles a MapLibre
-			let protocol = new pmtiles.Protocol();
-			maplibregl.addProtocol('pmtiles', protocol.tile);
+   // Añadir el protocolo de pmtiles a MapLibre
+   let protocol = new pmtiles.Protocol();
+   maplibregl.addProtocol('pmtiles', protocol.tile);
 
-			// Crear el mapa
-			const map = new maplibregl.Map({
-				container: 'map',
-				style: '/miestilo.json',
-				bounds: [
-					[2.0428702462744956, 41.263970142291704],
-					[2.243836537167097, 41.48757944350839]
-				]
-			});
-		</script>
-	</body>
+   // Crear el mapa
+   const map = new maplibregl.Map({
+    container: 'map',
+    style: '/miestilo.json',
+    bounds: [
+     [2.0428702462744956, 41.263970142291704],
+     [2.243836537167097, 41.48757944350839]
+    ]
+   });
+  </script>
+ </body>
 </html>
 
 Y luego el archivo `miestilo.json` puedes descargarlo de [maps.protomaps.com](https://maps.protomaps.com/#map=0.89/0/0&theme=light&lang=en&tiles=https://demo-bucket.protomaps.com/v4.pmtiles&local_sprites=true) clicando en "Get style JSON" y guardándolo en tu servidor. Cambias la ruta a tu pmtiles y ya. Y puedes usar cualquier otro estilo para MapLibre, como los de [OpenMapTiles](https://openmaptiles.org/styles/) mismamente, o hacer uno propio con algo como [Maputnik](https://maputnik.github.io/editor/).

@@ -1,0 +1,99 @@
+---
+import { useTranslations } from "../i18n";
+import Layout from "./Layout.astro";
+
+const t = useTranslations(Astro.currentLocale);
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    url: "https://www.costas.dev/contact",
+    headline: t.contactPage.headline,
+};
+---
+
+<Layout title={t.contactPage.title} description={t.contactPage.description}>
+    <script
+        is:inline
+        type="application/ld+json"
+        slot="head-jsonld"
+        set:html={JSON.stringify(schema)}
+    />
+
+    <h1>{t.contactPage.headline}</h1>
+
+    <noscript>
+        <div role="alert" class="warning">
+            {t.contactPage.enableJs}
+        </div>
+    </noscript>
+
+    <p set:html={t.contactPage.intro} />
+
+    <p>{t.contactPage.socialMedia}</p>
+
+    <dl>
+        <dt>GitHub</dt>
+        <dd><a href="https://github.com/arielcostas">@arielcostas</a></dd>
+        <dt>LinkedIn</dt>
+        <dd>
+            <a href="https://www.linkedin.com/in/ariel-costas/"
+                >/in/ariel-costas</a>
+        </dd>
+        <dt>BlueSky</dt>
+        <dd><a href="https://bsky.app/profile/costas.dev">@costas.dev</a></dd>
+    </dl>
+</Layout>
+
+<script>
+    const encryptedEmail = "LygNLiMmFRo/GlQZaFIWBA==";
+    const encryptedPhoneNumber = "ZWlQfX1QT0Z+XgVd";
+    const key = "NZdKOfvuLn5jF6sryF0Q";
+
+    const emailAddrLink = document.getElementById(
+        "email-addr",
+    ) as HTMLAnchorElement;
+    const phoneNumberLink = document.getElementById(
+        "phone-number",
+    ) as HTMLAnchorElement;
+
+    (() => {
+        if (emailAddrLink == null || phoneNumberLink == null) {
+            return;
+        }
+
+        const emailAddress = xorData(encryptedEmail, key);
+        const phoneNumber = xorData(encryptedPhoneNumber, key);
+
+        emailAddrLink.href = `mailto:${emailAddress}`;
+        emailAddrLink.textContent = emailAddress;
+
+        phoneNumberLink.href = `tel:${phoneNumber}`;
+        phoneNumberLink.textContent = phoneNumber;
+    })();
+
+    function xorData(data: string, key: string): string {
+        let actualData = atob(data);
+        let actualKey = key;
+        const keyLength = key.length;
+        const dataLength = actualData.length;
+        const result = new Array(dataLength);
+
+        // If the key is 12 characters but the data is 30 characters, the key should be repeated 3 times and truncated to 30 characters
+        if (keyLength < dataLength) {
+            actualKey = key
+                .repeat(Math.ceil(dataLength / keyLength))
+                .substring(0, dataLength);
+        } else if (keyLength > dataLength) {
+            actualKey = key.substring(0, dataLength);
+        }
+
+        for (let i = 0; i < dataLength; i++) {
+            result[i] = String.fromCharCode(
+                actualData.charCodeAt(i) ^ actualKey.charCodeAt(i),
+            );
+        }
+
+        return result.join("");
+    }
+</script>
