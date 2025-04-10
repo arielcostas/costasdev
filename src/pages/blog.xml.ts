@@ -1,19 +1,18 @@
-import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
-
+import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
 
 export async function GET(context: any) {
-	const collection = await getCollection('blog');
+  const collection = await getCollection("blog");
 
-	return rss({
-		title: "Blog de Ariel Costas",
-		description: "Artículos del blog de Ariel Costas",
-		site: context.site,
-		items: collection.map((post: any) => ({
-			title: post.data.title,
-			link: `${context.site}blog/${post.slug}`,
-			description: post.data.metaDescription,
-			pubDate: post.data.publishedAt
-		}))
-	})
+  return rss({
+    title: "Blog de Ariel Costas",
+    description: "Artículos del blog de Ariel Costas",
+    site: context.site,
+    items: collection.map((post: any) => ({
+      title: post.data.title,
+      link: `${context.site}blog/${post.slug}`,
+      description: post.data.metaDescription,
+      pubDate: post.data.publishedAt,
+    })),
+  });
 }

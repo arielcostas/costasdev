@@ -5,77 +5,84 @@ import Layout from "./Layout.astro";
 const t = useTranslations(Astro.currentLocale);
 
 const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    url: "https://www.costas.dev/trajectory",
-    headline: t.trajectoryPage.headline,
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: "https://www.costas.dev/trajectory",
+  headline: t.trajectoryPage.headline,
 };
 ---
 
-<Layout title={t.trajectoryPage.title} description={t.trajectoryPage.description}>
-    <script
-        is:inline
-        type="application/ld+json"
-        slot="head-jsonld"
-        set:html={JSON.stringify(schema)}
-    />
+<Layout
+  title={t.trajectoryPage.title}
+  description={t.trajectoryPage.description}
+>
+  <script
+    is:inline
+    type="application/ld+json"
+    slot="head-jsonld"
+    set:html={JSON.stringify(schema)}
+  />
 
-    <h1>{t.trajectoryPage.headline}</h1>
+  <h1>{t.trajectoryPage.headline}</h1>
 
-    <p>{t.trajectoryPage.intro}</p>
+  <p>{t.trajectoryPage.intro}</p>
 
-    <h2>{t.trajectoryPage.techTitle}</h2>
+  <h2>{t.trajectoryPage.techTitle}</h2>
 
-    <p>{t.trajectoryPage.techDescription1}</p>
+  <p>{t.trajectoryPage.techDescription1}</p>
 
-    <p>{t.trajectoryPage.techDescription2}</p>
+  <p>{t.trajectoryPage.techDescription2}</p>
 
-    <h2>{t.trajectoryPage.educationTitle}</h2>
+  <h2>{t.trajectoryPage.educationTitle}</h2>
 
-    <ul>
-        <li>
-            <strong>{t.trajectoryPage.efsetCert1}</strong>
-            {t.trajectoryPage.efsetCert2} <a
-                href="https://cert.efset.org/es/Yxzc9L"
-                >{t.trajectoryPage.viewCertificate}</a
-            >
-        </li>
+  <ul>
+    <li>
+      <strong>{t.trajectoryPage.efsetCert1}</strong>
+      {t.trajectoryPage.efsetCert2}
+      <a href="https://cert.efset.org/es/Yxzc9L"
+        >{t.trajectoryPage.viewCertificate}</a
+      >
+    </li>
 
-        <li>
-            <strong>{t.trajectoryPage.azureDeveloperCert1}</strong>
-            {t.trajectoryPage.azureDeveloperCert2} <a
-                href="https://learn.microsoft.com/api/credentials/share/en-us/ariel-costas/E15072607CCF2DA9?sharingId=149A1CD9C13790F4"
-                >{t.trajectoryPage.viewCredential}</a
-            >.
-        </li>
+    <li>
+      <strong>{t.trajectoryPage.azureDeveloperCert1}</strong>
+      {t.trajectoryPage.azureDeveloperCert2}
+      <a
+        href="https://learn.microsoft.com/api/credentials/share/en-us/ariel-costas/E15072607CCF2DA9?sharingId=149A1CD9C13790F4"
+        >{t.trajectoryPage.viewCredential}</a
+      >.
+    </li>
 
-        <li>
-            <strong>{t.trajectoryPage.azureDevOpsCert1}</strong>
-            {t.trajectoryPage.azureDevOpsCert2} <a
-                href="https://learn.microsoft.com/api/credentials/share/en-us/ariel-costas/5FB94876A1701595?sharingId=149A1CD9C13790F4"
-                >{t.trajectoryPage.viewCredential}</a
-            >
-        </li>
+    <li>
+      <strong>{t.trajectoryPage.azureDevOpsCert1}</strong>
+      {t.trajectoryPage.azureDevOpsCert2}
+      <a
+        href="https://learn.microsoft.com/api/credentials/share/en-us/ariel-costas/5FB94876A1701595?sharingId=149A1CD9C13790F4"
+        >{t.trajectoryPage.viewCredential}</a
+      >
+    </li>
 
-        <li>
-            <strong>{t.trajectoryPage.higherTechCert1}</strong>
-            {t.trajectoryPage.higherTechCert2} <a href="https://iesteis.es/">{t.trajectoryPage.higherTechCert3}</a> {t.trajectoryPage.higherTechCert4}
-        </li>
-    </ul>
+    <li>
+      <strong>{t.trajectoryPage.higherTechCert1}</strong>
+      {t.trajectoryPage.higherTechCert2}
+      <a href="https://iesteis.es/">{t.trajectoryPage.higherTechCert3}</a>
+      {t.trajectoryPage.higherTechCert4}
+    </li>
+  </ul>
 
-    <h2>{t.trajectoryPage.experienceTitle}</h2>
+  <h2>{t.trajectoryPage.experienceTitle}</h2>
 
-    <h3>{t.trajectoryPage.estelaria1}</h3>
+  <h3>{t.trajectoryPage.estelaria1}</h3>
 
-    <p>{t.trajectoryPage.estelaria2}</p>
+  <p>{t.trajectoryPage.estelaria2}</p>
 
-    <p>{t.trajectoryPage.estelaria3}</p>
+  <p>{t.trajectoryPage.estelaria3}</p>
 
-    <h3>{t.trajectoryPage.polygon1}</h3>
+  <h3>{t.trajectoryPage.polygon1}</h3>
 
-    <p>{t.trajectoryPage.polygon2}</p>
+  <p>{t.trajectoryPage.polygon2}</p>
 
-    <h2>{t.trajectoryPage.projectsTitle}</h2>
+  <h2>{t.trajectoryPage.projectsTitle}</h2>
 
-    <p set:html={t.trajectoryPage.projectsDescription} />
+  <p set:html={t.trajectoryPage.projectsDescription} />
 </Layout>

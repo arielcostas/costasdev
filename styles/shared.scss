@@ -1,6 +1,6 @@
-$titleFontStack: 'Beiruti', 'Arial', system-ui, sans-serif;
-$mainFontStack: 'Sen Variable', 'Arial', system-ui, sans-serif;
-$monoFontStack: 'Fira Code', 'Consolas', monospace;
+$titleFontStack: "Beiruti", "Arial", system-ui, sans-serif;
+$mainFontStack: "Sen Variable", "Arial", system-ui, sans-serif;
+$monoFontStack: "Fira Code", "Consolas", monospace;
 
 $accent: hsl(209, 94%, 42%);
 $accentLight: hsl(215, 90%, 60%);
@@ -26,32 +26,32 @@ $breakpointTablet: 480px;
 $breakpointDesktop: 1024px;
 
 :root {
-	font: 400 16px/1.65 $mainFontStack;
+  font: 400 16px/1.65 $mainFontStack;
 }
 
 %heading {
-	font-family: $titleFontStack;
-	line-height: 1.25;
-	margin-block-start: 0.75em;
-	margin-block-end: 0.25em;
+  font-family: $titleFontStack;
+  line-height: 1.25;
+  margin-block-start: 0.75em;
+  margin-block-end: 0.25em;
 }
 
 h1 {
-	@extend %heading;
-	font-size: 3.25rem;
+  @extend %heading;
+  font-size: 3.25rem;
 }
 
 h2 {
-	@extend %heading;
-	font-size: 2.5rem;
+  @extend %heading;
+  font-size: 2.5rem;
 }
 
 h3 {
-	@extend %heading;
-	font-size: 1.5rem;
+  @extend %heading;
+  font-size: 1.5rem;
 }
 
 h4 {
-	@extend %heading;
-	font-size: 1.25rem;
+  @extend %heading;
+  font-size: 1.25rem;
 }

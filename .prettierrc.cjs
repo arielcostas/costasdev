@@ -8,6 +8,5 @@ module.exports = {
         parser: "astro",
       },
     },
-  ],
-  editorconfig: true,
+  ]
 };

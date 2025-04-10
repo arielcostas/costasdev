@@ -1,60 +1,67 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { useTranslations } from "../i18n"
+import { useTranslations } from "../i18n";
 
 const t = useTranslations(Astro.currentLocale);
 ---
 
 <header>
-	<a href={getRelativeLocaleUrl(Astro.currentLocale!, "")}>{t.header.home}</a>
-	<a href={getRelativeLocaleUrl(Astro.currentLocale!, "trajectory")}>{t.header.trajectory}</a>
-	<a href={getRelativeLocaleUrl(Astro.currentLocale!, "portfolio")}>{t.header.portfolio}</a>
-	<a href={getRelativeLocaleUrl("es", "blog")}>{t.header.blog}</a>
-	<a href={getRelativeLocaleUrl(Astro.currentLocale!, "contact")}>{t.header.contact}</a>
+  <a href={getRelativeLocaleUrl(Astro.currentLocale!, "")}>{t.header.home}</a>
+  <a href={getRelativeLocaleUrl(Astro.currentLocale!, "trajectory")}
+    >{t.header.trajectory}</a
+  >
+  <a href={getRelativeLocaleUrl(Astro.currentLocale!, "portfolio")}
+    >{t.header.portfolio}</a
+  >
+  <a href={getRelativeLocaleUrl("es", "blog")}>{t.header.blog}</a>
+  <a href={getRelativeLocaleUrl(Astro.currentLocale!, "contact")}
+    >{t.header.contact}</a
+  >
 </header>
 
 <style lang="scss">
-	@use "../../styles/shared.scss" as *;
+  @use "../../styles/shared.scss" as *;
 
-	header {
-		color: $accent;
+  header {
+    color: $accent;
 
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 
-		padding: 2rem;
+    padding: 2rem;
 
-		a {
-			text-decoration: none;
-			font-weight: 700;
-			font-size: 1.2rem;
-			text-transform: uppercase;
-			transition: color 0.2s ease-in-out,
-				border-bottom-color 0.2s ease-in-out;
-			color: $accent;
-			line-height: 1;
-			border-bottom: 2px solid transparent;
+    a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      transition:
+        color 0.2s ease-in-out,
+        border-bottom-color 0.2s ease-in-out;
+      color: $accent;
+      line-height: 1;
+      border-bottom: 2px solid transparent;
 
-			&:hover {
-				color: $accentDark;
-				border-bottom-color: currentColor;
-			}
+      &:hover {
+        color: $accentDark;
+        border-bottom-color: currentColor;
+      }
 
-			&.active {
-				color: $accentDark;
-			}
-		}
-	}
+      &.active {
+        color: $accentDark;
+      }
+    }
+  }
 
-	@media (max-width: $breakpointTablet) {
-	}
+  @media (max-width: $breakpointTablet) {
+  }
 
-	@media (min-width: $breakpointTablet) {
-	}
+  @media (min-width: $breakpointTablet) {
+  }
 
-	@media (min-width: $breakpointDesktop) {
-	}
+  @media (min-width: $breakpointDesktop) {
+  }
 </style>

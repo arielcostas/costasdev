@@ -1,95 +1,95 @@
 ---
 interface Technology {
-	name: string;
-	colour: string;
-	text?: "light" | "dark";
-	icon: string;
+  name: string;
+  colour: string;
+  text?: "light" | "dark";
+  icon: string;
 }
 
 export const technologies: { [key: string]: Technology } = {
-	java: {
-		name: "Java",
-		colour: "#e76f00",
-		icon: "java",
-	},
-	dotnet: {
-		name: ".NET",
-		colour: "#512bd4",
-		icon: "dotnet",
-	},
-	go: {
-		name: "Go",
-		colour: "#00add8",
-		icon: "go",
-	},
-	mysql: {
-		name: "MySQL",
-		colour: "#3a75b0",
-		icon: "mysql",
-	},
-	mongodb: {
-		name: "MongoDB",
-		colour: "#4db33d",
-		icon: "mongodb",
-	},
-	sqlserver: {
-		name: "SQL Server",
-		colour: "#cc2927",
-		icon: "sqlserver",
-	},
-	php: {
-		name: "PHP",
-		colour: "#8892be",
-		icon: "php",
-	},
-	python: {
-		name: "Python",
-		colour: "#306998",
-		icon: "python",
-	},
-	javascript: {
-		name: "JavaScript",
-		colour: "#ffe70b",
-		text: "dark",
-		icon: "javascript",
-	},
-	typescript: {
-		name: "TypeScript",
-		colour: "#007acc",
-		icon: "typescript",
-	},
-	azure: {
-		name: "Azure",
-		colour: "#0089d6",
-		icon: "azure",
-	},
-	linux: {
-		name: "Linux",
-		colour: "#010101",
-		icon: "linux",
-	},
-	windows: {
-		name: "Windows",
-		colour: "#0078d6",
-		icon: "windows",
-	},
-	astro: {
-		name: "Astro",
-		colour: "#3d50f5",
-		icon: "astro",
-	},
-	rabbitmq: {
-		name: "RabbitMQ",
-		colour: "#ff6600",
-		icon: "rabbitmq",
-	},
+  java: {
+    name: "Java",
+    colour: "#e76f00",
+    icon: "java",
+  },
+  dotnet: {
+    name: ".NET",
+    colour: "#512bd4",
+    icon: "dotnet",
+  },
+  go: {
+    name: "Go",
+    colour: "#00add8",
+    icon: "go",
+  },
+  mysql: {
+    name: "MySQL",
+    colour: "#3a75b0",
+    icon: "mysql",
+  },
+  mongodb: {
+    name: "MongoDB",
+    colour: "#4db33d",
+    icon: "mongodb",
+  },
+  sqlserver: {
+    name: "SQL Server",
+    colour: "#cc2927",
+    icon: "sqlserver",
+  },
+  php: {
+    name: "PHP",
+    colour: "#8892be",
+    icon: "php",
+  },
+  python: {
+    name: "Python",
+    colour: "#306998",
+    icon: "python",
+  },
+  javascript: {
+    name: "JavaScript",
+    colour: "#ffe70b",
+    text: "dark",
+    icon: "javascript",
+  },
+  typescript: {
+    name: "TypeScript",
+    colour: "#007acc",
+    icon: "typescript",
+  },
+  azure: {
+    name: "Azure",
+    colour: "#0089d6",
+    icon: "azure",
+  },
+  linux: {
+    name: "Linux",
+    colour: "#010101",
+    icon: "linux",
+  },
+  windows: {
+    name: "Windows",
+    colour: "#0078d6",
+    icon: "windows",
+  },
+  astro: {
+    name: "Astro",
+    colour: "#3d50f5",
+    icon: "astro",
+  },
+  rabbitmq: {
+    name: "RabbitMQ",
+    colour: "#ff6600",
+    icon: "rabbitmq",
+  },
 };
 
 interface Props {
-	// tech must be name of the key of one of the technologies
-	code: string;
+  // tech must be name of the key of one of the technologies
+  code: string;
 
-	size?: "small" | "large";
+  size?: "small" | "large";
 }
 
 const { code, size } = Astro.props;
@@ -97,38 +97,38 @@ const tech = technologies[code] as Technology;
 ---
 
 <span class={`pill-${size ?? "small"} text-${tech.text ?? "light"}`}>
-	{tech.name}
+  {tech.name}
 </span>
 
 <style define:vars={{ colour: tech.colour }}>
-	span {
-		display: inline-block;
-		background-color: var(--colour);
-		font-weight: bold;
-		text-transform: uppercase;
-		border-radius: 0.5em;
-		padding: 0.5em 1em;
-	}
+  span {
+    display: inline-block;
+    background-color: var(--colour);
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+  }
 
-	.text-dark {
-		color: #000;
-	}
+  .text-dark {
+    color: #000;
+  }
 
-	.text-light {
-		color: #fff;
-	}
+  .text-light {
+    color: #fff;
+  }
 
-	.pill-small {
-		padding: 0.35em 0.5em;
-		border-radius: 0.25em;
+  .pill-small {
+    padding: 0.35em 0.5em;
+    border-radius: 0.25em;
 
-		font-size: 0.75em;
-	}
+    font-size: 0.75em;
+  }
 
-	.pill-large {
-		padding: 0.35 0.75em;
-		border-radius: 0.5em;
+  .pill-large {
+    padding: 0.35 0.75em;
+    border-radius: 0.5em;
 
-		font-size: 0.75em;
-	}
+    font-size: 0.75em;
+  }
 </style>

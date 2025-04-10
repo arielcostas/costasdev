@@ -1,43 +1,49 @@
 ---
-import { useTranslations } from "../i18n"
+import { useTranslations } from "../i18n";
 
 const t = useTranslations(Astro.currentLocale);
 ---
 
 <footer>
-	<p>
-		Copyright &copy; 2023-{new Date().getFullYear()} Ariel Costas Guerrero. {t.footer.copyright}
-	</p>
+  <p>
+    Copyright &copy; 2023-{new Date().getFullYear()} Ariel Costas Guerrero. {
+      t.footer.copyright
+    }
+  </p>
 
-	<p>
-		{t.footer.contentLicencedUnder} <a
-			href={`https://creativecommons.org/licenses/by-sa/4.0/deed.${Astro.currentLocale}`}
-			>CC BY-SA 4.0</a>.
+  <p>
+    {t.footer.contentLicencedUnder}
+    <a
+      href={`https://creativecommons.org/licenses/by-sa/4.0/deed.${Astro.currentLocale}`}
+      >CC BY-SA 4.0</a
+    >.
 
-		{t.footer.sourceCodeAvailableOn} <a href="https://github.com/arielcostas/costasdev">GitHub</a>
-		{t.footer.andIsLicencedUnder} <a
-			href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-11-12"
-			>{t.footer.eupl} 1.2</a>
-	</p>
+    {t.footer.sourceCodeAvailableOn}
+    <a href="https://github.com/arielcostas/costasdev">GitHub</a>
+    {t.footer.andIsLicencedUnder}
+    <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-11-12"
+      >{t.footer.eupl} 1.2</a
+    >
+  </p>
 </footer>
 
 <style lang="scss">
-	@use "../../styles/shared.scss" as *;
+  @use "../../styles/shared.scss" as *;
 
-	footer {
-		background-color: $dark;
-		color: $light;
-		text-align: center;
+  footer {
+    background-color: $dark;
+    color: $light;
+    text-align: center;
 
-		padding: 0.5rem 1rem;
-		
-		a {
-			color: $accentLight;
-		}
+    padding: 0.5rem 1rem;
 
-		p {
-			max-width: 82ch;
-			margin-inline: auto;
-		}
-	}
+    a {
+      color: $accentLight;
+    }
+
+    p {
+      max-width: 82ch;
+      margin-inline: auto;
+    }
+  }
 </style>

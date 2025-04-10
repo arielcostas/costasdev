@@ -2,84 +2,98 @@
 import Layout from "../layouts/Layout.astro";
 
 const schema = {
-	"@context": "https://schema.org",
-	"@type": "ContactPage",
-	url: "https://www.costas.dev/contact",
-	headline: "Ponte en contacto conmigo",
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  url: "https://www.costas.dev/contact",
+  headline: "Ponte en contacto conmigo",
 };
 ---
 
-<Layout title="Contacto" description="Las formas de ponerte en contacto conmigo, ya sea por correo electrónico, teléfono o redes sociales.">
-	<script
-		is:inline
-		type="application/ld+json"
-		slot="head-jsonld"
-		set:html={JSON.stringify(schema)}
-	/>
+<Layout
+  title="Contacto"
+  description="Las formas de ponerte en contacto conmigo, ya sea por correo electrónico, teléfono o redes sociales."
+>
+  <script
+    is:inline
+    type="application/ld+json"
+    slot="head-jsonld"
+    set:html={JSON.stringify(schema)}
+  />
 
-	<h1>Contacta conmigo</h1>
+  <h1>Contacta conmigo</h1>
 
-	<p>
-		La forma más sencilla de contactar conmigo es a través de mi dirección
-		de correo electrónico:
-		<a href="#" id="email-addr">ACTIVA JAVASCRIPT PARA VER ESTO</a>. También
-		puedes usar <a href="https://wa.me/message/W7T7L4EZAELQI1">WhatsApp</a> con el número de teléfono
-		<a href="#" id="phone-number">ACTIVA JAVASCRIPT PARA VER ESTO</a>.
-	</p>
+  <p>
+    La forma más sencilla de contactar conmigo es a través de mi dirección de
+    correo electrónico:
+    <a href="#" id="email-addr">ACTIVA JAVASCRIPT PARA VER ESTO</a>. También
+    puedes usar <a href="https://wa.me/message/W7T7L4EZAELQI1">WhatsApp</a> con el
+    número de teléfono
+    <a href="#" id="phone-number">ACTIVA JAVASCRIPT PARA VER ESTO</a>.
+  </p>
 
-	<p>También puedes encontrarme en algunas redes sociales:</p>
+  <p>También puedes encontrarme en algunas redes sociales:</p>
 
-	<dl>
-		<dt>GitHub</dt>
-		<dd><a href="https://github.com/arielcostas">@arielcostas</a></dd>
-		<dt>LinkedIn</dt>
-		<dd><a href="https://www.linkedin.com/in/ariel-costas/">/in/ariel-costas</a></dd>
-		<dt>BlueSky</dt>
-		<dd><a href="https://bsky.app/profile/costas.dev">@costas.dev</a></dd>
-	</dl>
+  <dl>
+    <dt>GitHub</dt>
+    <dd><a href="https://github.com/arielcostas">@arielcostas</a></dd>
+    <dt>LinkedIn</dt>
+    <dd>
+      <a href="https://www.linkedin.com/in/ariel-costas/">/in/ariel-costas</a>
+    </dd>
+    <dt>BlueSky</dt>
+    <dd><a href="https://bsky.app/profile/costas.dev">@costas.dev</a></dd>
+  </dl>
 </Layout>
 
 <script>
-	const encryptedEmail = "LygNLiMmFRo/GlQZaFIWBA==";
-	const encryptedPhoneNumber = "ZWlQfX1QT0Z+XgVd";
-	const key = "NZdKOfvuLn5jF6sryF0Q";
+  const encryptedEmail = "LygNLiMmFRo/GlQZaFIWBA==";
+  const encryptedPhoneNumber = "ZWlQfX1QT0Z+XgVd";
+  const key = "NZdKOfvuLn5jF6sryF0Q";
 
-	const emailAddrLink = document.getElementById("email-addr") as HTMLAnchorElement;
-	const phoneNumberLink = document.getElementById("phone-number") as HTMLAnchorElement;
+  const emailAddrLink = document.getElementById(
+    "email-addr",
+  ) as HTMLAnchorElement;
+  const phoneNumberLink = document.getElementById(
+    "phone-number",
+  ) as HTMLAnchorElement;
 
-	(() => {
-		if (emailAddrLink == null || phoneNumberLink == null) {
-			return;
-		}
+  (() => {
+    if (emailAddrLink == null || phoneNumberLink == null) {
+      return;
+    }
 
-		const emailAddress = xorData(encryptedEmail, key);
-		const phoneNumber = xorData(encryptedPhoneNumber, key);
+    const emailAddress = xorData(encryptedEmail, key);
+    const phoneNumber = xorData(encryptedPhoneNumber, key);
 
-		emailAddrLink.href = `mailto:${emailAddress}`;
-		emailAddrLink.textContent = emailAddress;
+    emailAddrLink.href = `mailto:${emailAddress}`;
+    emailAddrLink.textContent = emailAddress;
 
-		phoneNumberLink.href = `tel:${phoneNumber}`;
-		phoneNumberLink.textContent = phoneNumber;
-	})();
+    phoneNumberLink.href = `tel:${phoneNumber}`;
+    phoneNumberLink.textContent = phoneNumber;
+  })();
 
-	function xorData(data: string, key: string): string {
-		let actualData = atob(data);
-		let actualKey = key;
-		const keyLength = key.length;
-		const dataLength = actualData.length;
-		const result = new Array(dataLength);
-		
-		// If the key is 12 characters but the data is 30 characters, the key should be repeated 3 times and truncated to 30 characters
-		if (keyLength < dataLength) {
-			actualKey = key.repeat(Math.ceil(dataLength / keyLength)).substring(0, dataLength);
-		} else if (keyLength > dataLength) {
-			actualKey = key.substring(0, dataLength);
-		}
+  function xorData(data: string, key: string): string {
+    let actualData = atob(data);
+    let actualKey = key;
+    const keyLength = key.length;
+    const dataLength = actualData.length;
+    const result = new Array(dataLength);
 
-		for (let i = 0; i < dataLength; i++) {
-			result[i] = String.fromCharCode(actualData.charCodeAt(i) ^ actualKey.charCodeAt(i));
-		}
+    // If the key is 12 characters but the data is 30 characters, the key should be repeated 3 times and truncated to 30 characters
+    if (keyLength < dataLength) {
+      actualKey = key
+        .repeat(Math.ceil(dataLength / keyLength))
+        .substring(0, dataLength);
+    } else if (keyLength > dataLength) {
+      actualKey = key.substring(0, dataLength);
+    }
 
-		return result.join("");
-	}
+    for (let i = 0; i < dataLength; i++) {
+      result[i] = String.fromCharCode(
+        actualData.charCodeAt(i) ^ actualKey.charCodeAt(i),
+      );
+    }
+
+    return result.join("");
+  }
 </script>
