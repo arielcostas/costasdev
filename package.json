@@ -5,20 +5,30 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "format:dry": "prettier --check .",
+    "check": "astro check",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.2.0",
+    "@astrojs/mdx": "^4.2.3",
     "@astrojs/rss": "4.0.11",
-    "@astrojs/sitemap": "3.2.1",
+    "@astrojs/sitemap": "^3.3.0",
     "@fontsource-variable/sen": "5.2.5",
     "@fontsource/beiruti": "^5.2.5",
-    "astro": "^5.5.2",
+    "astro": "^5.6.1",
+    "astro-icon": "^1.1.5",
+    "bootstrap": "^5.3.5",
+    "bootstrap-icons": "^1.11.3",
     "braces": "3.0.3",
+    "husky": "^9.1.7",
     "typescript": "5.8.2"
   },
   "devDependencies": {
-    "sass": "^1.85.1"
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "sass": "^1.86.3"
   }
 }

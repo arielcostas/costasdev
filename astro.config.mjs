@@ -4,6 +4,8 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import { DEFAULT_LANGUAGE, LANGUAGE_CODES } from './src/i18n';
 
+import icon from 'astro-icon';
+
 export default defineConfig({
     compressHTML: true,
     site: "https://www.costas.dev",
@@ -16,13 +18,10 @@ export default defineConfig({
             redirectToDefaultLocale: true
         }
     },
-    integrations: [
-        sitemap({
-            priority: 0.5,
-            changefreq: 'weekly'
-        }),
-        mdx()
-    ],
+    integrations: [sitemap({
+        priority: 0.5,
+        changefreq: 'weekly'
+    }), mdx(), icon()],
     build: {
         assets: 'assets',
         inlineStylesheets: 'never',
