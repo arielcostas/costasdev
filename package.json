@@ -18,6 +18,7 @@
     "@astrojs/sitemap": "^3.3.0",
     "@fontsource-variable/sen": "5.2.5",
     "@fontsource/beiruti": "^5.2.5",
+    "@iconify-json/ph": "^1.2.2",
     "astro": "^5.6.1",
     "astro-icon": "^1.1.5",
     "bootstrap": "^5.3.5",

@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  type: "note" | "warning";
+}
+
+const { type } = Astro.props;
+
+const icon = {
+  note: "ph:info",
+  warning: "ph:warning",
+}[type];
+---
+
+<div role="alert" class={type}>
+  <Icon name={icon} />
+  <slot />
+</div>
+
+<style lang="scss" is:global>
+  @use "../../styles/shared.scss" as *;
+
+  div[role="alert"] {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 1rem;
+    margin-block: 1rem;
+    border-radius: 0.5rem;
+
+    &.note {
+      background-color: $noteBackground;
+      color: $noteText;
+      box-shadow: 0 0 0 1px $noteText;
+    }
+
+    &.warning {
+      background-color: $warningBackground;
+      color: $warningText;
+      box-shadow: 0 0 0 1px $warningText;
+    }
+  }
+
+  div[role="alert"] svg {
+    width: 1.5em;
+    height: 1.5em;
+    margin-inline-end: 0.5rem;
+    color: inherit;
+    vertical-align: middle;
+  }
+
+  div[role="alert"] p {
+    margin-block: 0;
+  }
+</style>
