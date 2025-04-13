@@ -4,15 +4,9 @@ description: "Regarding the \"freedom\" of Americans, the ban of TikTok, and whe
 publishedAt: 2025-01-17
 ---
 
-import Alert from '@/components/Alert.astro';
-
-export const components = {
-    Alert
-}
-
-<Alert type="note">
+<div class="note" role="alert">
     This article is written in english because it's mainly directed to an international audience.
-</Alert>
+</div>
 
 I've been thinking about the concept of "freedom" lately. It's a word that's thrown around a lot, especially in the United States. Americans are proud of their "freedom" and how they can do whatever they want. But is that really true? They do like to call us out about our "lack of freedom" in Europe and the insane amount of bureaucracy we have to deal with (and they are somewhat right), but they also have their own problems.
 

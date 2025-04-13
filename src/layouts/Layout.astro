@@ -71,7 +71,8 @@ const urlWithoutLocale = getUrlWithoutLocale(Astro.url.pathname);
 </html>
 
 <style is:global lang="scss">
-  @use "../../styles/shared.scss" as *;
+  @use "../../styles/variables" as *;
+  @use "../../styles/shared";
   @use "sass:color";
 
   html,

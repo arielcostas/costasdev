@@ -1,0 +1,65 @@
+@use "./variables" as *;
+
+div[role="alert"] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+
+  padding: 1rem;
+  margin-block: 1.5rem;
+  margin-inline: 0.5rem;
+
+  border-radius: 0.5rem;
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+    margin-inline-end: 0.5rem;
+    color: inherit;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+
+  p {
+    margin-block: 0;
+  }
+
+  &::before {
+    flex-shrink: 0;
+    display: block;
+
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+
+    border-radius: 50%;
+    font-size: 1rem;
+
+    text-align: center;
+  }
+}
+
+div[role="alert"].note {
+  background-color: $noteBackground;
+  color: $noteText;
+  box-shadow: 0 0 0 1px $noteText;
+
+  &::before {
+    content: "i";
+    background-color: $noteText;
+    color: $light;
+  }
+}
+
+div[role="alert"].warning {
+  background-color: $warningBackground;
+  color: $warningText;
+  box-shadow: 0 0 0 1px $warningText;
+
+  &::before {
+    content: "!";
+    background-color: $warningText;
+    color: $light;
+  }
+}
