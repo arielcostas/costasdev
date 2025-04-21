@@ -1,9 +1,8 @@
 ---
-import Layout from "./Layout.astro";
-import { useTranslations } from "../i18n";
-import TechnologyBadge from "../partials/TechnologyBadge.astro";
+import t from "../i18n/es.json";
 
-const t = useTranslations(Astro.currentLocale);
+import Layout from "./Layout.astro";
+import TechnologyBadge from "../partials/TechnologyBadge.astro";
 
 const schema = {
   "@context": "https://schema.org",

@@ -1,0 +1,45 @@
+---
+import Layout from "./Layout.astro";
+---
+
+<Layout
+  title="Geoblocked"
+  description="Access to this page is restricted, learn why."
+  empty
+>
+  <Fragment slot="head-jsonld">
+    <meta name="robots" content="noindex" />
+  </Fragment>
+
+  <h1>Geo-blocked</h1>
+  <p>
+    This page is purposely blocked for users on your region due to ethical
+    concerns, spam or abuse (or a combination of all these).
+  </p>
+
+  <h2>Blocked countries</h2>
+  <ul>
+    <li>(US) United States of America - And colonies</li>
+    <li>(PR) Puerto Rico</li>
+    <li>(GU) Guam</li>
+    <li>(AS) American Samoa</li>
+    <li>(VI) U.S. Virgin Islands</li>
+    <li>(MP) Northern Mariana Islands</li>
+    <br />
+    <li>(SV) El Salvador</li>
+    <li>(RU) Russian Federation</li>
+    <li>(BY) Belarus</li>
+    <br />
+    <li>(IL) Israel</li>
+    <li>(HU) Hungary</li>
+    <li>(TR) Turkey</li>
+    <li>(CN) China</li>
+    <li>(SA) Saudi Arabia</li>
+  </ul>
+
+  <p>
+    I am open to adding more countries to the list or removing them at any time.
+    I am aware of many other countries that have committed human rights abuses,
+    but these are the ones more likely to have users on this website.
+  </p>
+</Layout>

@@ -3,16 +3,14 @@ import "@fontsource/beiruti";
 import "@fontsource-variable/sen";
 import Header from "../partials/Header.astro";
 import Footer from "../partials/Footer.astro";
-import { getAbsoluteLocaleUrl } from "astro:i18n";
-import { getUrlWithoutLocale } from "../i18n";
 
 interface Props {
   title: string;
   description: string;
+  empty?: boolean;
 }
 
-const { title, description } = Astro.props;
-const urlWithoutLocale = getUrlWithoutLocale(Astro.url.pathname);
+const { title, description, empty } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,21 +21,6 @@ const urlWithoutLocale = getUrlWithoutLocale(Astro.url.pathname);
     <meta name="viewport" content="width=device-width" />
 
     <link rel="canonical" href={Astro.url.toString().replace(/\.html$/, "")} />
-    <link
-      rel="alternate"
-      hreflang="es"
-      href={getAbsoluteLocaleUrl("es", urlWithoutLocale)}
-    />
-    <link
-      rel="alternate"
-      hreflang="en"
-      href={getAbsoluteLocaleUrl("en", urlWithoutLocale)}
-    />
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href={getAbsoluteLocaleUrl("es", urlWithoutLocale)}
-    />
 
     <link rel="alternate" type="application/rss+xml" href="/blog.xml" />
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
@@ -62,11 +45,11 @@ const urlWithoutLocale = getUrlWithoutLocale(Astro.url.pathname);
     <slot name="head-jsonld" />
   </head>
   <body>
-    <Header />
+    {empty ? null : <Header />}
     <main>
       <slot />
     </main>
-    <Footer />
+    {empty ? null : <Footer />}
   </body>
 </html>
 

@@ -1,18 +1,18 @@
 ---
-import { useTranslations } from "../i18n";
 import Layout from "./Layout.astro";
-
-const t = useTranslations(Astro.currentLocale);
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   url: "https://www.costas.dev/contact",
-  headline: t.contactPage.headline,
+  headline: "Contacta conmigo",
 };
 ---
 
-<Layout title={t.contactPage.title} description={t.contactPage.description}>
+<Layout
+  title="Contacto"
+  description="Las formas de ponerte en contacto conmigo, ya sea por correo electrónico, teléfono o redes sociales."
+>
   <script
     is:inline
     type="application/ld+json"
@@ -20,17 +20,24 @@ const schema = {
     set:html={JSON.stringify(schema)}
   />
 
-  <h1>{t.contactPage.headline}</h1>
+  <h1>"Contacta conmigo"</h1>
 
   <noscript>
     <div role="alert" class="warning">
-      {t.contactPage.enableJs}
+      Es necesario activar JavaScript para ver la dirección de correo
+      electrónico y el número de teléfono. Esto se hace para evitar scrapers y
+      spam.
     </div>
   </noscript>
 
-  <p set:html={t.contactPage.intro} />
+  <p>
+    La forma más sencilla de contactar conmigo es a través de mi dirección de
+    correo electrónico: <a href="#" id="email-addr">Activa JS</a>. También
+    puedes usar <a href="https://wa.me/message/W7T7L4EZAELQI1">WhatsApp</a> con el
+    número de teléfono <a href="#" id="phone-number">Activa JS</a>.
+  </p>
 
-  <p>{t.contactPage.socialMedia}</p>
+  <p>También puedes encontrarme en algunas redes sociales:</p>
 
   <dl>
     <dt>GitHub</dt>
