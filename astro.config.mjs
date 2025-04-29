@@ -4,6 +4,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 
 import icon from "astro-icon";
+import rehypeExternalLinks from "rehype-external-links";
 
 export default defineConfig({
   compressHTML: true,
@@ -21,4 +22,17 @@ export default defineConfig({
     inlineStylesheets: "never",
   },
   scopedStyleStrategy: "where",
+  markdown: {
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          "rel": ["nofollow", "noopener"],
+          "properties": {
+            "className": "external",
+          }
+        }
+      ]
+    ]
+  }
 });

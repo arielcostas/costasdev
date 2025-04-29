@@ -25,6 +25,7 @@
     "bootstrap-icons": "^1.11.3",
     "braces": "3.0.3",
     "husky": "^9.1.7",
+    "rehype-external-links": "^3.0.0",
     "typescript": "5.8.2"
   },
   "devDependencies": {

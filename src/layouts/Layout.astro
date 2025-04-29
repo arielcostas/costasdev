@@ -32,7 +32,10 @@ const { title, description, empty } = Astro.props;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url.toString().replace(".html", "")} />
+    <meta
+      property="og:url"
+      content={Astro.url.toString().replace(".html", "")}
+    />
     <meta property="og:image" content="/favicon.png" />
 
     <meta name="twitter:card" content="summary" />
@@ -84,6 +87,14 @@ const { title, description, empty } = Astro.props;
 
   a {
     color: $accent;
+  }
+
+  a.external::after {
+    content: "↗";
+    font-family: monospace;
+    font-size: 0.85em;
+    display: inline-block;
+    transform: translateY(-1px);
   }
 
   *::selection {
