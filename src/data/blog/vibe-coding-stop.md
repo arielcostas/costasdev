@@ -2,6 +2,7 @@
 title: "Vibe coding, la nueva moda estúpida"
 description: "Reflexiones sobre el 'vibe coding' y su impacto en la industria del software."
 publishedAt: 2025-04-13
+tags: ["programación", "IA"]
 ---
 
 <div role="alert" class="warning">

@@ -2,6 +2,7 @@
 title: "Americans: so much for your \"freedom\""
 description: "Regarding the \"freedom\" of Americans, the ban of TikTok, and whether Europe should follow suit"
 publishedAt: 2025-01-17
+tags: ["política", "derecho", "internacional"]
 ---
 
 <div class="note" role="alert">

@@ -2,6 +2,7 @@
 title: "El espectáculo que está montando WordPress (o mejor dicho, Matt Mullenweg)"
 description: "Hablemos de la polémica que ha surgido en torno a WordPress y su fundador, Matt Mullenweg, contra WPEngine y todo lo que ha desencadenado."
 publishedAt: 2024-10-13
+tags: ["desarrollo web", "open source"]
 ---
 
 Hace unas semanas que Matt Mullenweg comenzó una batalla contra WPEngine, uno de los mayores proveedores de hosting de WordPress. Pero para entender esta historia, primero hay que aclarar quien es quien:

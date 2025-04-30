@@ -2,6 +2,7 @@
 title: "Alojar aplicación PHP en servidor IIS"
 description: "Un breve tutorial de cómo alojar una aplicación PHP en un servidor IIS para desarrollo"
 publishedAt: 2024-08-21
+tags: ["desarrollo web", "php"]
 ---
 
 En este tutorial, aprenderás a alojar una aplicación PHP en un servidor IIS. IIS es un servidor web desarrollado por Microsoft que viene instalado con Windows y es usable tanto en Windows Server como en escritorios Windows 10/11 Pro y Enterprise.

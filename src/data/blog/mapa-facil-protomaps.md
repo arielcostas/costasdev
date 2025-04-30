@@ -2,6 +2,7 @@
 title: "Crear un mapa de manera fácil con Protomaps"
 description: "Una guía rápida para crear un mapa de manera fácil con Protomaps, sin servidor ni historias complicadas"
 publishedAt: 2025-01-03
+tags: ["desarrollo web", "GIS"]
 ---
 
 Durante las últimas semanas, he estado explorando tecnologías de mapas para integrar en proyectos que voy a llevar a cabo en el futuro.
