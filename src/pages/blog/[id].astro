@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 import { type GetStaticPaths } from "astro";
 
@@ -32,6 +32,7 @@ const schema = {
   "@type": "BlogPosting",
   headline: entry.data.title,
   datePublished: entry.data.publishedAt.toISOString(),
+  keywords: entry.data.tags || [],
   author: {
     "@type": "Person",
     name: "Ariel Costas Guerrero",
@@ -39,7 +40,8 @@ const schema = {
   publisher: {
     "@type": "Person",
     name: "Ariel Costas Guerrero",
-    logo: {
+    url: "https://www.costas.dev",
+    image: {
       "@type": "ImageObject",
       url: "https://www.costas.dev/favicon.png",
     },
@@ -74,6 +76,10 @@ const schema = {
   </small>
 
   <Content />
+
+  <p>
+    <a href="/blog">Volver al blog</a>
+  </p>
 </Layout>
 
 <style lang="scss">

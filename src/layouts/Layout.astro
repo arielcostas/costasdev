@@ -1,6 +1,5 @@
 ---
-import "@fontsource/beiruti";
-import "@fontsource-variable/sen";
+import "@fontsource-variable/onest";
 import Header from "../partials/Header.astro";
 import Footer from "../partials/Footer.astro";
 
@@ -111,7 +110,7 @@ const { title, description, empty } = Astro.props;
 
     align-self: center;
 
-    max-width: 82ch;
+    max-width: min(1000px, 90vw);
     font-size: 1.2rem;
 
     padding-block-end: 3rem;

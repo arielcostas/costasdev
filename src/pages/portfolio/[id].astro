@@ -1,12 +1,7 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { getCollection, render } from "astro:content";
-import { type GetStaticPaths } from "astro";
-import TechnologyBadge from "../../partials/TechnologyBadge.astro";
-
-interface Props {
-  entry: any;
-}
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import PortfolioItemLayout from "@/layouts/PortfolioItemLayout.astro";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const entries = await getCollection("portfolio");
@@ -17,50 +12,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
 ---
 
-<Layout title={entry.data.title} description={entry.data.description}>
-  <a id="link-back" href="/portfolio">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="w-6 h-6 inline-block mr-2"
-    >
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-    Volver al portfolio
-  </a>
-
-  <h1>{entry.data.title}</h1>
-
-  <Content />
-
-  <h2>Tecnologías utilizadas</h2>
-
-  {
-    entry.data.technologies.map((technology: string) => (
-      <TechnologyBadge size="small" code={technology} />
-    ))
-  }
-</Layout>
-
-<style>
-  a#link-back {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.2s ease-in-out;
-  }
-
-  a#link-back svg {
-    height: 1em;
-  }
-</style>
+<PortfolioItemLayout entry={entry} />

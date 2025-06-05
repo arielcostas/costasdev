@@ -1,87 +1,84 @@
 ---
+import Icon from "node_modules/astro-icon/components/Icon.astro";
+
 interface Technology {
   name: string;
   colour: string;
   text?: "light" | "dark";
-  icon: string;
+  icon?: string;
 }
 
 export const technologies: { [key: string]: Technology } = {
   java: {
     name: "Java",
     colour: "#e76f00",
-    icon: "java",
+    icon: "coffee"
   },
   dotnet: {
     name: ".NET",
     colour: "#512bd4",
-    icon: "dotnet",
+    icon: "brand-c-sharp",
   },
   go: {
     name: "Go",
     colour: "#00add8",
-    icon: "go",
+    icon: "brand-golang",
   },
   mysql: {
     name: "MySQL",
     colour: "#3a75b0",
-    icon: "mysql",
-  },
-  mongodb: {
-    name: "MongoDB",
-    colour: "#4db33d",
-    icon: "mongodb",
-  },
-  sqlserver: {
-    name: "SQL Server",
-    colour: "#cc2927",
-    icon: "sqlserver",
+    icon: "brand-mysql",
   },
   php: {
     name: "PHP",
     colour: "#8892be",
-    icon: "php",
+    icon: "brand-php",
   },
   python: {
     name: "Python",
     colour: "#306998",
-    icon: "python",
-  },
-  javascript: {
-    name: "JavaScript",
-    colour: "#ffe70b",
-    text: "dark",
-    icon: "javascript",
   },
   typescript: {
     name: "TypeScript",
     colour: "#007acc",
-    icon: "typescript",
+    icon: "brand-typescript",
   },
   azure: {
     name: "Azure",
     colour: "#0089d6",
-    icon: "azure",
+    icon: "brand-azure",
   },
-  linux: {
-    name: "Linux",
-    colour: "#010101",
-    icon: "linux",
+  ubuntu: {
+    name: "Ubuntu",
+    colour: "#E95420",
+    icon: "brand-ubuntu",
   },
   windows: {
     name: "Windows",
     colour: "#0078d6",
-    icon: "windows",
+    icon: "brand-windows",
   },
   astro: {
     name: "Astro",
     colour: "#3d50f5",
-    icon: "astro",
+    icon: "brand-astro",
   },
-  rabbitmq: {
-    name: "RabbitMQ",
-    colour: "#ff6600",
-    icon: "rabbitmq",
+  wordpress: {
+    name: "WordPress",
+    colour: "#21759b",
+    icon: "brand-wordpress",
+  },
+  github: {
+    name: "GitHub",
+    colour: "#181717",
+    text: "light",
+    icon: "brand-github",
+  },
+  web: {
+    name: "Web",
+    colour: "#f7df1e",
+    text: "dark",
+    icon: "world",
   },
 };
 
@@ -93,21 +90,33 @@ interface Props {
 }
 
 const { code, size } = Astro.props;
+if (!(code in technologies)) {
+  throw new Error(`Technology code "${code}" is not defined in technologies.`);
+}
 const tech = technologies[code] as Technology;
 ---
 
 <span class={`pill-${size ?? "small"} text-${tech.text ?? "light"}`}>
+  {
+    tech.icon && (
+      <Icon name={`tabler:${tech.icon}`} />
+    )
+  }
   {tech.name}
 </span>
 
 <style define:vars={{ colour: tech.colour }}>
   span {
-    display: inline-block;
+    /*display: inline-block;*/
     background-color: var(--colour);
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 0.5em;
     padding: 0.5em 1em;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .text-dark {

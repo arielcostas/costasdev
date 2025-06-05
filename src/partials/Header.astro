@@ -48,11 +48,15 @@ import t from "../i18n/es.json";
   }
 
   @media (max-width: $breakpointTablet) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      a {
+        font-size: 1.5rem;
+      }
+    }
   }
 
-  @media (min-width: $breakpointTablet) {
-  }
-
-  @media (min-width: $breakpointDesktop) {
-  }
 </style>

@@ -71,19 +71,7 @@
     "intro": "En esta sección encontrarás una lista de los proyectos en los que he trabajado, tanto para terceros como propios. Si quieres más información sobre alguno de ellos, no dudes en <a href=\"/contact\">contactar conmigo</a>.",
     "freelanceTitle": "Proyectos para terceros (freelance)",
     "freelanceDesc": "He realizado desarrollos de proyectos para terceros por encargo, siendo los más destacados los siguientes:",
-    "orderExtractorTitle": "Extractor de pedidos compra online",
-    "orderExtractorDesc": "Aplicación de escritorio que extrae los datos sobre los pedidos on-line de diversas plataformas (como WooCommerce, Amazon y Ebay). <a href=\"/portfolio/order-extractor\">Más información</a>.",
-    "touristInfoTitle": "Punto de información turística en móviles",
-    "touristInfoDesc": "Aplicación web de información turística, con QR, contenido en 360º e incrustado de YouTube. <a href=\"/portfolio/dynamic-tourist-info\">Más información</a>.",
-    "wpConsultingTitle": "Consultoría WordPress",
-    "wpConsultingDesc": "Trabajos de mantenimiento, optimización y migración de sitios web WordPress y tiendas online WooCommerce. <a href=\"/portfolio/wp-consulting\">Más información</a>. <a href=\"/contact\">Contactar</a>.",
     "ownProjectsTitle": "Proyectos propios",
-    "ownProjectsDesc": "Además, tengo varios proyectos propios que he desarrollado en mi tiempo, estando algunos de ellos en activo, y como código abierto.",
-    "personalWebTitle": "Web personal",
-    "personalWebDesc": "Desarrollado con Astro, un generador de sitios web estáticos que permite escribir contenido en Markdown y publicar en la web con un rendimiento excelente. Desplegado sobre Azure Static Web Apps.",
-    "mientrenoTitle": "MiEntreno (proyecto fin de ciclo)",
-    "mientrenoDesc": "Aplicación web para la gestión de entrenamientos deportivos, con una interfaz sencilla y fácil de usar. Desarrollado con ASP.NET Core, Razor Pages y SQL Server. <a href=\"/portfolio/mientreno\">Más información</a>. <a href=\"https://github.com/arielcostas/mientreno\">Código fuente</a>.",
-    "vigo360Title": "Vigo 360",
-    "vigo360Desc": "Blog sobre Vigo y su entorno, orientado principalmente a hablar de movilidad y toponimia. Desarrollado en Go, con base de datos MySQL y desplegado sobre VPS administrado por mí mismo. <a href=\"/portfolio/vigo-360\">Más información</a>. <a href=\"https://github.com/arielcostas/vigo360\">Código fuente</a>. <a href=\"https://vigo360.es\">Web</a>."
+    "ownProjectsDesc": "Además, tengo varios proyectos propios que he desarrollado en mi tiempo, estando algunos de ellos en activo, y como código abierto."
   }
 }

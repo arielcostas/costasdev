@@ -1,0 +1,77 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { render } from "astro:content";
+import TechnologyBadge from "@/components/TechnologyBadge.astro";
+import type { InferEntrySchema } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  entry: any;
+}
+
+const { entry } = Astro.props;
+const data = entry.data as InferEntrySchema<"portfolio">;
+const { Content } = await render(entry);
+---
+
+<Layout title={data.title} description={data.description}>
+  <a id="link-back" href="/portfolio">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="w-6 h-6 inline-block mr-2"
+    >
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+    Volver al portfolio
+  </a>
+
+  <h1>{data.title}</h1>
+
+  <Content />
+
+  <div>
+    {data.githubLink && <a href={data.githubLink}>
+        <Icon name="tabler:brand-github"/>
+        GitHub
+    </a>}
+
+    {data.onlineLink && <a href={data.onlineLink} target="_blank" rel="noopener noreferrer">
+        <Icon name="tabler:link"/>
+        En línea
+    </a>}
+
+    {data.demoLink && <a href={data.demoLink} target="_blank" rel="noopener noreferrer">
+        <Icon name="tabler:link"/>
+        Demo
+    </a>}
+  </div>
+
+  <h2>Tecnologías utilizadas</h2>
+
+  {
+    data.technologies.map((technology: string) => (
+      <TechnologyBadge size="small" code={technology} />
+    ))
+  }
+</Layout>
+
+<style>
+  a#link-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s ease-in-out;
+  }
+
+  a#link-back svg {
+    height: 1em;
+  }
+</style>

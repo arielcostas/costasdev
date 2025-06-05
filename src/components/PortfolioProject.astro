@@ -1,0 +1,84 @@
+---
+import { Icon } from "astro-icon/components";
+import TechnologyBadge from "./TechnologyBadge.astro";
+
+interface Props {
+    title: string;
+    summary: string;
+    tags: string[];
+
+    detailsLink?: string;
+    githubLink?: string;
+    onlineLink?: string;
+}
+
+const { title, summary, tags, detailsLink, githubLink, onlineLink } =
+    Astro.props;
+---
+
+<article>
+    <h3>{title}</h3>
+
+    <p>{summary}</p>
+
+    <div>
+        {detailsLink && <a href={detailsLink}>
+            <Icon name="tabler:info-circle"/>
+            Detalles
+        </a>}
+
+        {githubLink && <a href={githubLink}>
+            <Icon name="tabler:brand-github"/>
+            GitHub
+        </a>}
+
+        {onlineLink && <a href={onlineLink}>
+            <Icon name="tabler:link"/>
+            En línea
+        </a>}
+    </div>
+
+    <div>
+        {tags.map(tag => (
+            <TechnologyBadge code={tag} />
+        ))}
+    </div>
+</article>
+
+<style lang="scss">
+    @use "../../styles/variables" as *;
+
+    h3, p, div, a {
+        margin: 0;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 0.75rem;
+
+        padding: 1.5rem 1rem;
+        border-radius: 0.5rem;
+
+        background-color: white;
+        border: 1px solid $accent;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    div *:not(:last-child) {
+        margin-inline-end: 0.5rem;
+    }
+
+    div:nth-last-child(1) {
+        margin-block-start: 0.5rem;;
+    }
+</style>
