@@ -3,60 +3,199 @@ import t from "../i18n/es.json";
 ---
 
 <header>
-  <a href="/">{t.header.home}</a>
-  <a href="/trajectory/">{t.header.trajectory}</a>
-  <a href="/portfolio/">{t.header.portfolio}</a>
-  <a href="/blog/">{t.header.blog}</a>
-  <a href="/contact/">{t.header.contact}</a>
+  <div class="header-container">
+    <div class="brand">
+      <!-- Brand placeholder - you can replace this with a logo or name -->
+      <a href="/" class="brand-link" aria-label="Ariel Costas Home">Ariel&ZeroWidthSpace;<span class="brand-accent">Costas</span></a>
+    </div>
+
+    <div class="mobile-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+      <a href="/">{t.header.home}</a>
+      <a href="/trajectory/">{t.header.trajectory}</a>
+      <a href="/portfolio/">{t.header.portfolio}</a>
+      <a href="/blog/">{t.header.blog}</a>
+      <a href="/contact/">{t.header.contact}</a>
+    </nav>
+  </div>
 </header>
+
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    // Toggle mobile menu
+    mobileToggle?.addEventListener('click', () => {
+      const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+      mobileToggle.classList.toggle('active');
+      navLinks?.classList.toggle('active');
+    });
+
+    // Handle Escape key to close menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks?.classList.contains('active')) {
+        mobileToggle?.classList.remove('active');
+        navLinks.classList.remove('active');
+        mobileToggle?.setAttribute('aria-expanded', 'false');
+        mobileToggle?.focus();
+      }
+    });
+
+    // Add active class to current page link
+    const currentPath = window.location.pathname;
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(item => {
+      const href = item.getAttribute('href') ?? '';
+      if (href === currentPath || (href !== '/' && currentPath.startsWith(href))) {
+        item.classList.add('active');
+        item.setAttribute('aria-current', 'page');
+      }
+    });
+  });
+</script>
 
 <style lang="scss">
   @use "../../styles/variables" as *;
 
   header {
     color: $accent;
+    padding: 1rem 2rem;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
 
-    padding: 2rem;
+    .brand {
+      margin-right: auto;
 
-    a {
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      transition:
-        color 0.2s ease-in-out,
-        border-bottom-color 0.2s ease-in-out;
-      color: $accent;
-      line-height: 1;
-      border-bottom: 2px solid transparent;
+      .brand-link {
+        font-size: 1.8rem;
+        font-weight: 800;
+        text-decoration: none;
+        color: $accent;
 
-      &:hover {
-        color: $accentDark;
-        border-bottom-color: currentColor;
+        .brand-accent {
+          color: $accentDark;
+        }
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        transition:
+          color 0.2s ease-in-out,
+          border-bottom-color 0.2s ease-in-out;
+        color: $accent;
+        line-height: 1;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+          color: $accentDark;
+          border-bottom-color: currentColor;
+        }
+
+        &.active {
+          color: $accentDark;
+        }
+      }
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 2rem;
+      height: 1.25rem;
+      cursor: pointer;
+      z-index: 10;
+
+      .bar {
+        height: 3px;
+        width: 100%;
+        background-color: $accent;
+        border-radius: 3px;
+        transition: all 0.2s ease;
       }
 
       &.active {
-        color: $accentDark;
+        .bar:nth-child(1) {
+          transform: translateY(0.5rem) rotate(45deg);
+        }
+
+        .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .bar:nth-child(3) {
+          transform: translateY(-0.5rem) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpointDesktop) {
+    header {
+      .nav-links {
+        gap: 1.5rem;
+
+        a {
+          font-size: 1rem;
+        }
       }
     }
   }
 
   @media (max-width: $breakpointTablet) {
     header {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+      .mobile-toggle {
+        display: flex;
+      }
 
-      a {
-        font-size: 1.5rem;
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: $lightAlt;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        box-shadow: $shadow;
+        z-index: 5;
+
+        a {
+          font-size: 1.5rem;
+        }
+
+        &.active {
+          right: 0;
+        }
       }
     }
   }
-
 </style>

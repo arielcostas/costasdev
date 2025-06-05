@@ -47,8 +47,9 @@ const { title, description, empty } = Astro.props;
     <slot name="head-jsonld" />
   </head>
   <body>
+    <a href="#main" class="skip-to-content">Skip to content</a>
     {empty ? null : <Header />}
-    <main>
+    <main id="main">
       <slot />
     </main>
     {empty ? null : <Footer />}
@@ -59,6 +60,39 @@ const { title, description, empty } = Astro.props;
   @use "../../styles/variables" as *;
   @use "../../styles/shared";
   @use "sass:color";
+
+  .skip-to-content {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    z-index: 100;
+    background-color: $accent;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:focus {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: 8px 15px;
+      clip: auto;
+      clip-path: none;
+      white-space: normal;
+      outline: 2px solid $secondary;
+      box-shadow: none;
+    }
+  }
 
   html,
   body {
@@ -78,8 +112,9 @@ const { title, description, empty } = Astro.props;
     background: linear-gradient(
       to bottom,
       #ffffff 0%,
-      $background 3rem,
-      $background 100%
+      color.adjust($background, $lightness: -5%) 3rem,
+      color.adjust($background, $lightness: -5%) 88%,
+      color.adjust($backgroundDarker, $lightness: -5%) 100%
     );
     color: $dark;
   }
@@ -110,7 +145,7 @@ const { title, description, empty } = Astro.props;
 
     align-self: center;
 
-    max-width: min(1000px, 90vw);
+    max-width: min(69ch, 90vw);
     font-size: 1.2rem;
 
     padding-block-end: 3rem;
