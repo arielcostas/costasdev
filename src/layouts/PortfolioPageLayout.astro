@@ -87,6 +87,12 @@ const schema = {
       onlineLink="https://vigo360.es"
     />
   </section>
+
+  <div class="trajectory-summary">
+    <h2>{t.portfolioPage.trajectoryTitle}</h2>
+    <p>{t.portfolioPage.trajectorySummary}</p>
+    <a href="/trajectory" class="cta-link">{t.portfolioPage.viewTrajectory} →</a>
+  </div>
 </Layout>
 
 <style>
@@ -94,5 +100,30 @@ const schema = {
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
     gap: 1.5rem;
+  }
+
+  .trajectory-summary {
+    margin-top: 3rem;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+    border-left: 4px solid hsl(209, 94%, 42%);
+  }
+
+  .trajectory-summary h2 {
+    margin-top: 0;
+  }
+
+  .cta-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: hsl(215, 90%, 30%);
+  }
+
+  .cta-link:hover {
+    text-decoration: underline;
   }
 </style>

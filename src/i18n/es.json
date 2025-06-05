@@ -62,7 +62,9 @@
     "polygon1": "FCT en Polygon-E (Q2 2023)",
     "polygon2": "Realicé mis prácticas de formación profesional en la empresa Polygon-E, donde desarrollé varias aplicaciones de gestión interna con ASP.NET Core y Blazor, desplegando sobre entornos on-premise con Windows Server, IIS y SQL Server.",
     "projectsTitle": "Proyectos",
-    "projectsDescription": "Puedes encontrar los proyectos (públicos) en los que he trabajado en <a href=\"/portfolio\">mi portfolio</a> y en mi <a href=\"https://github.com/arielcostas\">perfil de GitHub</a>."
+    "projectsDescription": "Puedes encontrar los proyectos (públicos) en los que he trabajado en <a href=\"/portfolio\">mi portfolio</a> y en mi <a href=\"https://github.com/arielcostas\">perfil de GitHub</a>.",
+    "portfolioSummary": "Para ver una lista completa de mis proyectos, tanto profesionales como personales, con más detalles y enlaces a las demos y repositorios, visita mi página de portafolio.",
+    "viewPortfolio": "Ver mi portafolio completo"
   },
   "portfolioPage": {
     "title": "Portfolio",
@@ -72,6 +74,9 @@
     "freelanceTitle": "Proyectos para terceros (freelance)",
     "freelanceDesc": "He realizado desarrollos de proyectos para terceros por encargo, siendo los más destacados los siguientes:",
     "ownProjectsTitle": "Proyectos propios",
-    "ownProjectsDesc": "Además, tengo varios proyectos propios que he desarrollado en mi tiempo, estando algunos de ellos en activo, y como código abierto."
+    "ownProjectsDesc": "Además, tengo varios proyectos propios que he desarrollado en mi tiempo, estando algunos de ellos en activo, y como código abierto.",
+    "trajectoryTitle": "Mi trayectoria profesional",
+    "trajectorySummary": "Para conocer más sobre mi experiencia laboral, educación, certificaciones y habilidades técnicas, visita mi página de trayectoria profesional.",
+    "viewTrajectory": "Ver mi trayectoria completa"
   }
 }
