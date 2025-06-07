@@ -1,0 +1,370 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { render } from "astro:content";
+import TechnologyBadge from "@/components/TechnologyBadge.astro";
+import type { InferEntrySchema } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  entry: any;
+}
+
+const { entry } = Astro.props;
+const data = entry.data as InferEntrySchema<"portfolio">;
+const { Content } = await render(entry);
+---
+
+<Layout title={data.title} description={data.description}>
+  <a id="link-back" href="/portfolio">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="w-6 h-6 inline-block mr-2"
+    >
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+    Volver al portfolio
+  </a>
+
+  <h1>{data.title}</h1>
+
+  <small>Hecho con {data.technologies.map((technology: string) => (
+      <TechnologyBadge size="small" code={technology} />
+    ))}</small>
+
+  <Content />
+
+    <div class="project-links">
+    {data.githubLink && <a href={data.githubLink} target="_blank" rel="noopener noreferrer" class="project-link">
+        <Icon name="tabler:brand-github" class="link-icon"/>
+        <span>Código en GitHub</span>
+    </a>}
+
+    {data.onlineLink && <a href={data.onlineLink} target="_blank" rel="noopener noreferrer" class="project-link">
+        <Icon name="tabler:external-link" class="link-icon"/>
+        <span>Ver en línea</span>
+    </a>}
+
+    {data.demoLink && <a href={data.demoLink} target="_blank" rel="noopener noreferrer" class="project-link">
+        <Icon name="tabler:device-laptop" class="link-icon"/>
+        <span>Ver demo</span>
+    </a>}
+  </div>
+
+  {data.images.length > 0 && (
+    <h2>Galería</h2>
+    <section id="project-images">
+      {data.images.map((image) => (
+        <a href={`${image.src}.png`} target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source
+              srcset={`${image.src}.webp`}
+              type="image/webp"
+            />
+            <img src={`${image.src}.png`} alt={image.alt} loading="lazy" />
+          </picture>
+        </a>
+      ))}
+    </section>
+  )}
+
+  <dialog id="largeimage-dialog">
+    <div id="largeimage-dialogcontainer">
+      <button class="largeimage__nav" aria-label="Previous image" id="largeimage__nav-left">
+        <Icon name="tabler:chevron-left" />
+      </button>
+      <div id="largeimage-imagecontainer">
+        <img id="largeimage-image" alt="Some alt" />
+      </div>
+      <div id="largeimage-caption">Some caption</div>
+      <button class="largeimage__nav" aria-label="Next image" id="largeimage__nav-right">
+        <Icon name="tabler:chevron-right" />
+      </button>
+      <button id="largeimage-close"><Icon name="tabler:x" /></button>
+    </div>
+  </dialog>
+
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dialog = document.getElementById("largeimage-dialog") as HTMLDialogElement;
+    const closeButton = document.getElementById("largeimage-close") as HTMLButtonElement;
+    const imageElement = document.getElementById("largeimage-image") as HTMLImageElement;
+    const captionElement = document.getElementById("largeimage-caption") as HTMLDivElement;
+    const navLeft = document.getElementById("largeimage__nav-left") as HTMLButtonElement;
+    const navRight = document.getElementById("largeimage__nav-right") as HTMLButtonElement;
+    const imageLinks = Array.from(document.querySelectorAll("#project-images a")) as HTMLAnchorElement[];
+
+    const images = imageLinks.map(link => {
+      const img = link.querySelector("img");
+      return {
+        src: img?.src,
+        alt: img?.alt
+      };
+    });
+    let currentIndex = 0;
+
+    function showImage(index: number) {
+      if (index < 0 || index >= images.length) return;
+      currentIndex = index;
+      const { src, alt } = images[currentIndex];
+      if (!imageElement || !captionElement) {
+        console.error("Image or caption element not found");
+        return;
+      }
+      imageElement.src = src!;
+      imageElement.alt = alt!;
+      captionElement.textContent = alt || "Imagen del proyecto";
+    }
+
+    if (!dialog || !closeButton || !imageElement || !captionElement) {
+      console.error("Dialog or elements not found");
+      return;
+    }
+
+    imageLinks.forEach((link, idx) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        showImage(idx);
+        dialog.showModal();
+      });
+    });
+
+    closeButton.addEventListener("click", () => {
+      dialog.close();
+    });
+
+    if (navLeft) {
+      navLeft.addEventListener("click", (e) => {
+        e.preventDefault();
+        showImage((currentIndex - 1 + images.length) % images.length);
+      });
+    }
+    if (navRight) {
+      navRight.addEventListener("click", (e) => {
+        e.preventDefault();
+        showImage((currentIndex + 1) % images.length);
+      });
+    }
+
+    dialog.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        showImage((currentIndex - 1 + images.length) % images.length);
+      } else if (e.key === "ArrowRight") {
+        showImage((currentIndex + 1) % images.length);
+      } else if (e.key === "Escape") {
+        dialog.close();
+      }
+    });
+
+    dialog.addEventListener("shown", () => {
+      dialog.focus();
+    });
+
+    dialog.addEventListener("open", () => {
+      dialog.focus();
+    });
+
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) {
+        dialog.close();
+      }
+    });
+  });
+</script>
+
+<style>
+  a#link-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s ease-in-out;
+  }
+
+  a#link-back svg {
+    height: 1em;
+  }
+
+  #project-images {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin: 1.5rem 0 2rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  #project-images a {
+    display: block;
+    flex: 0 0 auto;
+    box-shadow: none;
+    text-decoration: none;
+    padding: 0;
+  }
+
+  #project-images picture {
+    display: block;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: max(20vh, 400px);
+  }
+
+  #project-images img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #project-images a {
+    position: relative;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    background-color: #f3f4f6;
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #e5e7eb;
+      transform: translateY(-2px);
+      box-shadow: none;
+    }
+
+    &:focus {
+      outline: 2px solid $secondary;
+      background-color: #e5e7eb;
+      box-shadow: none;
+    }
+
+    .link-icon {
+      font-size: 1.2rem;
+    }
+  }
+
+  #largeimage-dialog {
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: 100vw;
+    max-height: 100vh;
+    margin: auto;
+  }
+
+  #largeimage-dialog::backdrop {
+    background: #000c;
+  }
+
+  #largeimage-dialogcontainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    padding: 1.5rem;
+  }
+
+  #largeimage-imagecontainer {
+    max-width: 100%;
+    max-height: calc(100vh - 2rem);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #largeimage-image {
+    object-fit: cover;
+    max-width: 100%;
+    max-height: calc(100vh - 9rem);
+
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #largeimage-caption {
+    position: static;
+    background: #FFFC;
+    color: #000;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    max-width: 100%;
+  }
+
+  #largeimage-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background: #fffc;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #000;
+    transition: background-color .2s;
+  }
+
+  .largeimage__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background: #fffc;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 2;
+    color: #000;
+    transition: background-color .2s;
+  }
+
+  #largeimage__nav-left {
+    left: 1rem;
+  }
+  #largeimage__nav-right {
+    right: 1rem;
+  }
+
+  .largeimage__nav:hover,
+  #largeimage-close:hover {
+    background-color: #FFFFFF;
+  }
+</style>

@@ -20,7 +20,9 @@ const portfolio = defineCollection({
     githubLink: z.string().url().optional(),
     onlineLink: z.string().url().optional(),
     demoLink: z.string().url().optional(),
-    images: z.array(z.string()).default([])
+    images: z.array(
+      z.object({ src: z.string(), alt: z.string() })
+    ).default([])
   }),
 });
 

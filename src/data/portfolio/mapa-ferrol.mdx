@@ -3,16 +3,43 @@ title: "Mapa de patrimonio da Costa Ártabra"
 description: "Desarrollo de una aplicación completa para el patrimonio cultural y militar de la Costa Ártabra."
 technologies: ["dotnet", "react", "mysql", "ubuntu"]
 onlineLink: "https://mapacostaartabramilitar.com"
+images:
+- src: "/images/portfolio/mapa-ferrol/home-narrow"
+  alt: "Vista principal del mapa con los elementos del patrimonio"
+- src: "/images/portfolio/mapa-ferrol/home-info-narrow"
+  alt: "Sheet con información de un elemento patrimonial"
+- src: "/images/portfolio/mapa-ferrol/route-id-narrow"
+  alt: "Vista de una ruta predefinida"
+- src: "/images/portfolio/mapa-ferrol/planner-narrow"
+  alt: "Planificador de rutas de senderismo"
 ---
 
-Se desarrolló una aplicación web completa para la gestión del patrimonio cultural y militar de la Costa Ártabra, en Galicia, España. Esta aplicación permite a los usuarios explorar y descubrir el patrimonio de la región (Ferrol, Ares y Valdoviño) incluyendo las baterías militares, faros, iglesias, miradores, playas, etc.
+Desarrollo de una **aplicación web integral** para la exploración del patrimonio cultural y militar de la Costa Ártabra (Ferrol, Ares, Valdoviño). La plataforma incluye baterías costeras, faros, rutas de senderismo y puntos de interés natural, ofreciendo una experiencia adaptada principalmente a dispositivos móviles.
 
-La aplicación está desarrollada con ASP.NET Core y React, utilizando una base de datos MySQL para almacenar la información del patrimonio y permitir al personal de la administración añadir, editar y eliminar elementos del patrimonio.
+Tecnologías clave:
 
-Para la parte del frontend, se utilizó React con TypeScript, creando una interfaz de usuario intuitiva y fluida, adaptándose primordialmente a dispositivos móviles. Además, se implementó un mapa interactivo utilizando MapLibre y capas de OpenStreetMap (mapa base) y el PNOA (Satélite del IGN) para mostrar la ubicación de los elementos del patrimonio.
+* Backend con ASP.NET Core y base de datos MySQL.
+* Frontend en React (TypeScript) y mapas interactivos con MapLibre.
+* Teselas vectoriales de OpenStreetMap con [Protomaps](https://protomaps.com/) para un mapa de alta calidad y buen rendimiento.
+* Calculador de rutas autoalojado con [OSRM](https://project-osrm.org/) para optimización de rutas.
 
-La aplicación también incluye un sistema de rutas de senderismo, tanto proporcionadas por la administración como generadas a medida por los usuarios, permitiendo a los visitantes explorar la región a su manera.
+Diseñada para autonomía y privacidad:
 
-Una complejidad destacable fue hacer la aplicación rápida y fluida para el usuario, para garantizar la mejor experiencia posible al navegar por el patrimonio, sobre todo desde dispositivos móviles en redes móviles.
+* Infraestructura autoalojada (Ubuntu) sin dependencia de APIs comerciales.
+* Optimización de rutas con motor de cálculo interno (OSRM).
+* Panel de administración para gestión centralizada del patrimonio.
+
+## Características clave
+
+1. **Tecnologías autónomas**: Implementación sin dependencia de servicios externos (como Google Maps), garantizando privacidad del usuario y reducción de costos.
+
+2. **Gestión de recursos**: Solución personalizada para iconografía y capas de mapa, asegurando consistencia visual y eficiencia.
+
+3. **Planificación de rutas inteligente**: Sistema de optimización para senderismo basado en puntos patrimoniales, con énfasis en rendimiento y estabilidad.
+
+4. **Panel de administración**: Herramienta interna para gestión de contenido por personal no técnico.
+
+
+---
 
 Desarrollado en 2025 en colaboración con [Kendra](https://kendra.es/).
