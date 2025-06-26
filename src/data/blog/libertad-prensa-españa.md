@@ -2,7 +2,7 @@
 title: "En España sí hay libertad de prensa, por eso se puede decir lo contrario tranquilamente"
 description: "La libertad de prensa en España es un derecho fundamental, y hay quien afirma no tenerlo... mientras lo ejerce."
 publishedAt: 2025-06-05
-tags: ["politica", "derecho", "españa"]
+tags: ["política", "derecho", "españa"]
 ---
 
 Estoy harto de leer y escuchar a gente diciendo que "en España no hay libertad de prensa" y que "todos los medios están comprados por el Gobierno", y nada más lejos de la realidad. De hecho, quienes afirman esto justamente lo hacen desde sus medios de comunicación (sean o no prensa, aunque no sea tan relevante en la era de las redes sociales), y lo hacen sin recibir ningún tipo de represalia. ¿No es eso libertad de prensa?
