@@ -1,0 +1,26 @@
+---
+title: "Nadie está por encima de la ley"
+description: "Hablo sobre la polémica de El Xokas con Hacienda"
+publishedAt: 2025-07-08
+tags: ["política", "derecho", "españa"]
+---
+
+Estoy harto de ver cómo algunos se creen por encima de la ley, ya sea por su fama, su dinero o su influencia. O de simplemente creer que pueden negociar excepciones, por ser quien son, y encima quejarse cuando les dicen que no. Y esto es lo que ha pasado con el streamer ElXokas hace unas semanas, [que intentó negociar menos impuestos con Hacienda (vídeo)](https://www.dailymotion.com/video/x9lrpra), y dijo lo siguiente:
+
+> Pero yo estuve reunido con Hacienda aquí en Madrid. Esto os lo cuento. Yo estuve reunido con Hacienda aquí en Madrid y en Hacienda me dijeron todo bien, todo perfecto, y yo hablé con ellos porque quiero pagar menos. Yo gilipollas no soy. Y les dije, "oye, tal, a ver, esto quiero negociarlo con vosotros porque me estáis reventando. Aflojado un poquito. Porque me estáis reventando. Vamos a reducir un poco, tengo muchos asalariados. No quiero pagar tanto, es una barbaridad esto que estoy pagando..." ¿y sabéis lo que me dijeron? Que no, que no se puede. Porque mi trabajo depende demasiado de mí. A pesar de tener una persona que me guioniza los directos, que me busca las noticias, que me prepara todo un equipo técnico, que me organiza todo esto, tener gestor de vídeos, tener dos editores de vídeo a los que pago por separado... a pesar de tener todo un equipo a pesar de yo ser un presentador de televisión como Matías Prats, a pesar de yo ser uno solo, un presentador, que no es suficiente. No es suficiente para Hacienda. [...]
+
+Y omito la parte del final de todo del vídeo, porque suelta una burrada demagoga, que no merece ni ser transcrita.
+
+Me parece increíble que a alguien se le ocurra intentar "negociar" con Hacienda, como si fuera un banco o una empresa con la que haces negocios. Hacienda no es una empresa, es una institución pública que se encarga de recaudar impuestos para el Estado, con los que se financian los servicios público que todos (incluyendo él) usamos. Y punto.
+
+Habla, curiosamente, de que preguntó en Hacienda (no especifica a quién, si a un funcionario medio o a un cargo con cierta responsabilidad), y le dijeron que no podía actuar como una sociedad, porque su trabajo depende de él. Lo cual es cierto, y hay el precedente de ElRubius, que fue [condenado por el TJS de Madrid](https://los40.com/los40/2022/11/29/actualidad/1669719369_782801.html) a tributar el IRPF que correspondía, en lugar de hacerlo a través de una sociedad como él hizo en su momento.
+
+Y es que en ese caso era una clara sociedad interpuesta (aquella que existe sobre el papel, pero que en la realidad es uno mismo), porque era el dueño del 98% de las participaciones, y se "pagaba" desde la empresa a sí mismo un sueldo correspondiente a gran parte del beneficio de la empresa, para eludir parte del IRPF, pagando el IS en su lugar, que es más bajo en esas cantidades.
+
+En el caso del Xokas, también es una actividad "personalísima", ya que es ÉL y solo él, con su personalidad, quien hace que la gente entre a su canal de Twitch, a diferencia de lo que presenta gente como Matías Prats, que es un presentador de muchos, en un programa de los muchos que hay en la cadena, y que podría ser sustituído sin que el programa fuera radicalmente distinto. Es decir, si en vez de ser solo Xokas, fueran varios YouTubers o streamers, con un espacio común de la sociedad, y un equipo de producción detrás, sí se defiende el uso de una sociedad, pero no es el caso.
+
+Podemos ver ejemplos de programas donde, indudablemente, el presentador es una parte de su esencia, como El Hormiguero de Pablo Motos. Pero aún en ese caso, es un programa de los varios de Antena 3 (parte de Atresmedia), y es solo la cara visible de una producción que tiene detrás un equipo de guionistas, técnicos de iluminación, imagen, sonido, coordinar con mánagers de los invitados, público en plató, etc. No es un señor en su ático de 2 millones de euros en Madrid, con un micrófono y una webcam, que se graba a sí mismo soltando burradas y chorradas durante horas.
+
+Lo que sí puede hacer, si tanto le fastidia pagar impuestos, es hacer como otros streamers e irse a Andorra u otros países con regímenes fiscales más laxos y menos servicios públicos, como Andorra, Luxemburgo, Irlanda, etc. Su centro de intereses no es exclusivamente España, al cobrar de Twitch desde EEUU, de YouTube desde Irlanda, y tener su público repartido entre España y países de Hispanoamérica. Otra cosa es que le interese, por cuestión de imagen, y porque los servicios públicos en otros países pueden ser peores, aparte de lo que supone vivir en otro país lejos de su familia y amigos.
+
+Lo que no se puede pretender es negociar con Hacienda como quien regatea en el mercadillo, porque es una institución pública que tiene que hacer cumplir la ley, que aprueba el Congreso en representación del pueblo español. Y menos cuando cobras tanto dinero que tributas parte en el tramo más alto del IRPF, que no eres un _currito_ que cobra 1.000 euros al mes para subsistir, sino que amasas decenas de miles de euros al mes, viviendo en un ático caro en Madrid y trabajas las horas que te apetezca.
