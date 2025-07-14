@@ -93,7 +93,7 @@ const schema = {
               const tagsAttribute = postTags.join(',');
               return (
                 <li class="post-item" data-tags={tagsAttribute}>
-                  <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                  <a href={`/blog/${post.id}/`}>{post.data.title}</a>
                   {postTags.length > 0 && (
                     <ul class="post-tags">
                       {postTags.map((tag: string) => (

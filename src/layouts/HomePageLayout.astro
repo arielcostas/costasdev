@@ -32,18 +32,18 @@ const schema = {
   <h2>¿Quién soy?</h2>
 
   <p>
-    Soy un desarrollador de software con varios años de experiencia en el sector,
-    especializado en el desarrollo de aplicaciones web y la administración de
-    sistemas Cloud. Me apasiona la tecnología y disfruto creando soluciones
-    prácticas y eficientes para resolver problemas reales, simplificando la vida
-    y el trabajo de las personas.
+    Soy un desarrollador de software con varios años de experiencia en el
+    sector, especializado en el desarrollo de aplicaciones web y la
+    administración de sistemas Cloud. Me apasiona la tecnología y disfruto
+    creando soluciones prácticas y eficientes para resolver problemas reales,
+    simplificando la vida y el trabajo de las personas.
   </p>
 
   <p>
-    En mi tiempo libre, fuera de mi trabajo, me interesan temas como la filosofía,
-    la economía y las finanzas, así como el derecho y la política. Me gusta
-    aprender sobre cómo funcionan las cosas y cómo se relacionan entre sí, y
-    reflexionar sobre el impacto que tienen en nuestra sociedad y en nuestras
+    En mi tiempo libre, fuera de mi trabajo, me interesan temas como la
+    filosofía, la economía y las finanzas, así como el derecho y la política. Me
+    gusta aprender sobre cómo funcionan las cosas y cómo se relacionan entre sí,
+    y reflexionar sobre el impacto que tienen en nuestra sociedad y en nuestras
     vidas cotidianas.
   </p>
 
@@ -56,21 +56,28 @@ const schema = {
     segura y eficiente.
   </p>
 
-  <a href="/trajectory">Conoce más sobre mi trayectoria profesional</a>
+  <a href="/trajectory/">Conoce más sobre mi trayectoria profesional</a>
 
   <p>
     También realizo ocasinalmente proyectos personales y freelance para clientes
-    que necesitan soluciones a medida o apoyo técnico en sus proyectos. Me
-    gusta trabajar con tecnologías modernas y aprender nuevas habilidades para
-    mejorar mi trabajo y ofrecer un mejor servicio a mis clientes.
+    que necesitan soluciones a medida o apoyo técnico en sus proyectos. Me gusta
+    trabajar con tecnologías modernas y aprender nuevas habilidades para mejorar
+    mi trabajo y ofrecer un mejor servicio a mis clientes.
   </p>
-  <a href="/portfolio">Echa un vistazo a mi portfolio</a>
+
+  <p>
+    Si necesitas ayuda con un proyecto o quieres colaborar conmigo, no dudes en
+    ponerte en contacto conmigo a través de mi correo electrónico o mis redes
+    sociales.
+  </p>
+
+  <a href="/portfolio/">Echa un vistazo a mi portfolio</a>
 
   <h2>Mis reflexiones</h2>
   <p>
-    En mi blog comparto mis reflexiones, aprendizajes y experiencias sobre
-    los temas que me interesan, además de hablar ocasionalmente sobre tecnología
-    y desarrollo. Disfruto escribiendo sobre lo que aprendo y reflexiono, pudiendo
+    En mi blog comparto mis reflexiones, aprendizajes y experiencias sobre los
+    temas que me interesan, además de hablar ocasionalmente sobre tecnología y
+    desarrollo. Disfruto escribiendo sobre lo que aprendo y reflexiono, pudiendo
     plasmar mis ideas de forma clara y ordenada, y compartiéndolas con el mundo.
   </p>
   <ul>
@@ -84,7 +91,7 @@ const schema = {
         return (
           <li>
             <time datetime={p.data.publishedAt.toISOString()}>{date}</time>
-            <a href={`/blog/${p.id}`}>{p.data.title}</a>
+            <a href={`/blog/${p.id}/`}>{p.data.title}</a>
           </li>
         );
       })

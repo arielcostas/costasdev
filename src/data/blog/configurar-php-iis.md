@@ -15,7 +15,7 @@ Para este tutorial, suponemos que estamos usando lo siguiente:
 - Dominio de la aplicación: `app.internal` (`.internal` está reservado para uso interno)
 - PHP instalado en `C:\php`
 - IIS habilitado y funcionando (en `localhost:80` deberías ver la página de inicio de IIS)
-- [MKCert](https://mkcert.dev) instalado para generar certificados TLS autofirmados
+- [MKCert](https://github.com/FiloSottile/mkcert) instalado para generar certificados TLS autofirmados
 
 ## Crear un certificado TLS autofirmado
 
