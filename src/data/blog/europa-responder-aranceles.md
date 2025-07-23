@@ -2,7 +2,7 @@
 title: "Europa debe responder con firmeza a los aranceles de EE.UU."
 description: "Un análisis de los recientes aranceles estadounidenses y una propuesta de estrategia de respuesta europea."
 publishedAt: 2025-04-21
-tags: ["política", "comercio", "economía"]
+tags: ["política", "economía"]
 ---
 
 Estados Unidos ha lanzado una nueva ofensiva arancelaria bajo el mandato de Trump, y desde Europa no podemos seguir dedicándonos a la "vida contemplativa" al respecto.

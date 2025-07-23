@@ -2,7 +2,7 @@
 title: "El gobierno no 'aprueba una ley' sobre el derecho a rectificación"
 description: "Hablemos de la frase 'el gobierno aprueba una ley' y por qué no es correcta, poniendo como ejemplo la ley de derecho a rectificación en prensa"
 publishedAt: 2024-12-17
-tags: ["politica", "derecho", "españa"]
+tags: ["política", "derecho", "españa"]
 ---
 
 Hoy leemos la noticia en la prensa española que dice que "El Gobierno aprueba la ley del Derecho de Rectificación ante bulos e incluye a 'influencers'" (ABC), con los demás periódicos diciendo lo mismo. Pero, ¿es correcto decir que el Gobierno aprueba una ley?
