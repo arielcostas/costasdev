@@ -1,8 +1,10 @@
 @use "./variables" as *;
 @use "./alert";
 
-:root {
-  font: 400 16px/1.65 $mainFontStack;
+body {
+  font-family: $mainFontStack;
+  line-height: 1.65;
+  color: $textColor;
 }
 
 %heading {
