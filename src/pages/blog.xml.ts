@@ -1,5 +1,5 @@
 import rss from "@astrojs/rss";
-import type { APIContext, APIRoute } from "astro";
+import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 
 const spanishPubDate = (date: Date): string => {
