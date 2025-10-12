@@ -25,51 +25,31 @@ const schema = {
   <p>
     La forma más sencilla de contactar conmigo es a través de mi dirección de
     correo electrónico:
-    <a href="#" id="email-addr">ACTIVA JAVASCRIPT PARA VER ESTO</a>. También
-    puedes usar <a href="https://wa.me/message/W7T7L4EZAELQI1">WhatsApp</a> con el
-    número de teléfono
-    <a href="#" id="phone-number">ACTIVA JAVASCRIPT PARA VER ESTO</a>.
+    <a href="#" id="email-addr">ACTIVA JAVASCRIPT PARA VER ESTO</a>.
   </p>
 
-  <p>También puedes encontrarme en algunas redes sociales:</p>
-
-  <dl>
-    <dt>GitHub</dt>
-    <dd><a href="https://github.com/arielcostas">@arielcostas</a></dd>
-    <dt>LinkedIn</dt>
-    <dd>
-      <a href="https://www.linkedin.com/in/ariel-costas/">/in/ariel-costas</a>
-    </dd>
-    <dt>BlueSky</dt>
-    <dd><a href="https://bsky.app/profile/costas.dev">@costas.dev</a></dd>
-  </dl>
+  <p>
+    También puedes encontrarme en GitHub:
+    <a href="https://github.com/arielcostas">@arielcostas</a>
+  </p>
 </Layout>
 
 <script>
   const encryptedEmail = "LygNLiMmFRo/GlQZaFIWBA==";
-  const encryptedPhoneNumber = "ZWlQfX1QT0Z+XgVd";
   const key = "NZdKOfvuLn5jF6sryF0Q";
 
   const emailAddrLink = document.getElementById(
     "email-addr",
   ) as HTMLAnchorElement;
-  const phoneNumberLink = document.getElementById(
-    "phone-number",
-  ) as HTMLAnchorElement;
-
   (() => {
-    if (emailAddrLink == null || phoneNumberLink == null) {
+    if (emailAddrLink == null) {
       return;
     }
 
     const emailAddress = xorData(encryptedEmail, key);
-    const phoneNumber = xorData(encryptedPhoneNumber, key);
 
     emailAddrLink.href = `mailto:${emailAddress}`;
     emailAddrLink.textContent = emailAddress;
-
-    phoneNumberLink.href = `tel:${phoneNumber}`;
-    phoneNumberLink.textContent = phoneNumber;
   })();
 
   function xorData(data: string, key: string): string {
