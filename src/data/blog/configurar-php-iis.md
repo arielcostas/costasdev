@@ -35,13 +35,13 @@ En la barra izquierda, en Sitios hacemos clic derecho y seleccionamos Agregar si
 - Nombre del sitio: `app` (o el nombre que prefieras)
 - Ruta de acceso física: `C:\users\user\app\public`
 - Enlace:
-    - Tipo: `https`
-    - Dirección IP: `Todas las direcciones no asignadas`
-    - Puerto: `443`
-    - Nombre del host: `app.internal`
-    - Requerir indicación del nombre del servidor: `Sí`
-    - Deshabilitar [...] `No`
-    - Certificado: `app.internal`
+  - Tipo: `https`
+  - Dirección IP: `Todas las direcciones no asignadas`
+  - Puerto: `443`
+  - Nombre del host: `app.internal`
+  - Requerir indicación del nombre del servidor: `Sí`
+  - Deshabilitar [...] `No`
+  - Certificado: `app.internal`
 - Iniciar sitio web inmediatamente: `Sí`
 
 Hacemos clic en Aceptar y el sitio se creará. Pero aún hay que configurar PHP y la reescritura de URL (si el enrutamiento se hace por el propio framework, como en Symfony).
@@ -51,6 +51,7 @@ Antes de eso, hay que pulsar en la parte derecha en "Configuración básica" y c
 ## Configuración de PHP
 
 Dentro del Sitio, ir a "Componentes del servidor -> Asignaciones de controlador -> Agregar asignación de módulo" y rellenar los campos de la siguiente manera:
+
 - Ruta de acceso de solicitudes: `*.php`
 - Módulo: `FastCgiModule`
 - Ejecutable: `C:\php\php-cgi.exe`
@@ -71,38 +72,38 @@ Hacer clic en Aceptar y volver a la pantalla de reglas de reescritura. Hacer cli
 
 - Nombre: `Symfony`
 - Coincidir dirección URL:
-    - Dirección URL solicitada: `Coincide con el patrón`
-    - Usando: `Expresiones regulares`
-    - Patrón: `^(.*)$`
-    - Omitir mayúsculas y minúsculas: `Desmarcado`
+  - Dirección URL solicitada: `Coincide con el patrón`
+  - Usando: `Expresiones regulares`
+  - Patrón: `^(.*)$`
+  - Omitir mayúsculas y minúsculas: `Desmarcado`
 - Condiciones:
-    - Agrupación lógica: `Coincide con todas`
-    - Añadir condición:
-        - Entrada: `{REQUEST_FILENAME}`
-        - Comprobar si la cadena de entrada: `No es un archivo`
-    - Seguir los grupos de captura a través de condiciones: `Desmarcado`
+  - Agrupación lógica: `Coincide con todas`
+  - Añadir condición:
+    - Entrada: `{REQUEST_FILENAME}`
+    - Comprobar si la cadena de entrada: `No es un archivo`
+  - Seguir los grupos de captura a través de condiciones: `Desmarcado`
 - Variables de servidor:
-    - Agregar...:
-        - Nombre: `HTTP_X_FORWARDED_PROTO`
-        - Valor: `https`
-        - Remplazar el valor existente: `Marcado`
-    - Agregar...:
-        - Nombre: `HTTP_X_FORWARDED_SCHEMA`
-        - Valor: `https`
-        - Remplazar el valor existente: `Marcado`
-    - Agregar...:
-        - Nombre: `HTTP_X_FORWARDED_HOST`
-        - Valor: `{HTTP_HOST}`
-        - Remplazar el valor existente: `Marcado`
-    - Agregar...:
-        - Nombre: `HTTP_X_FORWARDED_FOR`
-        - Valor: `{REMOTE_ADDR}`
-        - Remplazar el valor existente: `Marcado`
+  - Agregar...:
+    - Nombre: `HTTP_X_FORWARDED_PROTO`
+    - Valor: `https`
+    - Remplazar el valor existente: `Marcado`
+  - Agregar...:
+    - Nombre: `HTTP_X_FORWARDED_SCHEMA`
+    - Valor: `https`
+    - Remplazar el valor existente: `Marcado`
+  - Agregar...:
+    - Nombre: `HTTP_X_FORWARDED_HOST`
+    - Valor: `{HTTP_HOST}`
+    - Remplazar el valor existente: `Marcado`
+  - Agregar...:
+    - Nombre: `HTTP_X_FORWARDED_FOR`
+    - Valor: `{REMOTE_ADDR}`
+    - Remplazar el valor existente: `Marcado`
 - Acción:
-    - Tipo de acción: `Reescribir`
-    - Reescribir dirección URL: `/index.php`
-    - Anexar cadena de consulta: `Marcado`
-    - Dirección URL reescrita de registro: `Desmarcado`
+  - Tipo de acción: `Reescribir`
+  - Reescribir dirección URL: `/index.php`
+  - Anexar cadena de consulta: `Marcado`
+  - Dirección URL reescrita de registro: `Desmarcado`
 - Detener procesamiento de reglas: `Desmarcado`
 
 Hacer clic en Aceptar y la regla se añadirá. Ahora, la aplicación PHP debería estar alojada en el servidor IIS y accesible en `https://app.internal`.
