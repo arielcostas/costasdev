@@ -18,7 +18,7 @@
     "@fontsource-variable/roboto": "^5.2.8",
     "@fontsource-variable/roboto-mono": "^5.2.8",
     "@iconify-json/tabler": "^1.2.23",
-    "astro": "^5.15.3",
+    "astro": "^5.15.6",
     "astro-compressor": "^1.2.0",
     "astro-icon": "^1.1.5",
     "rehype-external-links": "^3.0.0",
