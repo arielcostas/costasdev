@@ -11,11 +11,11 @@ jobs:
     name: Build production artifact
     environment: Production
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           submodules: true
           lfs: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: lts/*
           cache: "npm"
@@ -24,11 +24,11 @@ jobs:
       - name: Build
         run: npm run build -mode production
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: production
           path: dist
-          retention-days: 7
+          retention-days: 1
 
   deploy:
     runs-on: ubuntu-latest
@@ -37,12 +37,12 @@ jobs:
     environment: Production
     steps:
       - name: Download Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: production
           path: dist
       - name: Connect to tailnet
-        uses: tailscale/github-action@v3
+        uses: tailscale/github-action@v4
         with:
           oauth-client-id: ${{ secrets.TAILSCALE_CLIENT_ID }}
           oauth-secret: ${{ secrets.TAILSCALE_CLIENT_SECRET }}

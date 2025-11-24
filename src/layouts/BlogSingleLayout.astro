@@ -88,6 +88,7 @@ const schema = {
 
   .tags {
     display: inline-flex;
+    flex-direction: row;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -101,7 +102,7 @@ const schema = {
   .tags a {
     // Estilo de enlace normal, siguiendo los estilos predefinidos en Layout.astro
     color: v.$accentDark;
-    font-size: 0.85rem;
+    font-size: 0.90rem;
     font-family: v.$monoFontStack;
     text-decoration: none;
     box-shadow: 0 1px v.$accent;
@@ -124,7 +125,7 @@ const schema = {
     display: block;
     margin-top: -1rem;
     margin-bottom: 1.5rem;
-    font-size: 0.85rem;
+    font-size: 0.90rem;
     color: color.adjust(v.$dark, $lightness: 30%);
   }
 
