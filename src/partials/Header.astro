@@ -84,10 +84,21 @@ import t from "../i18n/es.json";
         font-weight: 700;
         font-variation-settings: "wdth" 87.5,"wght" 700,"GRAD" 150;
         text-decoration: none;
-        color: $accent;
+        background: linear-gradient(135deg, #0066cc 0%, #0099ff 50%, #00ccff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: filter 0.2s ease;
+
+        &:hover {
+          filter: brightness(1.1);
+        }
 
         .brand-accent {
-          color: $accentDark;
+          background: linear-gradient(135deg, #0052a3 0%, #0066cc 50%, #0080ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
       }
     }

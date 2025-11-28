@@ -111,13 +111,14 @@ const { title, description, empty } = Astro.props;
 
     background: linear-gradient(
       to bottom,
-      #ffffff 0%,
-      color.adjust($background, $lightness: -2%) 6rem,
-      color.adjust($background, $lightness: -5%) 12rem,
-      color.adjust($background, $lightness: -5%) 88%,
-      color.adjust($backgroundDarker, $lightness: -5%) 100%
+      #f0f8ff 0%,
+      #e6f3ff 6rem,
+      #d9edff 12rem,
+      #d9edff 88%,
+      #cce5ff 100%
     );
     color: $dark;
+    line-height: 1.6;
   }
 
   a {
