@@ -22,7 +22,10 @@ const groupedPosts = blogCollection.reduce(
 );
 
 // Colección de todas las etiquetas únicas
-const allTags = [...new Set(blogCollection.flatMap(post => post.data.tags || []))].sort();
+const allTags = [...new Set(blogCollection
+  .flatMap(post => post.data.tags || [])
+  .map(t => t.trim().toLowerCase()))
+].sort();
 
 function humaniseDate(date: Date) {
   const result = date.toLocaleDateString("es-ES", {
@@ -74,7 +77,7 @@ const schema = {
     <div class="tags-container">
       <h2>Etiquetas</h2>
       <div class="tag-filter">
-        <button class="tag-button active" data-tag="all">Todas</button>
+        <button class="tag-button active" data-tag="all">todas</button>
         {allTags.map((tag) => (
           <button class="tag-button" data-tag={tag}>{tag}</button>
         ))}
@@ -238,7 +241,7 @@ const schema = {
     margin-bottom: 1rem;
   }
 
-  > p {
+  p {
     line-height: 1.7;
     margin-bottom: 2rem;
   }
