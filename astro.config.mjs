@@ -31,6 +31,9 @@ export default defineConfig({
   },
   scopedStyleStrategy: "where",
   markdown: {
+    remarkRehype: {
+      footnoteLabel: "Notas"
+    },
     rehypePlugins: [
       [
         rehypeExternalLinks,
@@ -38,7 +41,7 @@ export default defineConfig({
           "rel": ["nofollow", "noopener"],
           "properties": {
             "className": "external",
-          }
+          },
         }
       ]
     ]

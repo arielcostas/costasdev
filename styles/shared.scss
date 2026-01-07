@@ -1,5 +1,6 @@
 @use "./variables" as *;
 @use "./alert";
+@use 'sass:color';
 
 body {
   font-family: $mainFontStack;
@@ -41,4 +42,30 @@ h4 {
 
 p {
   font-variation-settings: "GRAD" -15,"wdth" 112.5;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+
+  th,
+  td {
+    border: 1px solid $accent;
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  th {
+    font-variation-settings: "GRAD" 150,"wdth" 87.5,"wght" 700;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: color.scale($accent, $lightness: 90%);
+  }
+
+  th,
+  tbody tr:nth-child(even) {
+    background-color: color.scale($accent, $lightness: 97%);
+  }
 }
