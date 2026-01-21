@@ -5,67 +5,79 @@
 body {
   font-family: $mainFontStack;
   line-height: 1.65;
-  color: #000000;
+  color: $dark;
+  background-color: $background;
 }
 
 %heading {
   font-family: $titleFontStack;
-  margin-block-start: 0.75em;
-  margin-block-end: 0.25em;
+  margin-block-start: 1rem;
+  margin-block-end: 0.5rem;
+  color: $accentDark;
+  text-shadow: 1px 1px 0 #fff;
 }
 
 h1 {
   @extend %heading;
-  font-size: 3.25rem;
-  line-height: 1.3;
-
+  font-size: 2.75rem;
+  line-height: 1.2;
+  border-bottom: 2px solid $accentLight;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
   @extend %heading;
-  font-size: 2.5rem;
-  line-height: 1.55;
-  font-variation-settings: "wdth" 87.5,"wght" 700,"GRAD" 150
+  font-size: 2rem;
+  line-height: 1.3;
 }
 
 h3 {
   @extend %heading;
-  font-size: 2rem;
-  line-height: 1.55;
+  font-size: 1.5rem;
+  line-height: 1.3;
 }
 
 h4 {
   @extend %heading;
-  font-size: 1.25rem;
-  line-height: 1.55;
+  font-size: 1.2rem;
+  line-height: 1.3;
 }
 
 p {
-  font-variation-settings: "GRAD" -15,"wdth" 112.5;
+  margin-bottom: 1rem;
 }
 
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
   th,
   td {
-    border: 1px solid $accent;
+    border: 1px solid #ddd;
     padding: 0.75rem;
     text-align: left;
   }
 
   th {
-    font-variation-settings: "GRAD" 150,"wdth" 87.5,"wght" 700;
+    background: $accent;
+    //background-image: $glossyGradient;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
   }
 
   tbody tr:nth-child(odd) {
-    background-color: color.scale($accent, $lightness: 90%);
+    background-color: #fff;
   }
 
-  th,
   tbody tr:nth-child(even) {
-    background-color: color.scale($accent, $lightness: 97%);
+    background-color: #f9f9f9;
   }
 }

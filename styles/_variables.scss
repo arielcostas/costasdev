@@ -1,26 +1,29 @@
-$titleFontStack: "Archivo Variable", "Liberation Sans", "Arial", "Helvetica", sans-serif;
-$mainFontStack: "Archivo Variable", "Liberation Sans", "Arial", "Helvetica", sans-serif;
-$monoFontStack: "Roboto Mono Variable", "Fira Code", "Consolas", monospace;
+$titleFontStack: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif;
+$mainFontStack: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif;
+$monoFontStack: "Consolas", "Monaco", "Lucida Console", monospace;
 
-$accent: hsl(209, 94%, 42%);
-$accentLight: hsl(215, 90%, 60%);
-$accentDark: hsl(215, 90%, 30%);
-$secondary: hsl(48, 100%, 50%);
-$dark: hsl(340, 13%, 5%);
+$accent: hsl(210, 100%, 45%); // Classic blue
+$accentLight: hsl(210, 100%, 70%);
+$accentDark: hsl(210, 100%, 25%);
+$secondary: hsl(35, 100%, 50%); // Glossy orange for highlights
+$dark: hsl(210, 15%, 10%);
 
-$background: hsl(210, 40%, 96%);
-$backgroundDarker: hsl(210, 40%, 80%);
-$light: hsl(214, 64%, 98%);
-$lightAlt: hsl(0, 0%, 100%);
+$background: hsl(0, 0%, 94%);
+$backgroundDarker: hsl(0, 0%, 90%);
+$light: white;
+$lightAlt: hsl(0, 0%, 95%);
 
-$noteBackground: hsl(210, 40%, 86%);
-$noteText: hsl(210, 40%, 40%);
+$noteBackground: #fffbcc;
+$noteText: #5a5a22;
 
-$warningBackground: hsl(40, 100%, 90%);
-$warningText: hsl(40, 100%, 30%);
+$warningBackground: #ffe6e6;
+$warningText: #cc0000;
 
-$shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
+// Web 2.0/Skeuomorphic effects
+$glassBackground: rgba(255, 255, 255, 0.75);
+$bevelShadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 5px rgba(0, 0, 0, 0.2);
 $floatingRadius: 0.5rem;
 
 $breakpointTablet: 480px;

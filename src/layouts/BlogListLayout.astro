@@ -248,10 +248,8 @@ const schema = {
 
   .tags-container {
     margin-bottom: 2.5rem;
-    padding: 1.5rem;
     background: white;
     border-radius: 0.75rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
     h2 {
       font-size: 1.5rem;
@@ -278,7 +276,6 @@ const schema = {
     font-weight: 600;
     font-family: v.$monoFontStack;
     cursor: pointer;
-    transition: all 0.2s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 
     &:hover {
@@ -297,7 +294,6 @@ const schema = {
 
   .post-section {
     margin-bottom: 3rem;
-    transition: opacity 0.3s ease;
 
     h2 {
       font-size: 1.75rem;
@@ -318,18 +314,12 @@ const schema = {
   }
 
   .post-item {
-    background: white;
+    background: v.$lightAlt;
     padding: 1.25rem 1.5rem;
     border-radius: 0.625rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    transition: all 0.25s ease;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-
-    &:hover {
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
-    }
 
     > a {
       font-size: 1.2rem;
@@ -337,7 +327,6 @@ const schema = {
       text-decoration: none;
       color: v.$accentDark;
       box-shadow: none !important;
-      transition: color 0.2s ease;
 
       &:hover {
         color: v.$accent;
@@ -372,7 +361,6 @@ const schema = {
     font-family: v.$monoFontStack;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.2s ease;
 
     &:hover {
       background-color: rgba(0, 153, 255, 0.2);

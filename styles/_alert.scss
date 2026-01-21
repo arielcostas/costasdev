@@ -10,11 +10,14 @@ div[role="alert"] {
   margin-block: 1.5rem;
   margin-inline: 0.5rem;
 
-  border-radius: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.5);
+  //background-image: $glossyGradient;
 
   svg {
-    width: 1.5em;
-    height: 1.5em;
+    width: 2em;
+    height: 2em;
     margin-inline-end: 0.5rem;
     color: inherit;
     vertical-align: middle;
@@ -23,43 +26,32 @@ div[role="alert"] {
 
   p {
     margin-block: 0;
-  }
-
-  &::before {
-    flex-shrink: 0;
-    display: block;
-
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-
-    border-radius: 50%;
-    font-size: 1rem;
-
-    text-align: center;
+    font-weight: 500;
   }
 }
 
 div[role="alert"].note {
-  background-color: $noteBackground;
-  color: $noteText;
-  box-shadow: 0 0 0 1px $noteText;
+  background-color: #e7f3ff;
+  color: #004a99;
+  border-color: #b3d7ff;
 
   &::before {
     content: "i";
-    background-color: $noteText;
-    color: $light;
+    background-color: #004a99;
+    color: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   }
 }
 
 div[role="alert"].warning {
-  background-color: $warningBackground;
-  color: $warningText;
-  box-shadow: 0 0 0 1px $warningText;
+  background-color: #fff4ce;
+  color: #856404;
+  border-color: #ffeeba;
 
   &::before {
     content: "!";
-    background-color: $warningText;
-    color: $light;
+    background-color: #856404;
+    color: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   }
 }

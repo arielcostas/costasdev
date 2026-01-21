@@ -3,46 +3,57 @@ import t from "../i18n/es.json";
 ---
 
 <footer>
-  <p>
-    Copyright &copy; 2023-{new Date().getFullYear()} Ariel Costas Guerrero. {
-      t.footer.copyright
-    }
-  </p>
+  <div class="footer-content">
+    <p>
+      Copyright &copy; 2023-{new Date().getFullYear()} Ariel Costas Guerrero. {
+        t.footer.copyright
+      }
+    </p>
 
-  <p>
-    {t.footer.contentLicencedUnder}
-    <a href={`https://creativecommons.org/licenses/by-sa/4.0/deed.es`}
-      >CC BY-SA 4.0</a
-    >.
+    <p>
+      {t.footer.contentLicencedUnder}
+      <a href={`https://creativecommons.org/licenses/by-sa/4.0/deed.es`}
+        >CC BY-SA 4.0</a
+      >.
 
-    {t.footer.sourceCodeAvailableOn}
-    <a href="https://github.com/arielcostas/costasdev">GitHub</a>
-    {t.footer.andIsLicencedUnder}
-    <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-11-12"
-      >{t.footer.eupl} 1.2</a
-    >
-  </p>
+      {t.footer.sourceCodeAvailableOn}
+      <a href="https://github.com/arielcostas/costasdev">GitHub</a>
+      {t.footer.andIsLicencedUnder}
+      <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-11-12"
+        >{t.footer.eupl} 1.2</a
+      >
+    </p>
+  </div>
 </footer>
 
 <style lang="scss">
   @use "../../styles/variables" as *;
 
   footer {
-    background-color: $dark;
-    color: $light;
+    background: #222;
+    color: #ccc;
+    font-size: 0.9rem;
+    border-top: 1px solid #000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 
     vertical-align: middle;
     text-align: center;
 
-    padding: 0.5rem 1rem;
+    padding: 2rem 1rem;
+
+    .footer-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
     a {
-      color: $accentLight;
+      color: white;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.5);
     }
 
     p {
-      max-width: 60ch;
       margin-inline: auto;
+      margin-bottom: 0.5rem;
     }
   }
 </style>

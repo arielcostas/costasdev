@@ -107,16 +107,13 @@ const { title, description, empty } = Astro.props;
 
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
 
-    background: linear-gradient(
-      to bottom,
-      #f0f8ff 0%,
-      #e6f3ff 6rem,
-      #d9edff 12rem,
-      #d9edff 88%,
-      #cce5ff 100%
-    );
+    background: #c3d9ff;
+    background-image:
+      radial-gradient(at 0% 0%, hsla(210,100%,90%,1) 0, transparent 50%),
+      radial-gradient(at 50% 0%, hsla(210,100%,85%,1) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(210,100%,80%,1) 0, transparent 50%);
+    background-attachment: fixed;
     color: $dark;
     line-height: 1.6;
   }
@@ -154,21 +151,29 @@ const { title, description, empty } = Astro.props;
 
   main {
     box-sizing: border-box;
-    margin-bottom: auto;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 
     align-self: center;
 
-    max-width: min(75ch, 90vw);
-    font-size: 1.125rem;
+    max-width: min(900px, 95vw);
+    width: 100%;
+    font-size: 1.1rem;
 
-    padding-block-end: 3rem;
+    padding: 2.5rem;
+    background: #ffffff;
+    border: 1px solid #b4c7e7;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
 
     p > code {
       word-break: break-word;
       font-family: $monoFontStack;
-
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid #ddd;
       color: $accentDark;
-      background-color: #f6f6f6;
+      background-color: #f8f8f8;
     }
 
     p.meta {

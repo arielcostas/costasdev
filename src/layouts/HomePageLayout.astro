@@ -34,13 +34,14 @@ const schema = {
     <p>
       En mi blog comparto mis reflexiones, aprendizajes y experiencias sobre los
       temas que me interesan, además de hablar ocasionalmente sobre tecnología y
-      desarrollo. Disfruto escribiendo sobre lo que aprendo y reflexiono, pudiendo
-      plasmar mis ideas de forma clara y ordenada, y compartiéndolas con el mundo.
+      desarrollo. Disfruto escribiendo sobre lo que aprendo y reflexiono,
+      pudiendo plasmar mis ideas de forma clara y ordenada, y compartiéndolas
+      con el mundo.
     </p>
   </div>
 
   <hr class="section-divider" />
-
+  <h2>Entradas recientes del blog</h2>
   <ul class="blog-list">
     {
       blogCollection.slice(0, 5).map((p) => {
@@ -93,12 +94,6 @@ const schema = {
     background: $lightAlt;
     padding: 1rem 1.25rem;
     border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 0.2s ease;
-
-    &:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-    }
 
     time {
       display: block;
@@ -125,23 +120,22 @@ const schema = {
   .cta-button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: $accent;
+    background: $accentDark;
     color: white !important;
     text-decoration: none;
     border-radius: 0.5rem;
     font-weight: 600;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-    transition: all 0.2s ease;
 
     &:hover {
-      background: $accentDark;
+      background: $accent;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
     }
 
     &:focus {
       outline: 3px solid $secondary;
       outline-offset: 2px;
-      background: $accentDark !important;
+      background: $accent !important;
     }
   }
 </style>
