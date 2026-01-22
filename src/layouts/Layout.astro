@@ -52,6 +52,7 @@ const { title, description, empty } = Astro.props;
     <main id="main">
       <slot />
     </main>
+    <div class="spacer" />
     {empty ? null : <Footer />}
   </body>
 </html>
@@ -118,10 +119,6 @@ const { title, description, empty } = Astro.props;
     line-height: 1.6;
   }
 
-  a {
-    color: $accent;
-  }
-
   a.external::after {
     content: "↗";
     font-family: monospace;
@@ -158,13 +155,12 @@ const { title, description, empty } = Astro.props;
 
     max-width: min(900px, 95vw);
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 
-    padding: 2.5rem;
+    padding: 0 1rem 1rem;
     background: #ffffff;
     border: 1px solid #b4c7e7;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    border-radius: 2px;
 
     p > code {
       word-break: break-word;
@@ -199,21 +195,22 @@ const { title, description, empty } = Astro.props;
     }
   }
 
-  main a {
-    color: $accentDark;
+  .spacer {
+    flex: 1 0;
   }
 
-  footer a {
-    color: $accentLight;
+  main a {
+    color: blue;
   }
 
   main a,
   footer a {
     text-decoration: none;
-    box-shadow: 0 1px $accent;
+    box-shadow: 0 1px currentColor;
+    padding-block-end: 0.07em; // Para que el shadow no toque las "g" o "y"
 
     &:hover {
-      box-shadow: 0 2px $accentDark;
+      box-shadow: 0 2px currentColor;
     }
 
     &:focus {

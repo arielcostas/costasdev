@@ -15,11 +15,11 @@ const spanishPubDate = (date: Date): string => {
 
 export const GET: APIRoute = async (context) => {
   const collection = (await getCollection("blog"))
-    .filter((post) => post.data.publishedAt && post.data.title && post.data.description)
+    .filter((post) => post.data.publishedAt && post.data.title)
     .sort((a, b) => {
       return new Date(b.data.publishedAt).getTime() - new Date(a.data.publishedAt).getTime();
     })
-    .slice(0, 20); // Limit to the latest 20 posts
+    .slice(0, 10); // Limit to the latest 20 posts
 
   return rss({
     title: "Blog de Ariel Costas",
@@ -32,7 +32,7 @@ export const GET: APIRoute = async (context) => {
     items: collection.map((post) => ({
       title: post.data.title,
       link: `${context.url.origin}/blog/${post.id}`,
-      description: post.data.description,
+      description: post.data.description ?? "",
       pubDate: post.data.publishedAt,
       categories: post.data.tags,
       customData: `<cdrss:spanishPubDate>${spanishPubDate(post.data.publishedAt)}</cdrss:spanishPubDate>`,

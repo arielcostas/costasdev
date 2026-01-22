@@ -1,29 +1,38 @@
 ---
+import { Icon } from "astro-icon/components";
 import t from "../i18n/es.json";
 ---
 
 <footer>
-  <div class="footer-content">
+  <section class="footer-content">
     <p>
       Copyright &copy; 2023-{new Date().getFullYear()} Ariel Costas Guerrero. {
         t.footer.copyright
       }
     </p>
+  </section>
 
-    <p>
-      {t.footer.contentLicencedUnder}
-      <a href={`https://creativecommons.org/licenses/by-sa/4.0/deed.es`}
-        >CC BY-SA 4.0</a
-      >.
+  <section class="footer-badges">
+    <article id="footer-badge-rss">
+      <Icon name="tabler:rss" />
+      <a href="/blog.xml" title="RSS Feed">RSS</a>
+    </article>
 
-      {t.footer.sourceCodeAvailableOn}
-      <a href="https://github.com/arielcostas/costasdev">GitHub</a>
-      {t.footer.andIsLicencedUnder}
-      <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-11-12"
-        >{t.footer.eupl} 1.2</a
+    <article id="footer-badge-eupl">
+      <Icon name="tabler:brand-open-source" />
+      <a
+        href="https://github.com/arielcostas/costasdev"
+        >EUPL 1.2</a
       >
-    </p>
-  </div>
+    </article>
+
+    <article id="footer-badge-cc">
+      <Icon name="tabler:creative-commons" />
+      <a
+        href="https://github.com/arielcostas/costasdev"
+        >BY-SA 4.0</a
+      >
+  </section>
 </footer>
 
 <style lang="scss">
@@ -39,21 +48,66 @@ import t from "../i18n/es.json";
     vertical-align: middle;
     text-align: center;
 
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
 
     .footer-content {
       max-width: 900px;
       margin: 0 auto;
+
+      a {
+        color: $accentLight;
+      }
+      p {
+        margin-inline: auto;
+        margin-block: 0 0.5rem;
+      }
+    }
+  }
+
+  .footer-badges {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    article {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+      min-width: 67px;
+      height: 33px;
+      border-radius: 3px;
+      padding: 0 0.5rem;
+
+      a, span {
+        color: currentColor;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: none !important;
+      }
+
+      svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        color: currentColor;
+      }
     }
 
-    a {
+    #footer-badge-rss {
+      background: linear-gradient(to bottom, orangered, red);
       color: white;
-      text-shadow: 0 1px 1px rgba(0,0,0,0.5);
     }
 
-    p {
-      margin-inline: auto;
-      margin-bottom: 0.5rem;
+    #footer-badge-eupl {
+      background: linear-gradient(to bottom, blue, navy);
+      color: gold;
+    }
+
+    #footer-badge-cc {
+      background-color: black;
+      background: linear-gradient(to bottom, #333, #000);
+      color: white;
     }
   }
 </style>
