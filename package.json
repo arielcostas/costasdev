@@ -11,22 +11,22 @@
     "check": "astro check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
+    "@astrojs/check": "^0.9.2",
     "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "4.0.14",
-    "@astrojs/sitemap": "^3.6.1",
+    "@astrojs/rss": "4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
     "@fontsource-variable/archivo": "^5.2.8",
     "@iconify-json/tabler": "^1.2.26",
-    "astro": "^5.16.9",
+    "astro": "^5.17.1",
     "astro-compressor": "^1.2.0",
     "astro-icon": "^1.1.5",
     "rehype-external-links": "^3.0.0",
     "typescript": "5.9.3"
   },
   "devDependencies": {
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "sass": "^1.97.2"
+    "sass": "^1.97.3"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "*"
