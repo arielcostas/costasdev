@@ -11,7 +11,7 @@
     "check": "astro check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
+    "@astrojs/check": "^0.9.2",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "4.0.15",
     "@astrojs/sitemap": "^3.7.0",
@@ -30,5 +30,8 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "*"
+  },
+  "overrides": {
+    "lodash": "^4.17.21"
   }
 }
