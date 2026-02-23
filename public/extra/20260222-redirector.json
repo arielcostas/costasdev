@@ -1,0 +1,75 @@
+{
+    "createdBy": "Redirector v3.5.4",
+    "createdAt": "2026-02-08T22:11:07.624Z",
+    "redirects": [
+        {
+            "description": "Twitter -> Nitter",
+            "exampleUrl": "https://x.com/ToxikPija/status/2018261061699277116",
+            "exampleResult": "https://nitter.poast.org/ToxikPija/status/2018261061699277116",
+            "error": null,
+            "includePattern": "https://x.com/*",
+            "excludePattern": "",
+            "patternDesc": "Any word after example.com leads to google search for that word.",
+            "redirectUrl": "https://nitter.poast.org/$1",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "AMP redirect",
+            "exampleUrl": "https://www.google.com/amp/www.example.com/amp/document",
+            "exampleResult": "https://www.example.com/amp/document",
+            "error": null,
+            "includePattern": "^(?:https?://)www.(?:google|bing).com/amp/(?:s/)?(.*)",
+            "excludePattern": "",
+            "patternDesc": "AMP is bad: https://80x24.net/post/the-problem-with-amp/",
+            "redirectUrl": "https://$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "Doubleclick escaper",
+            "exampleUrl": "https://ad.doubleclick.net/ddm/trackclk/N135005.2681608PRIVATENETWORK/B20244?https://www.example.com",
+            "exampleResult": "https://www.example.com",
+            "error": null,
+            "includePattern": "^(?:https?://)ad.doubleclick.net/.*\\?(http?s://.*)",
+            "excludePattern": "",
+            "patternDesc": "Remove doubleclick link tracking / fix problems with doubleclick host-based blocking",
+            "redirectUrl": "$1",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        },
+        {
+            "description": "YouTube Shorts to YouTube",
+            "exampleUrl": "https://www.youtube.com/shorts/video-id",
+            "exampleResult": "https://www.youtube.com/watch?v=video-id",
+            "error": null,
+            "includePattern": "^(?:https?://)(?:www.)?youtube.com/shorts/([a-zA-Z0-9_-]+)(.*)",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://www.youtube.com/watch?v=$1$2",
+            "patternType": "R",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame",
+                "history"
+            ]
+        }
+    ]
+}
