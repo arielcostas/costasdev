@@ -47,6 +47,10 @@ const schema = {
     },
   },
 };
+
+const textToEncode = `${entry.data.title}\r\n\r\n${Astro.url.toString()} por @arielcg@mastodon.social`;
+
+const mastodonShareUrl = `https://share.joinmastodon.org/#text=${encodeURIComponent(textToEncode)}`;
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
@@ -79,6 +83,8 @@ const schema = {
 
   <p>
     <a href="/blog/">Volver al blog</a>
+    &nbsp;·&nbsp;
+    <a href={mastodonShareUrl} rel="noopener noreferrer">Compartir en Mastodon</a>
   </p>
 </Layout>
 
