@@ -1,5 +1,5 @@
 import sitemap from "@astrojs/sitemap";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import mdx from "@astrojs/mdx";
 
@@ -7,8 +7,6 @@ import icon from "astro-icon";
 import rehypeExternalLinks from "rehype-external-links";
 
 import compressor from "astro-compressor";
-
-import icon from 'astro-icon';
 
 export default defineConfig({
   compressHTML: true,
@@ -45,5 +43,27 @@ export default defineConfig({
         }
       ]
     ]
+  },
+  security: {
+    csp: {
+      algorithm: "SHA-384"
+    }
+  },
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Archivo",
+      cssVariable: "--font-archivo"
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: "Inter",
+      cssVariable: "--font-inter"
+    }
+  ],
+  experimental: {
+    rustCompiler: true,
+    chromeDevtoolsWorkspace: true,
+    contentIntellisense: true
   }
 });

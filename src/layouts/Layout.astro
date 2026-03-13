@@ -1,7 +1,7 @@
 ---
-import '@fontsource-variable/archivo'
 import Header from "../partials/Header.astro";
 import Footer from "../partials/Footer.astro";
+import { Font } from "astro:assets";
 
 interface Props {
   title: string;
@@ -45,6 +45,8 @@ const { title, description, empty } = Astro.props;
     <meta name="fediverse:creator" content="@arielcg@mastodon.social" />
 
     <title>{title} - Ariel Costas</title>
+
+    <Font cssVariable="--font-archivo" preload />
 
     <slot name="head-jsonld" />
   </head>
