@@ -31,7 +31,9 @@
     "sass": "^1.98.0"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "*"
+    "@rollup/rollup-linux-x64-gnu": "*",
+    "@emnapi/runtime": "*",
+    "@emnapi/core": "*"
   },
   "overrides": {
     "lodash": "^4.17.21"
