@@ -60,10 +60,5 @@ export default defineConfig({
       name: "Inter",
       cssVariable: "--font-inter"
     }
-  ],
-  experimental: {
-    rustCompiler: true,
-    chromeDevtoolsWorkspace: true,
-    contentIntellisense: true
-  }
+  ]
 });
