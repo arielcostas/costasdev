@@ -1,0 +1,30 @@
+---
+title: "Microsoft, a ver si lo he entendido bien"
+description: ""
+publishedAt: 2026-04-28
+tags: []
+---
+
+Esta entrada va a tenor del anuncio de que [GitHub Copilot pasará a un modelo de facturación por uso](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/), publicado el lunes 27 de abril, igual que estas líneas.
+
+1. Anunciáis un cambio en el sistema de precios donde, en lugar de facturar por "solicitudes", se cobra en función de tokens, un concepto abstracto que varía según el modelo, y sobre los que realmente no tienes mucho control, ya que es la CLI/extensión la que envía el código de un lado a otro, sin que el usuario pueda elegir "reducir tokens" o "proporcionar más contexto", o cualqueir otro tipo de métrica seria.
+2. Decís que el cambio se produce a partir del 1 de junio, a un mes vista, pero que tenemos que esperar a principios de mayo (es decir, la semana que viene, se supone) para poder utilizar una herramienta que ya habéis documentado y anunciado. Si fuese malpensado, diría que es para que paguemos el mes de mayo con el sistema actual para evaluar con menos tiempo si realmente compensa usar Copilot, o lo que puedan ofrecer otros proveedores (como los chinos, o directamente Claude o Codex).
+3. Para los suscriptores anuales (por suerte, no soy uno de ellos), un modelo de solicitudes 1x como Claude 4.6 Sonnet ahora significa solicitudes 9x. Si bien el sistema actual era una tontería (¿por qué cobrar lo mismo por Sonnet 4.0, 4.5 y 4.6?), al menos el precio de los usuarios anuales (y cuánto obtienen de su cuota) debería haberse respetado hasta el final. Por lo visto váis a ofrecer reembolsos, pero solo hasta el 20 de mayo.
+4. Para los suscriptores mensuales, los [nuevos precios están en esta tabla](https://docs.github.com/es/copilot/reference/copilot-billing/models-and-pricing#model-multipliers-for-annual-copilot-pro-and-copilot-pro-subscribers), que vienen a ser los precios minoristas, al menos en Claude y Gemini (de OpenAI ni me molesto en comprobar, porque evito en lo posible usar nada suyo).
+5. Todo esto significa que básicamente pagaremos los 10 USD al mes como una especie de depósito en GitHub, y luego o usamos todo ese crédito o lo perdemos (como viene a ser ahora con el modelo por solicitud, pero al menos con las solicitudes sabías cuánto podías hacer con un número concreto, y no un concepto abstracto). Este modelo es, dicho sea de paso, similar a OpenAI, donde primero ingresas dinero, y si no lo usas, "caduca" (como si mantener un número en una base de datos indefinidamente fuera demasiado costoso). Básicamente, pagaremos por el privilegio de usar la herramienta en sí, no por el acceso al modelo (ya que es el mismo que el precio minorista), o el valor será como cuando Copilot eran las sugerencias in-line (con el modelo de GPT Codex, antes de que Codex fuera también agente y todo eso).
+
+Es que, si no son por las sugerencias _in-line_, ¿para qué te voy a pagar a tí si puedo pagar un pococ más por Claude Code, que mínimo me dará lo mismo, y seguramente aproveche mejor los modelos? Quien dice Claude Code, dice Antigravity con las suscripciones de Google One (o las que haya, lo desconozco), o Codex de OpenAI, o cualquier sistema parecido de los proveedores chinos.
+
+Estoy considerando seriamente cancelar Copilot Pro, que en realidad es una de las pocas razones (además de no tener que aprender una sintaxis de CI nueva, principalmente) por las que me quedé con GitHub. Las funcionalidades principales están disponibles en Forgejo, en Sourcehut, en GitLab (tanto el comercial gitlab.com como cualquier instancia abierta de GitLab CE)
+
+Pero a estas alturas, y después de ver todas las interrupciones recientes del servicio (al momento de escribir este artículo, problemas con la búsqueda y con Actions, y la semana varios problemas en diferentes días), mientras que realmente no lanzan apenas nada en la plataforma (excepto, aparentemente, Copilot, y ahora ni siquiera eso), ¿por qué molestarse en seguir en GitHub?
+
+No entro a valorar ya el motivo de todo esto: que GitHub pasase de ser una subsidiaria "independiente" (GitHub Inc.) a estar integrada en el departamento de IA de Microsoft, la misma empresa que ha creado auténticas abominaciones como lo son Teams, chapuzas como cada vez más Windows (¿alguien se acuerda cuando el explorador de archivos, el bloc de notas, o Paint no tardaban segundos en abrirse?), o Azure, a quien un [ex-ingeniero de la empresa le _leyó la cartilla_](https://isolveproblems.substack.com/p/how-microsoft-vaporized-a-trillion) recientemente. Justamente por la migración a Azure (antes tenían las cosas en sus propios centros de datos), parece que van saltando cosas por los aires constantemente.
+
+Visto todo esto, me queda contemplar qué hacer con mis proyectos, porque lo público puedo moverlo (o hacer mirror sin más) a Codeberg o a mi propio servidor (ya tengo un respaldo de algunas cosas en [git.costas.dev](https://git.costas.dev), algo muy rudimentario con cgit) o ambas; pero me da reparo usar Codeberg para proyectos privados (no necesariamente privativos, pero privados).
+
+Dejo esta cita que leí hoy, y compartí en Mastodon, para cerrar esta entrada:
+
+> Si le pides a un chatbot que te recomiende un producto y te sugiere un producto inferior pero que le genera una mayor comisión a la empresa ¿quién puede distinguir que el chatbot estaba haciendo trampas, o si era una "alucinación"? De igual manera, si le pides a un chatbot que solucione tu problema y lo hace de una manera ineficiente que quema un _zillón_ de tokens (que tienes que pagar tú), ¿está el chatbot funcionando mal, o es manipulación de precios?
+>
+> [Cory Doctorow, pluralistic.net](https://pluralistic.net/2026/04/27/analogs-and-analogies/#trapped:~:text=If%20you%20ask%20a%20chatbot%20to%20recommend%20a%20product%20and%20it%20steers%20you%20toward%20an%20inferior%20option%20that%20generates%20a%20higher%20commission%20for%20the%20company%2C%20who%20can%20say%20whether%20that%20was%20the%20chatbot%20cheating), traducción propia
